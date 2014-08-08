@@ -107,7 +107,9 @@
     <Compile Include="Views\StockAlquilablesView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\StockAlquilablesView.Designer.cs" />
+    <Compile Include="Views\StockAlquilablesView.Designer.cs">
+      <DependentUpon>StockAlquilablesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\StockInsumosView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +144,9 @@
     <EmbeddedResource Include="Views\AboutView.resx">
       <DependentUpon>AboutView.cs</DependentUpon>
     <EmbeddedResource Include="Views\StockAlquilablesView.resx" />
+    <EmbeddedResource Include="Views\StockAlquilablesView.resx">
+      <DependentUpon>StockAlquilablesView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\StockInsumosView.resx">
       <DependentUpon>StockInsumosView.cs</DependentUpon>
     </EmbeddedResource>
