@@ -103,13 +103,13 @@ namespace Maquetas.ViewModel
     /// Permite seleccionar una vista en base al tipo de la misma
     /// </summary>
     /// <param name="viewType"></param>
-    private void SelectView(ViewType viewType)
+    [Command(UseCommandManager = false)]
+    public void SelectView(ViewType viewType)
     {
       SelectedViewType = viewType;
     }
 
     /// <summary>
-    /// PSEUDO COMMAND
     /// Cierra la unica vista que puede estar abierta (la SelectedView)
     /// Si no hay ninguna, no hace nada...
     /// Si SelectedView soporta vista anterior
@@ -129,18 +129,7 @@ namespace Maquetas.ViewModel
       }
     }
 
-    /// <summary>
-    /// PSEUDO COMMAND
-    /// Se recibe desde el StartViewModel (navegador)
-    /// </summary>
-    public void NavigateTo(ViewType newViewType)
-    {
-      //  algo distinto deberia hacer.... por ejemplo guardar el estado...
-      SelectedViewType = newViewType;
-    }
-
     #endregion
-
 
     protected void OnSelectedViewTypeChanged(ViewType oldType)
     {
@@ -149,11 +138,9 @@ namespace Maquetas.ViewModel
       SelectedView = _locator.GetView(SelectedViewType);
       //  RaiseSelectedViewTypeChanged()
 
-      //  esto es mio... si soporta vista anterior, coloco oldView para que quede registro de donde tiene que volver
+      //  esto es mio... si soporta vista anterior, coloco oldView para que quede 
       if (SelectedView is ISupportPreviousView)
         ((ISupportPreviousView)SelectedView).PreviousView = oldType;
-
-      //  esto tambien es mio... si la vista es tipo navegador, los eventos de navegación deberian replicarse en 
     }
 
     protected void OnSelectedViewChanged(object oldView)

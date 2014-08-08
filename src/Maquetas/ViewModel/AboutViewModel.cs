@@ -18,8 +18,7 @@ namespace Maquetas.ViewModel
     {
       Debug.WriteLine("Cerrar about, volver a la vista previa");
 
-      //  Me comunico directamente con el ViewModel principal para que manipule la vista
-      //
+      //  ((ISupportParentViewModel)this).ParentViewModel
       Helpers.MainForm.MainViewModel.CloseView();
     }
   }
