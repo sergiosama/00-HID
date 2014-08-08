@@ -22,21 +22,11 @@ namespace Maquetas
       Helpers.MainForm = this;
       InitializeComponent();
 
-      _viewModel = ViewModelSource.Create(() => new MainViewModel(new Localizador()));    //  usar un registro para obtener el localizador (no crear dependencia)
+      _viewModel = ViewModelSource.Create(() => new MainViewModel(new Localizador()));
 
       _viewModel.ViewAdded += ViewModelOnViewAdded;
       _viewModel.ViewRemoved += ViewModelOnViewRemoved;
       BindCommands();
-    }
-
-    /// <summary>
-    /// Usamos por ahora para "simular" un login exitoso
-    /// </summary>
-    /// <param name="e"></param>
-    protected override void OnLoad(EventArgs e)
-    {
-      base.OnLoad(e);
-      _viewModel.SelectedViewType = ViewType.StartMenu;
     }
 
     private void ViewModelOnViewRemoved(object sender, EventArgs eventArgs)
@@ -45,7 +35,7 @@ namespace Maquetas
 
       if (oldVista is ISupportRibbon)
       {
-        ribMain.UnMergeRibbon();
+        ribbonControl1.UnMergeRibbon();
       }
       oldVista.Parent = null;
     }
@@ -67,10 +57,9 @@ namespace Maquetas
         {
           ISupportRibbon rib = nuevaVista as ISupportRibbon;
 
-          ribMain.MergeRibbon(rib.Ribbon);
-          rib.FocusOnPage(ribMain);
+          ribbonControl1.MergeRibbon(rib.Ribbon);
+          rib.FocusOnPage(ribbonControl1);
         }
-        //  cambiar titulo de barra segun la vista!!
       }
     }
 
