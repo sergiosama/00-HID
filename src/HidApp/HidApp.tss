@@ -1,28 +1,2 @@
 <?xml version="1.0"?>
-<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ArrayOfArrayOfString>
-    <ArrayOfString>
-      <string>c:\desarrollo\hid\src\maquetas\viewmodel\mainviewmodel.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\Users\Quiquillo\AppData\Local\JetBrains\ReSharper\v8.2\SolutionCaches\_ReSharper.HidApp.-845273733\Decompiler\decompiler\50\a876a642\ViewModelBase.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\desarrollo\hid\src\maquetas\common\comunes.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\DESARROLLO\HID\src\Maquetas\ViewModel\AboutViewModel.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\DESARROLLO\HID\src\Maquetas\Views\AboutView.cs</string>
-      <string>C:\DESARROLLO\HID\src\Maquetas\Views\AboutView.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\desarrollo\hid\src\maquetas\frmmain.cs</string>
-      <string>c:\desarrollo\hid\src\maquetas\frmmain.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\DESARROLLO\HID\src\Maquetas\Views\Localizador.cs</string>
-    </ArrayOfString>
-  </ArrayOfArrayOfString>
-</ArrayOfArrayOfArrayOfString>
+<ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
