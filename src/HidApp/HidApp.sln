@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HidUI", "HidUI\HidUI.csproj", "{723BA3E1-5D1E-4B62-A702-E21D749FB95A}"
 EndProject
@@ -9,7 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maquetas", "..\Maquetas\Maq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "..\Entidades\Entidades.csproj", "{5FBEDFD9-0064-4558-B821-CCDE6BFEC870}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{80C6822C-0DBA-49E0-BB8E-EE786E28DE46}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Script", "Script", "{9E391F85-AE0F-41BC-A65A-208F9CAF0F2E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Documents\17-07script.sql = ..\..\..\..\..\Documents\17-07script.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +32,6 @@ Global
 		{5FBEDFD9-0064-4558-B821-CCDE6BFEC870}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FBEDFD9-0064-4558-B821-CCDE6BFEC870}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FBEDFD9-0064-4558-B821-CCDE6BFEC870}.Release|Any CPU.Build.0 = Release|Any CPU
-		{80C6822C-0DBA-49E0-BB8E-EE786E28DE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80C6822C-0DBA-49E0-BB8E-EE786E28DE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80C6822C-0DBA-49E0-BB8E-EE786E28DE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80C6822C-0DBA-49E0-BB8E-EE786E28DE46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
