@@ -98,6 +98,28 @@
       <DependentUpon>AboutView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Localizador.cs" />
+    <Compile Include="Views\StartView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\StartView.Designer.cs">
+      <DependentUpon>StartView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockAlquilablesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\StockAlquilablesView.Designer.cs" />
+    <Compile Include="Views\StockInsumosView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\StockInsumosView.Designer.cs">
+      <DependentUpon>StockInsumosView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\StockView.Designer.cs">
+      <DependentUpon>StockView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AboutView.resx">
       <DependentUpon>AboutView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\StockAlquilablesView.resx" />
+    <EmbeddedResource Include="Views\StockInsumosView.resx">
+      <DependentUpon>StockInsumosView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StockView.resx">
+      <DependentUpon>StockView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
