@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
+            this.xrBarCode1 = new DevExpress.XtraReports.UI.XRBarCode();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -60,13 +63,29 @@
             this.PageHeader.HeightF = 100F;
             this.PageHeader.Name = "PageHeader";
             // 
+            // PageFooter
+            // 
+            this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrBarCode1});
+            this.PageFooter.HeightF = 100F;
+            this.PageFooter.Name = "PageFooter";
+            // 
+            // xrBarCode1
+            // 
+            this.xrBarCode1.LocationFloat = new DevExpress.Utils.PointFloat(342.7083F, 54.08332F);
+            this.xrBarCode1.Name = "xrBarCode1";
+            this.xrBarCode1.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
+            this.xrBarCode1.SizeF = new System.Drawing.SizeF(307.2917F, 45.91667F);
+            this.xrBarCode1.Symbology = code128Generator1;
+            // 
             // remitos
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.Detail,
             this.TopMargin,
             this.BottomMargin,
-            this.PageHeader});
+            this.PageHeader,
+            this.PageFooter});
             this.Version = "14.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -78,5 +97,7 @@
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
+        private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
+        private DevExpress.XtraReports.UI.XRBarCode xrBarCode1;
     }
 }
