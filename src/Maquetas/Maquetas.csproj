@@ -33,27 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v14.1" />
-    <Reference Include="DevExpress.Mvvm.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v14.1.Core" />
-    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v14.1" />
-    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v14.1" />
     <Reference Include="DevExpress.Sparkline.v14.1.Core" />
-    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v14.1" />
-    <Reference Include="DevExpress.XtraGauges.v14.1.Core, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v14.1.Extensions, Version=14.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -91,6 +85,9 @@
     <Compile Include="ViewModel\AboutViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\StartViewModel.cs" />
+    <Compile Include="ViewModel\StockInsumosViewModel.cs" />
+    <Compile Include="ViewModel\StockViewModel.cs" />
     <Compile Include="Views\AboutView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -103,6 +100,12 @@
     </Compile>
     <Compile Include="Views\StartView.Designer.cs">
       <DependentUpon>StartView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockAlquilablesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\StockAlquilablesView.designer.cs">
+      <DependentUpon>StockAlquilablesView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StockInsumosView.cs">
       <SubType>UserControl</SubType>
@@ -128,6 +131,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reportes\etiquetas.resx">
       <DependentUpon>etiquetas.cs</DependentUpon>
@@ -137,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\AboutView.resx">
       <DependentUpon>AboutView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StartView.resx">
+      <DependentUpon>StartView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StockAlquilablesView.resx">
+      <DependentUpon>StockAlquilablesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StockInsumosView.resx">
       <DependentUpon>StockInsumosView.cs</DependentUpon>
@@ -156,6 +166,121 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Servicios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\address_book_48.png" />
+    <Content Include="Imagenes\add_48.png" />
+    <Content Include="Imagenes\administrator_48.png" />
+    <Content Include="Imagenes\arrowhead_down_48.png" />
+    <Content Include="Imagenes\arrowhead_left_48.png" />
+    <Content Include="Imagenes\arrowhead_right_48.png" />
+    <Content Include="Imagenes\arrowhead_up_48.png" />
+    <Content Include="Imagenes\arrow_down_48.png" />
+    <Content Include="Imagenes\arrow_left_48.png" />
+    <Content Include="Imagenes\arrow_right_48.png" />
+    <Content Include="Imagenes\arrow_up_48.png" />
+    <Content Include="Imagenes\attachment_48.png" />
+    <Content Include="Imagenes\binoculars2_48.png" />
+    <Content Include="Imagenes\binoculars_48.png" />
+    <Content Include="Imagenes\book_48.png" />
+    <Content Include="Imagenes\briefcase_48.png" />
+    <Content Include="Imagenes\calculator_buttons_48.png" />
+    <Content Include="Imagenes\calendar_48.png" />
+    <Content Include="Imagenes\camera_48.png" />
+    <Content Include="Imagenes\cancel_48.png" />
+    <Content Include="Imagenes\chat_emoticon_48.png" />
+    <Content Include="Imagenes\chat_exclamation_48.png" />
+    <Content Include="Imagenes\checkmark_48.png" />
+    <Content Include="Imagenes\clipboard_48.png" />
+    <Content Include="Imagenes\clip_48.png" />
+    <Content Include="Imagenes\clock_48.png" />
+    <Content Include="Imagenes\close_48.png" />
+    <Content Include="Imagenes\copy2_48.png" />
+    <Content Include="Imagenes\copy_48.png" />
+    <Content Include="Imagenes\couple_48.png" />
+    <Content Include="Imagenes\cross_48.png" />
+    <Content Include="Imagenes\delete_48.png" />
+    <Content Include="Imagenes\diary_48.png" />
+    <Content Include="Imagenes\diskette_48.png" />
+    <Content Include="Imagenes\document_48.png" />
+    <Content Include="Imagenes\door_48.png" />
+    <Content Include="Imagenes\download_48.png" />
+    <Content Include="Imagenes\edit_48.png" />
+    <Content Include="Imagenes\envelope_48.png" />
+    <Content Include="Imagenes\envelope_open_48.png" />
+    <Content Include="Imagenes\file2_48.png" />
+    <Content Include="Imagenes\file_48.png" />
+    <Content Include="Imagenes\folder2_48.png" />
+    <Content Include="Imagenes\folder_48.png" />
+    <Content Include="Imagenes\games_card_clubs_48.png" />
+    <Content Include="Imagenes\games_card_diamonds_48.png" />
+    <Content Include="Imagenes\games_card_hearts_48.png" />
+    <Content Include="Imagenes\games_card_spades_48.png" />
+    <Content Include="Imagenes\games_control2_48.png" />
+    <Content Include="Imagenes\games_dice_48.png" />
+    <Content Include="Imagenes\gear_48.png" />
+    <Content Include="Imagenes\group_48.png" />
+    <Content Include="Imagenes\hand_point_48.png" />
+    <Content Include="Imagenes\hand_share_48.png" />
+    <Content Include="Imagenes\help_48.png" />
+    <Content Include="Imagenes\history2_48.png" />
+    <Content Include="Imagenes\history3_48.png" />
+    <Content Include="Imagenes\history_48.png" />
+    <Content Include="Imagenes\home_48.png" />
+    <Content Include="Imagenes\hourglass_48.png" />
+    <Content Include="Imagenes\info_48.png" />
+    <Content Include="Imagenes\lightbulb_off_48.png" />
+    <Content Include="Imagenes\lightbulb_on_48.png" />
+    <Content Include="Imagenes\list_48.png" />
+    <Content Include="Imagenes\lock_closed_48.png" />
+    <Content Include="Imagenes\lock_open_48.png" />
+    <Content Include="Imagenes\man_48.png" />
+    <Content Include="Imagenes\man_slim_48.png" />
+    <Content Include="Imagenes\microphone_48.png" />
+    <Content Include="Imagenes\monitor2_48.png" />
+    <Content Include="Imagenes\monitor_48.png" />
+    <Content Include="Imagenes\music_beamed_note_48.png" />
+    <Content Include="Imagenes\music_eighth_note_48.png" />
+    <Content Include="Imagenes\music_library_48.png" />
+    <Content Include="Imagenes\network_48.png" />
+    <Content Include="Imagenes\notepad_48.png" />
+    <Content Include="Imagenes\paste2_48.png" />
+    <Content Include="Imagenes\paste_48.png" />
+    <Content Include="Imagenes\phone_48.png" />
+    <Content Include="Imagenes\phone_book_48.png" />
+    <Content Include="Imagenes\preview2_48.png" />
+    <Content Include="Imagenes\preview_48.png" />
+    <Content Include="Imagenes\printer_48.png" />
+    <Content Include="Imagenes\print_48.png" />
+    <Content Include="Imagenes\pyramid_48.png" />
+    <Content Include="Imagenes\refresh_48.png" />
+    <Content Include="Imagenes\reload_48.png" />
+    <Content Include="Imagenes\round_48.png" />
+    <Content Include="Imagenes\scissors_48.png" />
+    <Content Include="Imagenes\speech_balloon_48.png" />
+    <Content Include="Imagenes\sphere_48.png" />
+    <Content Include="Imagenes\star_2_48.png" />
+    <Content Include="Imagenes\stats_pie_chart_48.png" />
+    <Content Include="Imagenes\technical_hammer_48.png" />
+    <Content Include="Imagenes\technical_screwdriver_48.png" />
+    <Content Include="Imagenes\technical_wrench_48.png" />
+    <Content Include="Imagenes\traffic_lights_48.png" />
+    <Content Include="Imagenes\trash_can_48.png" />
+    <Content Include="Imagenes\upload_48.png" />
+    <Content Include="Imagenes\user_48.png" />
+    <Content Include="Imagenes\user_awake_48.png" />
+    <Content Include="Imagenes\user_sleep_48.png" />
+    <Content Include="Imagenes\user_woman_48.png" />
+    <Content Include="Imagenes\webcam_48.png" />
+    <Content Include="Imagenes\windows_48.png" />
+    <Content Include="Imagenes\window_48.png" />
+    <Content Include="Imagenes\wizard_48.png" />
+    <Content Include="Imagenes\woman_48.png" />
+    <Content Include="Imagenes\woman_slim_48.png" />
+    <Content Include="Imagenes\world_48.png" />
+    <Content Include="Imagenes\zoom_in_48.png" />
+    <Content Include="Imagenes\zoom_out_48.png" />
+    <None Include="Resources\tech.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

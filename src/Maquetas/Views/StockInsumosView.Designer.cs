@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+      this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
       this.gridControl1 = new DevExpress.XtraGrid.GridControl();
       this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
       this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -37,7 +38,6 @@
       this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
       this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
       this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-      this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
       this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
       ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
       this.layoutControl1.SuspendLayout();
@@ -66,6 +66,19 @@
       this.layoutControl1.Size = new System.Drawing.Size(675, 461);
       this.layoutControl1.TabIndex = 1;
       this.layoutControl1.Text = "layoutControl1";
+      // 
+      // simpleButton1
+      // 
+      this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
+      this.simpleButton1.Appearance.Options.UseBackColor = true;
+      this.simpleButton1.Image = global::Maquetas.Properties.Resources.arrow_left_48;
+      this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+      this.simpleButton1.Location = new System.Drawing.Point(12, 395);
+      this.simpleButton1.Name = "simpleButton1";
+      this.simpleButton1.Size = new System.Drawing.Size(58, 54);
+      this.simpleButton1.StyleController = this.layoutControl1;
+      this.simpleButton1.TabIndex = 6;
+      this.simpleButton1.Click += new System.EventHandler(this.NavTo_StartView);
       // 
       // gridControl1
       // 
@@ -156,19 +169,6 @@
       this.emptySpaceItem3.Size = new System.Drawing.Size(63, 201);
       this.emptySpaceItem3.Text = "emptySpaceItem3";
       this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-      // 
-      // simpleButton1
-      // 
-      this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
-      this.simpleButton1.Appearance.Options.UseBackColor = true;
-      this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-      this.simpleButton1.Image = global::Maquetas.Properties.Resources.arrow_left_48;
-      this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-      this.simpleButton1.Location = new System.Drawing.Point(12, 395);
-      this.simpleButton1.Name = "simpleButton1";
-      this.simpleButton1.Size = new System.Drawing.Size(58, 54);
-      this.simpleButton1.TabIndex = 6;
-      this.simpleButton1.Click += new System.EventHandler(this.NavTo_StartView);
       // 
       // layoutControlItem2
       // 

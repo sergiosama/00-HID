@@ -29,9 +29,9 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutView));
-      DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
-      DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
+      DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+      DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
       this.imageSlider1 = new DevExpress.XtraEditors.Controls.ImageSlider();
       this.ribAbout = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.bbiCloseAbout = new DevExpress.XtraBars.BarButtonItem();
@@ -79,12 +79,12 @@
       this.bbiCloseAbout.Id = 1;
       this.bbiCloseAbout.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiCloseAbout.LargeGlyph")));
       this.bbiCloseAbout.Name = "bbiCloseAbout";
-      toolTipTitleItem4.Text = "Acerca de la aplicación...";
-      toolTipItem4.LeftIndent = 6;
-      toolTipItem4.Text = "Quita esta pantalla y vuelve a la ventana principal";
-      superToolTip4.Items.Add(toolTipTitleItem4);
-      superToolTip4.Items.Add(toolTipItem4);
-      this.bbiCloseAbout.SuperTip = superToolTip4;
+      toolTipTitleItem1.Text = "Acerca de la aplicación...";
+      toolTipItem1.LeftIndent = 6;
+      toolTipItem1.Text = "Quita esta pantalla y vuelve a la ventana principal";
+      superToolTip1.Items.Add(toolTipTitleItem1);
+      superToolTip1.Items.Add(toolTipItem1);
+      this.bbiCloseAbout.SuperTip = superToolTip1;
       // 
       // ribbonPage1
       // 

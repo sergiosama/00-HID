@@ -40,7 +40,15 @@ namespace Maquetas.Common
     /// <summary>
     /// UC integrable, seleccionado mediante la pagina Alquilables de la Ribbon de Stock
     /// </summary>
-    StockAlquilables
+    StockAlquilables,
+    /// <summary>
+    /// UC integrable, permite administrar la impresion de etiquetas
+    /// </summary>
+    StockEtiquetas,
+    /// <summary>
+    /// UC integrable, permite incorporar la impresión de reportes relacionados con el stock
+    /// </summary>
+    StockReportes
   }
 
   /// <summary>
@@ -60,6 +68,16 @@ namespace Maquetas.Common
   public interface ISupportPreviousView
   {
     ViewType PreviousView { get; set; }
+  }
+
+  public interface INavigableView
+  {
+    
+  }
+
+  public interface IWorkView
+  {
+    
   }
 
 }
