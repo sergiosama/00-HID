@@ -39,6 +39,7 @@
     <Reference Include="DevExpress.XtraBars.v14.1" />
     <Reference Include="DevExpress.Sparkline.v14.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v14.1" />
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -53,6 +54,25 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="Views\LoginIngresoNormal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginIngresoNormal.Designer.cs">
+      <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginRecuperarContraseña.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginRecuperarContraseña.Designer.cs">
+      <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\winLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\winLogin.designer.cs">
+      <DependentUpon>winLogin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -62,7 +82,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\LoginIngresoNormal.resx">
+      <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginRecuperarContraseña.resx">
+      <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\winLogin.resx">
+      <DependentUpon>winLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -72,6 +102,131 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Entidades\Entidades.csproj">
+      <Project>{5fbedfd9-0064-4558-b821-ccde6bfec870}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{947eb898-5c1a-4a8d-a9b9-3e0cdfdb9722}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\address_book_48.png" />
+    <Content Include="Imagenes\add_48.png" />
+    <Content Include="Imagenes\administrator_48.png" />
+    <Content Include="Imagenes\arrowhead_down_48.png" />
+    <Content Include="Imagenes\arrowhead_left_48.png" />
+    <Content Include="Imagenes\arrowhead_right_48.png" />
+    <Content Include="Imagenes\arrowhead_up_48.png" />
+    <Content Include="Imagenes\arrow_down_48.png" />
+    <Content Include="Imagenes\arrow_left_48.png" />
+    <Content Include="Imagenes\arrow_right_48.png" />
+    <Content Include="Imagenes\arrow_up_48.png" />
+    <Content Include="Imagenes\attachment_48.png" />
+    <Content Include="Imagenes\binoculars2_48.png" />
+    <Content Include="Imagenes\binoculars_48.png" />
+    <Content Include="Imagenes\book_48.png" />
+    <Content Include="Imagenes\briefcase_48.png" />
+    <Content Include="Imagenes\calculator_buttons_48.png" />
+    <Content Include="Imagenes\calendar_48.png" />
+    <Content Include="Imagenes\camera_48.png" />
+    <Content Include="Imagenes\cancel_48.png" />
+    <Content Include="Imagenes\chat_emoticon_48.png" />
+    <Content Include="Imagenes\chat_exclamation_48.png" />
+    <Content Include="Imagenes\checkmark_48.png" />
+    <Content Include="Imagenes\clipboard_48.png" />
+    <Content Include="Imagenes\clip_48.png" />
+    <Content Include="Imagenes\clock_48.png" />
+    <Content Include="Imagenes\close_48.png" />
+    <Content Include="Imagenes\copy2_48.png" />
+    <Content Include="Imagenes\copy_48.png" />
+    <Content Include="Imagenes\couple_48.png" />
+    <Content Include="Imagenes\cross_48.png" />
+    <Content Include="Imagenes\delete_48.png" />
+    <Content Include="Imagenes\diary_48.png" />
+    <Content Include="Imagenes\diskette_48.png" />
+    <Content Include="Imagenes\document_48.png" />
+    <Content Include="Imagenes\door_48.png" />
+    <Content Include="Imagenes\download_48.png" />
+    <Content Include="Imagenes\edit_48.png" />
+    <Content Include="Imagenes\envelope_48.png" />
+    <Content Include="Imagenes\envelope_open_48.png" />
+    <Content Include="Imagenes\file2_48.png" />
+    <Content Include="Imagenes\file_48.png" />
+    <Content Include="Imagenes\folder2_48.png" />
+    <Content Include="Imagenes\folder_48.png" />
+    <Content Include="Imagenes\games_card_clubs_48.png" />
+    <Content Include="Imagenes\games_card_diamonds_48.png" />
+    <Content Include="Imagenes\games_card_hearts_48.png" />
+    <Content Include="Imagenes\games_card_spades_48.png" />
+    <Content Include="Imagenes\games_control2_48.png" />
+    <Content Include="Imagenes\games_dice_48.png" />
+    <Content Include="Imagenes\gear_48.png" />
+    <Content Include="Imagenes\group_48.png" />
+    <Content Include="Imagenes\hand_point_48.png" />
+    <Content Include="Imagenes\hand_share_48.png" />
+    <Content Include="Imagenes\help_48.png" />
+    <Content Include="Imagenes\HID_Logo.png" />
+    <Content Include="Imagenes\history2_48.png" />
+    <Content Include="Imagenes\history3_48.png" />
+    <Content Include="Imagenes\history_48.png" />
+    <Content Include="Imagenes\home_48.png" />
+    <Content Include="Imagenes\hourglass_48.png" />
+    <Content Include="Imagenes\info_48.png" />
+    <Content Include="Imagenes\lightbulb_off_48.png" />
+    <Content Include="Imagenes\lightbulb_on_48.png" />
+    <Content Include="Imagenes\list_48.png" />
+    <Content Include="Imagenes\lock_closed_48.png" />
+    <Content Include="Imagenes\lock_open_48.png" />
+    <Content Include="Imagenes\man_48.png" />
+    <Content Include="Imagenes\man_slim_48.png" />
+    <Content Include="Imagenes\microphone_48.png" />
+    <Content Include="Imagenes\monitor2_48.png" />
+    <Content Include="Imagenes\monitor_48.png" />
+    <Content Include="Imagenes\music_beamed_note_48.png" />
+    <Content Include="Imagenes\music_eighth_note_48.png" />
+    <Content Include="Imagenes\music_library_48.png" />
+    <Content Include="Imagenes\network_48.png" />
+    <Content Include="Imagenes\notepad_48.png" />
+    <Content Include="Imagenes\paste2_48.png" />
+    <Content Include="Imagenes\paste_48.png" />
+    <Content Include="Imagenes\phone_48.png" />
+    <Content Include="Imagenes\phone_book_48.png" />
+    <Content Include="Imagenes\preview2_48.png" />
+    <Content Include="Imagenes\preview_48.png" />
+    <Content Include="Imagenes\printer_48.png" />
+    <Content Include="Imagenes\print_48.png" />
+    <Content Include="Imagenes\pyramid_48.png" />
+    <Content Include="Imagenes\refresh_48.png" />
+    <Content Include="Imagenes\reload_48.png" />
+    <Content Include="Imagenes\round_48.png" />
+    <Content Include="Imagenes\scissors_48.png" />
+    <Content Include="Imagenes\speech_balloon_48.png" />
+    <Content Include="Imagenes\sphere_48.png" />
+    <Content Include="Imagenes\star_2_48.png" />
+    <Content Include="Imagenes\stats_pie_chart_48.png" />
+    <Content Include="Imagenes\technical_hammer_48.png" />
+    <Content Include="Imagenes\technical_screwdriver_48.png" />
+    <Content Include="Imagenes\technical_wrench_48.png" />
+    <Content Include="Imagenes\traffic_lights_48.png" />
+    <Content Include="Imagenes\trash_can_48.png" />
+    <Content Include="Imagenes\upload_48.png" />
+    <Content Include="Imagenes\user_48.png" />
+    <Content Include="Imagenes\user_awake_48.png" />
+    <Content Include="Imagenes\user_sleep_48.png" />
+    <Content Include="Imagenes\user_woman_48.png" />
+    <Content Include="Imagenes\webcam_48.png" />
+    <Content Include="Imagenes\windows_48.png" />
+    <Content Include="Imagenes\window_48.png" />
+    <Content Include="Imagenes\wizard_48.png" />
+    <Content Include="Imagenes\woman_48.png" />
+    <Content Include="Imagenes\woman_slim_48.png" />
+    <Content Include="Imagenes\world_48.png" />
+    <Content Include="Imagenes\zoom_in_48.png" />
+    <Content Include="Imagenes\zoom_out_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

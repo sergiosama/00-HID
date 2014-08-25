@@ -36,6 +36,7 @@ namespace Maquetas
     protected override void OnLoad(EventArgs e)
     {
       base.OnLoad(e);
+
       _viewModel.SelectedViewType = ViewType.StartMenu;
     }
 

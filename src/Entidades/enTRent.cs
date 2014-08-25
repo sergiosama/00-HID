@@ -2,21 +2,26 @@ using System;
 
 namespace Entidades
 {
+  /// <summary>
+  /// Representa una transaccion de alquiler particular
+  /// Un Paciente alquila o renta un Articulo, a partir de una Fecha, durante un periodo de tiempo
+  /// Cuidado!!! El Monto representa el precio pactado para el periodo inicial? O es el precio que se carga en cada vencimiento?? 
+  /// </summary>
 	public class enTRent
 	{
 		#region Fields
 
-		private int idRent;
-		private int idArticulo;
-		private int idPacientes;
-		private int idRecursos;
-		private DateTime fechaSalida;
-		private DateTime desde;
-		private DateTime hasta;
-		private DateTime fechaEntrada;
-		private int diferenciaDias;
-		private decimal monto;
-		private int idObraSocial;
+		private int _idRent;
+//		private int _idArticulo;
+//		private int _idPacientes;
+		private int _idRecursos;
+		private DateTime _fechaSalida;
+		private DateTime _desde;
+		private DateTime _hasta;
+		private DateTime _fechaEntrada;
+		private int _diferenciaDias;
+		private decimal _monto;
+		private int _idObraSocial;
 
 		#endregion
 
@@ -32,36 +37,44 @@ namespace Entidades
 		/// <summary>
 		/// Initializes a new instance of the enTRent class.
 		/// </summary>
-		public enTRent(int idArticulo, int idPacientes, int idRecursos, DateTime fechaSalida, DateTime desde, DateTime hasta, DateTime fechaEntrada, int diferenciaDias, decimal monto, int idObraSocial)
+		public enTRent(enTArticulo articulo, enTPaciente paciente, int idRecursos, DateTime fechaSalida, DateTime desde, 
+      DateTime hasta, DateTime fechaEntrada, int diferenciaDias, decimal monto, int idObraSocial)
 		{
-			this.idArticulo = idArticulo;
-			this.idPacientes = idPacientes;
-			this.idRecursos = idRecursos;
-			this.fechaSalida = fechaSalida;
-			this.desde = desde;
-			this.hasta = hasta;
-			this.fechaEntrada = fechaEntrada;
-			this.diferenciaDias = diferenciaDias;
-			this.monto = monto;
-			this.idObraSocial = idObraSocial;
+//			this._idArticulo = idArticulo;
+//			this._idPacientes = idPacientes;
+		  this.Articulo = articulo;
+		  this.Paciente = paciente;
+
+			this._idRecursos = idRecursos;
+			this._fechaSalida = fechaSalida;
+			this._desde = desde;
+			this._hasta = hasta;
+			this._fechaEntrada = fechaEntrada;
+			this._diferenciaDias = diferenciaDias;
+			this._monto = monto;
+			this._idObraSocial = idObraSocial;
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the enTRent class.
+		/// Dificil que se instancie un objeto con idRent...
 		/// </summary>
-		public enTRent(int idRent, int idArticulo, int idPacientes, int idRecursos, DateTime fechaSalida, DateTime desde, DateTime hasta, DateTime fechaEntrada, int diferenciaDias, decimal monto, int idObraSocial)
+		public enTRent(int idRent, enTArticulo articulo, enTPaciente paciente, int idRecursos, DateTime fechaSalida, DateTime desde, 
+      DateTime hasta, DateTime fechaEntrada, int diferenciaDias, decimal monto, int idObraSocial)
 		{
-			this.idRent = idRent;
-			this.idArticulo = idArticulo;
-			this.idPacientes = idPacientes;
-			this.idRecursos = idRecursos;
-			this.fechaSalida = fechaSalida;
-			this.desde = desde;
-			this.hasta = hasta;
-			this.fechaEntrada = fechaEntrada;
-			this.diferenciaDias = diferenciaDias;
-			this.monto = monto;
-			this.idObraSocial = idObraSocial;
+			this._idRent = idRent;
+//			this._idArticulo = idArticulo;
+//			this._idPacientes = idPacientes;
+      this.Articulo = articulo;
+      this.Paciente = paciente;
+      
+      this._idRecursos = idRecursos;
+			this._fechaSalida = fechaSalida;
+			this._desde = desde;
+			this._hasta = hasta;
+			this._fechaEntrada = fechaEntrada;
+			this._diferenciaDias = diferenciaDias;
+			this._monto = monto;
+			this._idObraSocial = idObraSocial;
 		}
 
 		#endregion
@@ -72,35 +85,39 @@ namespace Entidades
 		/// </summary>
 		public virtual int IdRent
 		{
-			get { return idRent; }
-			set { idRent = value; }
+			get { return _idRent; }
+			set { _idRent = value; }
 		}
 
+//		public virtual int IdArticulo
+//		{
+//			get { return _idArticulo; }
+//			set { _idArticulo = value; }
+//		}
+
 		/// <summary>
-		/// Gets or sets the IdArticulo value.
+		/// Articulo que se está alquilando en esta transacción
 		/// </summary>
-		public virtual int IdArticulo
-		{
-			get { return idArticulo; }
-			set { idArticulo = value; }
-		}
+    public virtual enTArticulo Articulo { get; set; }
+
+//		public virtual int IdPacientes
+//		{
+//			get { return _idPacientes; }
+//			set { _idPacientes = value; }
+//		}
+
+    /// <summary>
+    /// El Paciente al cual se le efectua el alquiler
+    /// </summary>
+    public virtual enTPaciente Paciente { get; set; }
 
 		/// <summary>
-		/// Gets or sets the IdPacientes value.
-		/// </summary>
-		public virtual int IdPacientes
-		{
-			get { return idPacientes; }
-			set { idPacientes = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the IdRecursos value.
+		/// Que seria esto???
 		/// </summary>
 		public virtual int IdRecursos
 		{
-			get { return idRecursos; }
-			set { idRecursos = value; }
+			get { return _idRecursos; }
+			set { _idRecursos = value; }
 		}
 
 		/// <summary>
@@ -108,8 +125,8 @@ namespace Entidades
 		/// </summary>
 		public virtual DateTime FechaSalida
 		{
-			get { return fechaSalida; }
-			set { fechaSalida = value; }
+			get { return _fechaSalida; }
+			set { _fechaSalida = value; }
 		}
 
 		/// <summary>
@@ -117,8 +134,8 @@ namespace Entidades
 		/// </summary>
 		public virtual DateTime Desde
 		{
-			get { return desde; }
-			set { desde = value; }
+			get { return _desde; }
+			set { _desde = value; }
 		}
 
 		/// <summary>
@@ -126,8 +143,8 @@ namespace Entidades
 		/// </summary>
 		public virtual DateTime Hasta
 		{
-			get { return hasta; }
-			set { hasta = value; }
+			get { return _hasta; }
+			set { _hasta = value; }
 		}
 
 		/// <summary>
@@ -135,8 +152,8 @@ namespace Entidades
 		/// </summary>
 		public virtual DateTime FechaEntrada
 		{
-			get { return fechaEntrada; }
-			set { fechaEntrada = value; }
+			get { return _fechaEntrada; }
+			set { _fechaEntrada = value; }
 		}
 
 		/// <summary>
@@ -144,8 +161,8 @@ namespace Entidades
 		/// </summary>
 		public virtual int DiferenciaDias
 		{
-			get { return diferenciaDias; }
-			set { diferenciaDias = value; }
+			get { return _diferenciaDias; }
+			set { _diferenciaDias = value; }
 		}
 
 		/// <summary>
@@ -153,17 +170,18 @@ namespace Entidades
 		/// </summary>
 		public virtual decimal Monto
 		{
-			get { return monto; }
-			set { monto = value; }
+			get { return _monto; }
+			set { _monto = value; }
 		}
 
 		/// <summary>
-		/// Gets or sets the IdObraSocial value.
+		/// Cambiar
+		/// La Obra Social que autoriza el alquiler o bien null si el costo corre por cuenta del Paciente (PARTICULAR)
 		/// </summary>
 		public virtual int IdObraSocial
 		{
-			get { return idObraSocial; }
-			set { idObraSocial = value; }
+			get { return _idObraSocial; }
+			set { _idObraSocial = value; }
 		}
 
 		#endregion

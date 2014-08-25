@@ -2,12 +2,16 @@ using System;
 
 namespace Entidades
 {
-	public class enTCategoriaRecurso
+  /// <summary>
+  /// Categoria o Tipo del Recurso, es decir que funcion cumple dentro de la Empresa
+  /// Cuidado!! esto puede transformarse o confundirse con los skills...para mi hay dos categorias principales: Administrativos y Profesionales
+  /// </summary>
+  public class enTCategoriaRecurso
 	{
 		#region Fields
 
-		private int idCategoria;
-		private string detalle;
+		private int _idCategoria;
+		private string _detalle;
 
 		#endregion
 
@@ -25,7 +29,7 @@ namespace Entidades
 		/// </summary>
 		public enTCategoriaRecurso(string detalle)
 		{
-			this.detalle = detalle;
+			this._detalle = detalle;
 		}
 
 		/// <summary>
@@ -33,8 +37,8 @@ namespace Entidades
 		/// </summary>
 		public enTCategoriaRecurso(int idCategoria, string detalle)
 		{
-			this.idCategoria = idCategoria;
-			this.detalle = detalle;
+			this._idCategoria = idCategoria;
+			this._detalle = detalle;
 		}
 
 		#endregion
@@ -43,10 +47,10 @@ namespace Entidades
 		/// <summary>
 		/// Gets or sets the IdCategoria value.
 		/// </summary>
-		public virtual int IdCategoria
+    public virtual int IdCategoria
 		{
-			get { return idCategoria; }
-			set { idCategoria = value; }
+			get { return _idCategoria; }
+			set { _idCategoria = value; }
 		}
 
 		/// <summary>
@@ -54,8 +58,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string Detalle
 		{
-			get { return detalle; }
-			set { detalle = value; }
+			get { return _detalle; }
+			set { _detalle = value; }
 		}
 
 		#endregion

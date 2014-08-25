@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using HidUI.Views;
 
 namespace HidUI
 {
@@ -15,7 +16,7 @@ namespace HidUI
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new frmMain());
+      Application.Run(new winLogin());
     }
   }
 }

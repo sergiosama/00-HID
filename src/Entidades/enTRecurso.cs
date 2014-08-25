@@ -2,29 +2,33 @@ using System;
 
 namespace Entidades
 {
+  /// <summary>
+  /// Clase que representa a un integrante de la empresa, cualquiera sea su actividad
+  /// </summary>
 	public class enTRecurso
 	{
 		#region Fields
 
-		private int idRecursos;
-		private string apellido;
-		private string nombre;
-		private string matricula;
-		private DateTime fechaTituloMedico;
-		private DateTime fechaNacimiento;
-		private string direccion;
-		private string telefono;
-		private string celular;
-		private int idCategoria;
-		private string cUIT;
-		private int idTipoIVA;
-		private string email;
-		private string nroSeguroMAP;
-		private string sssalud;
-		private byte[] adjuntos;
-		private byte[] foto;
-		private byte[] clave;
-		private string observaciones;
+		private int _idRecurso;
+		private string _apellido;
+		private string _nombre;
+		private string _matricula;
+		private DateTime? _fechaTituloMedico;
+		private DateTime? _fechaNacimiento;
+		private string _direccion;
+		private string _telefono;
+		private string _celular;
+		//  private int _idCategoria;
+		private string _numCUIT;
+		//  private int _idTipoIVA;
+		private string _email;
+		private string _nroSeguroMap;
+		private string _sssalud;
+		private byte[] _adjuntos;
+		private byte[] _foto;
+    //  La password no deberia formar parte de la entidad
+		//  private byte[] _clave;
+		private string _observaciones;
 
 		#endregion
 
@@ -40,64 +44,73 @@ namespace Entidades
 		/// <summary>
 		/// Initializes a new instance of the enTRecurso class.
 		/// </summary>
-		public enTRecurso(string apellido, string nombre, string matricula, DateTime fechaTituloMedico, DateTime fechaNacimiento, string direccion, string telefono, string celular, int idCategoria, string cUIT, int idTipoIVA, string email, string nroSeguroMAP, string sssalud, byte[] adjuntos, byte[] foto, byte[] clave, string observaciones)
+		public enTRecurso(string apellido, string nombre, string matricula, DateTime? fechaTituloMedico, DateTime? fechaNacimiento, 
+      string direccion, string telefono, string celular, enTCategoriaRecurso categoria, string cUIT, enTTipoIVA tipoIVA, string email, 
+      string nroSeguroMAP, string sssalud, byte[] adjuntos, byte[] foto, string observaciones)
 		{
-			this.apellido = apellido;
-			this.nombre = nombre;
-			this.matricula = matricula;
-			this.fechaTituloMedico = fechaTituloMedico;
-			this.fechaNacimiento = fechaNacimiento;
-			this.direccion = direccion;
-			this.telefono = telefono;
-			this.celular = celular;
-			this.idCategoria = idCategoria;
-			this.cUIT = cUIT;
-			this.idTipoIVA = idTipoIVA;
-			this.email = email;
-			this.nroSeguroMAP = nroSeguroMAP;
-			this.sssalud = sssalud;
-			this.adjuntos = adjuntos;
-			this.foto = foto;
-			this.clave = clave;
-			this.observaciones = observaciones;
+			this._apellido = apellido;
+			this._nombre = nombre;
+			this._matricula = matricula;
+			this._fechaTituloMedico = fechaTituloMedico;
+			this._fechaNacimiento = fechaNacimiento;
+			this._direccion = direccion;
+			this._telefono = telefono;
+			this._celular = celular;
+			//this._idCategoria = idCategoria;
+		  this.Categoria = categoria;
+			this._numCUIT = cUIT;
+			//this._idTipoIVA = idTipoIVA;
+		  this.SituacionAFIP = tipoIVA;
+			this._email = email;
+			this._nroSeguroMap = nroSeguroMAP;
+			this._sssalud = sssalud;
+			this._adjuntos = adjuntos;
+			this._foto = foto;
+			//  this._clave = clave;
+			this._observaciones = observaciones;
 		}
 
 		/// <summary>
 		/// Initializes a new instance of the enTRecurso class.
 		/// </summary>
-		public enTRecurso(int idRecursos, string apellido, string nombre, string matricula, DateTime fechaTituloMedico, DateTime fechaNacimiento, string direccion, string telefono, string celular, int idCategoria, string cUIT, int idTipoIVA, string email, string nroSeguroMAP, string sssalud, byte[] adjuntos, byte[] foto, byte[] clave, string observaciones)
+		public enTRecurso(int idRecursos, string apellido, string nombre, string matricula, DateTime? fechaTituloMedico, DateTime? fechaNacimiento, 
+      string direccion, string telefono, string celular, enTCategoriaRecurso categoria, string cUIT, enTTipoIVA tipoIVA, string email, string nroSeguroMAP, 
+      string sssalud, byte[] adjuntos, byte[] foto, string observaciones)
 		{
-			this.idRecursos = idRecursos;
-			this.apellido = apellido;
-			this.nombre = nombre;
-			this.matricula = matricula;
-			this.fechaTituloMedico = fechaTituloMedico;
-			this.fechaNacimiento = fechaNacimiento;
-			this.direccion = direccion;
-			this.telefono = telefono;
-			this.celular = celular;
-			this.idCategoria = idCategoria;
-			this.cUIT = cUIT;
-			this.idTipoIVA = idTipoIVA;
-			this.email = email;
-			this.nroSeguroMAP = nroSeguroMAP;
-			this.sssalud = sssalud;
-			this.adjuntos = adjuntos;
-			this.foto = foto;
-			this.clave = clave;
-			this.observaciones = observaciones;
+			this._idRecurso = idRecursos;
+			this._apellido = apellido;
+			this._nombre = nombre;
+			this._matricula = matricula;
+			this._fechaTituloMedico = fechaTituloMedico;
+			this._fechaNacimiento = fechaNacimiento;
+			this._direccion = direccion;
+			this._telefono = telefono;
+			this._celular = celular;
+			//this._idCategoria = idCategoria;
+		  this.Categoria = categoria;
+			this._numCUIT = cUIT;
+			//this._idTipoIVA = idTipoIVA;
+		  this.SituacionAFIP = tipoIVA;
+			this._email = email;
+			this._nroSeguroMap = nroSeguroMAP;
+			this._sssalud = sssalud;
+			this._adjuntos = adjuntos;
+			this._foto = foto;
+			//  this._clave = clave;
+			this._observaciones = observaciones;
 		}
 
 		#endregion
 
 		#region Properties
+
 		/// <summary>
-		/// Gets or sets the IdRecursos value.
+		/// ID del Recurso --> clave primaria usada por EF
 		/// </summary>
-		public virtual int IdRecursos
+		public virtual int IdRecurso
 		{
-			get { return idRecursos; }
-			set { idRecursos = value; }
+			get { return _idRecurso; }
+			set { _idRecurso = value; }
 		}
 
 		/// <summary>
@@ -105,8 +118,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string Apellido
 		{
-			get { return apellido; }
-			set { apellido = value; }
+			get { return _apellido; }
+			set { _apellido = value; }
 		}
 
 		/// <summary>
@@ -114,8 +127,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string Nombre
 		{
-			get { return nombre; }
-			set { nombre = value; }
+			get { return _nombre; }
+			set { _nombre = value; }
 		}
 
 		/// <summary>
@@ -123,26 +136,26 @@ namespace Entidades
 		/// </summary>
 		public virtual string Matricula
 		{
-			get { return matricula; }
-			set { matricula = value; }
+			get { return _matricula; }
+			set { _matricula = value; }
 		}
 
 		/// <summary>
 		/// Gets or sets the FechaTituloMedico value.
 		/// </summary>
-		public virtual DateTime FechaTituloMedico
+		public virtual DateTime? FechaTituloMedico
 		{
-			get { return fechaTituloMedico; }
-			set { fechaTituloMedico = value; }
+			get { return _fechaTituloMedico; }
+			set { _fechaTituloMedico = value; }
 		}
 
 		/// <summary>
 		/// Gets or sets the FechaNacimiento value.
 		/// </summary>
-		public virtual DateTime FechaNacimiento
+		public virtual DateTime? FechaNacimiento
 		{
-			get { return fechaNacimiento; }
-			set { fechaNacimiento = value; }
+			get { return _fechaNacimiento; }
+			set { _fechaNacimiento = value; }
 		}
 
 		/// <summary>
@@ -150,8 +163,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string Direccion
 		{
-			get { return direccion; }
-			set { direccion = value; }
+			get { return _direccion; }
+			set { _direccion = value; }
 		}
 
 		/// <summary>
@@ -159,8 +172,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string Telefono
 		{
-			get { return telefono; }
-			set { telefono = value; }
+			get { return _telefono; }
+			set { _telefono = value; }
 		}
 
 		/// <summary>
@@ -168,44 +181,58 @@ namespace Entidades
 		/// </summary>
 		public virtual string Celular
 		{
-			get { return celular; }
-			set { celular = value; }
+			get { return _celular; }
+			set { _celular = value; }
 		}
 
+/*
 		/// <summary>
 		/// Gets or sets the IdCategoria value.
 		/// </summary>
 		public virtual int IdCategoria
 		{
-			get { return idCategoria; }
-			set { idCategoria = value; }
+			get { return _idCategoria; }
+			set { _idCategoria = value; }
 		}
+*/
+    /// <summary>
+    /// Representa el Tipo del Recurso (Administrativo, Profesional...Kinesiologo...)
+    /// </summary>
+    
+    public virtual enTCategoriaRecurso Categoria { get; set; }
 
 		/// <summary>
 		/// Gets or sets the CUIT value.
 		/// </summary>
 		public virtual string CUIT
 		{
-			get { return cUIT; }
-			set { cUIT = value; }
+			get { return _numCUIT; }
+			set { _numCUIT = value; }
 		}
 
+/*
 		/// <summary>
 		/// Gets or sets the IdTipoIVA value.
 		/// </summary>
 		public virtual int IdTipoIVA
 		{
-			get { return idTipoIVA; }
-			set { idTipoIVA = value; }
+			get { return _idTipoIVA; }
+			set { _idTipoIVA = value; }
 		}
+*/
+    /// <summary>
+    /// Como esta inscripto el Recurso en la AFIP
+    /// </summary>
+    
+    public virtual enTTipoIVA SituacionAFIP { get; set; }
 
 		/// <summary>
 		/// Gets or sets the Email value.
 		/// </summary>
 		public virtual string Email
 		{
-			get { return email; }
-			set { email = value; }
+			get { return _email; }
+			set { _email = value; }
 		}
 
 		/// <summary>
@@ -213,8 +240,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string NroSeguroMAP
 		{
-			get { return nroSeguroMAP; }
-			set { nroSeguroMAP = value; }
+			get { return _nroSeguroMap; }
+			set { _nroSeguroMap = value; }
 		}
 
 		/// <summary>
@@ -222,8 +249,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string Sssalud
 		{
-			get { return sssalud; }
-			set { sssalud = value; }
+			get { return _sssalud; }
+			set { _sssalud = value; }
 		}
 
 		/// <summary>
@@ -231,8 +258,8 @@ namespace Entidades
 		/// </summary>
 		public virtual byte[] Adjuntos
 		{
-			get { return adjuntos; }
-			set { adjuntos = value; }
+			get { return _adjuntos; }
+			set { _adjuntos = value; }
 		}
 
 		/// <summary>
@@ -240,26 +267,28 @@ namespace Entidades
 		/// </summary>
 		public virtual byte[] Foto
 		{
-			get { return foto; }
-			set { foto = value; }
+			get { return _foto; }
+			set { _foto = value; }
 		}
 
+/*
 		/// <summary>
 		/// Gets or sets the Clave value.
 		/// </summary>
 		public virtual byte[] Clave
 		{
-			get { return clave; }
-			set { clave = value; }
+			get { return _clave; }
+			set { _clave = value; }
 		}
+*/
 
 		/// <summary>
 		/// Gets or sets the Observaciones value.
 		/// </summary>
 		public virtual string Observaciones
 		{
-			get { return observaciones; }
-			set { observaciones = value; }
+			get { return _observaciones; }
+			set { _observaciones = value; }
 		}
 
 		#endregion

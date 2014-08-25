@@ -6,18 +6,18 @@ namespace Entidades
 	{
 		#region Fields
 
-		private int idArticulo;
-		private string codeBar;
-		private int idProveedor;
-		private int idCategoria;
-		private int idTipoArticulo;
-		private string detalleArticulo;
-		private string avisoStockMinimo;
-		private float precioCompra;
-		private float precioVenta;
-		private float precioAlquiler;
-		private float stock;
-		private float stockminimo;
+		private int _idArticulo;
+		private string _codeBar;
+		private int _idProveedor;
+		private int _idCategoria;
+		private int _idTipoArticulo;
+		private string _detalleArticulo;
+		private string _avisoStockMinimo;
+		private float _precioCompra;
+		private float _precioVenta;
+		private float _precioAlquiler;
+		private float _stock;
+		private float _stockMinimo;
 
 		#endregion
 
@@ -35,16 +35,16 @@ namespace Entidades
 		/// </summary>
 		public enTArticulo(string codeBar, int idProveedor, int idCategoria, int idTipoArticulo, string detalleArticulo, string avisoStockMinimo, float precioCompra, float precioVenta, float precioAlquiler, float stock, float stockminimo)
 		{
-			this.codeBar = codeBar;
-			this.idProveedor = idProveedor;
-			this.idCategoria = idCategoria;
-			this.idTipoArticulo = idTipoArticulo;
-			this.detalleArticulo = detalleArticulo;
-			this.avisoStockMinimo = avisoStockMinimo;
-			this.precioCompra = precioCompra;
-			this.precioVenta = precioVenta;
-			this.precioAlquiler = precioAlquiler;
-			this.stock = stock;
+			this._codeBar = codeBar;
+			this._idProveedor = idProveedor;
+			this._idCategoria = idCategoria;
+			this._idTipoArticulo = idTipoArticulo;
+			this._detalleArticulo = detalleArticulo;
+			this._avisoStockMinimo = avisoStockMinimo;
+			this._precioCompra = precioCompra;
+			this._precioVenta = precioVenta;
+			this._precioAlquiler = precioAlquiler;
+			this._stock = stock;
 			this.stockminimo = stockminimo;
 		}
 
@@ -53,17 +53,17 @@ namespace Entidades
 		/// </summary>
 		public enTArticulo(int idArticulo, string codeBar, int idProveedor, int idCategoria, int idTipoArticulo, string detalleArticulo, string avisoStockMinimo, float precioCompra, float precioVenta, float precioAlquiler, float stock, float stockminimo)
 		{
-			this.idArticulo = idArticulo;
-			this.codeBar = codeBar;
-			this.idProveedor = idProveedor;
-			this.idCategoria = idCategoria;
-			this.idTipoArticulo = idTipoArticulo;
-			this.detalleArticulo = detalleArticulo;
-			this.avisoStockMinimo = avisoStockMinimo;
-			this.precioCompra = precioCompra;
-			this.precioVenta = precioVenta;
-			this.precioAlquiler = precioAlquiler;
-			this.stock = stock;
+			this._idArticulo = idArticulo;
+			this._codeBar = codeBar;
+			this._idProveedor = idProveedor;
+			this._idCategoria = idCategoria;
+			this._idTipoArticulo = idTipoArticulo;
+			this._detalleArticulo = detalleArticulo;
+			this._avisoStockMinimo = avisoStockMinimo;
+			this._precioCompra = precioCompra;
+			this._precioVenta = precioVenta;
+			this._precioAlquiler = precioAlquiler;
+			this._stock = stock;
 			this.stockminimo = stockminimo;
 		}
 
@@ -75,8 +75,8 @@ namespace Entidades
 		/// </summary>
 		public virtual int IdArticulo
 		{
-			get { return idArticulo; }
-			set { idArticulo = value; }
+			get { return _idArticulo; }
+			set { _idArticulo = value; }
 		}
 
 		/// <summary>
@@ -84,8 +84,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string CodeBar
 		{
-			get { return codeBar; }
-			set { codeBar = value; }
+			get { return _codeBar; }
+			set { _codeBar = value; }
 		}
 
 		/// <summary>
@@ -93,8 +93,8 @@ namespace Entidades
 		/// </summary>
 		public virtual int IdProveedor
 		{
-			get { return idProveedor; }
-			set { idProveedor = value; }
+			get { return _idProveedor; }
+			set { _idProveedor = value; }
 		}
 
 		/// <summary>
@@ -102,8 +102,8 @@ namespace Entidades
 		/// </summary>
 		public virtual int IdCategoria
 		{
-			get { return idCategoria; }
-			set { idCategoria = value; }
+			get { return _idCategoria; }
+			set { _idCategoria = value; }
 		}
 
 		/// <summary>
@@ -111,8 +111,8 @@ namespace Entidades
 		/// </summary>
 		public virtual int IdTipoArticulo
 		{
-			get { return idTipoArticulo; }
-			set { idTipoArticulo = value; }
+			get { return _idTipoArticulo; }
+			set { _idTipoArticulo = value; }
 		}
 
 		/// <summary>
@@ -120,8 +120,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string DetalleArticulo
 		{
-			get { return detalleArticulo; }
-			set { detalleArticulo = value; }
+			get { return _detalleArticulo; }
+			set { _detalleArticulo = value; }
 		}
 
 		/// <summary>
@@ -129,8 +129,8 @@ namespace Entidades
 		/// </summary>
 		public virtual string AvisoStockMinimo
 		{
-			get { return avisoStockMinimo; }
-			set { avisoStockMinimo = value; }
+			get { return _avisoStockMinimo; }
+			set { _avisoStockMinimo = value; }
 		}
 
 		/// <summary>
@@ -138,8 +138,8 @@ namespace Entidades
 		/// </summary>
 		public virtual float PrecioCompra
 		{
-			get { return precioCompra; }
-			set { precioCompra = value; }
+			get { return _precioCompra; }
+			set { _precioCompra = value; }
 		}
 
 		/// <summary>
@@ -147,8 +147,8 @@ namespace Entidades
 		/// </summary>
 		public virtual float PrecioVenta
 		{
-			get { return precioVenta; }
-			set { precioVenta = value; }
+			get { return _precioVenta; }
+			set { _precioVenta = value; }
 		}
 
 		/// <summary>
@@ -156,8 +156,8 @@ namespace Entidades
 		/// </summary>
 		public virtual float PrecioAlquiler
 		{
-			get { return precioAlquiler; }
-			set { precioAlquiler = value; }
+			get { return _precioAlquiler; }
+			set { _precioAlquiler = value; }
 		}
 
 		/// <summary>
@@ -165,18 +165,23 @@ namespace Entidades
 		/// </summary>
 		public virtual float Stock
 		{
-			get { return stock; }
-			set { stock = value; }
+			get { return _stock; }
+			set { _stock = value; }
 		}
 
 		/// <summary>
 		/// Gets or sets the Stockminimo value.
 		/// </summary>
-		public virtual float Stockminimo
+		public virtual float StockMinimo
 		{
-			get { return stockminimo; }
-			set { stockminimo = value; }
+			get { return _stockMinimo; }
+			set { _stockMinimo = value; }
 		}
+
+    /// <summary>
+    /// La imagen del articulo, almacenada en la base de datos
+    /// </summary>
+    public byte[] Imagen { get; set; }
 
 		#endregion
 	}
