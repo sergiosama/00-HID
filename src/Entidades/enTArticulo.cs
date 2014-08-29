@@ -45,7 +45,7 @@ namespace Entidades
 			this._precioVenta = precioVenta;
 			this._precioAlquiler = precioAlquiler;
 			this._stock = stock;
-			this.stockminimo = stockminimo;
+		  this._stockMinimo = stockminimo;
 		}
 
 		/// <summary>
@@ -64,7 +64,7 @@ namespace Entidades
 			this._precioVenta = precioVenta;
 			this._precioAlquiler = precioAlquiler;
 			this._stock = stock;
-			this.stockminimo = stockminimo;
+      this._stockMinimo = stockminimo;
 		}
 
 		#endregion

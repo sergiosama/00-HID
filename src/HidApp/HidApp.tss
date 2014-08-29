@@ -5,26 +5,30 @@
       <string>c:\desarrollo\00-hid\src\hidapp\data\hidcontext.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\TestEF\Program.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\testef\program.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>c:\desarrollo\00-hid\src\entidades\enttipoiva.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\Maquetas\Program.cs</string>
+      <string>c:\desarrollo\00-hid\src\maquetas\program.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\winLogin.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\winLogin.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\winlogin.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\winlogin.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\ViewModel\LoginViewModel.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\viewmodel\loginviewmodel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\LoginIngresoNormal.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\LoginIngresoNormal.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\LoginRecuperarContraseña.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\Servicios\SecurityServices.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\Infraestructura\Sesion.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

@@ -42,6 +42,7 @@ namespace TestEF
       //Console.WriteLine(s);
       //Console.ReadLine();
 
+
       var rec = db.Recursos.Where(x => x.Nombre.Contains("Enrique")).FirstOrDefault();
 
       if (rec.Categoria != null)
@@ -50,6 +51,12 @@ namespace TestEF
         Console.WriteLine(rec.SituacionAFIP.DescripcionIVA);
       }
       Console.ReadLine();
+
+      //  probando stored que retorna 0 o 1
+      var xx = db.Database.SqlQuery<int>("SEGU.ValidarUsuarioPassword @p0, @p1", "ethedy", "6nDaANLlLtb68GkKXhdlkeJc5z7b6j29QE2eoi/t9HY=").FirstOrDefault();
+      //  var xx = db.Database.SqlQuery<int>("select top 1 IdRecurso from tUsuarios").FirstOrDefault();
+
+
     }
   }
 }

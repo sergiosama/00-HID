@@ -55,7 +55,7 @@ namespace Data
     {
       //  mapear tabla, el campo ID es automatico CREO --> NOP!
       ToTable("TRecursos");
-      Property(et => et.IdRecurso).HasColumnName("IdRecursos");
+      Property(et => et.IdRecurso).HasColumnName("IdRecurso");
       HasKey(et => et.IdRecurso);
       //HasOptional<enTCategoriaRecurso>(et => et.Categoria).WithOptionalDependent();
       HasOptional(et => et.Categoria).WithMany().Map(x => x.MapKey("IdCategoria"));

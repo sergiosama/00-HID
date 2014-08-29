@@ -39,8 +39,17 @@
     <Reference Include="DevExpress.XtraBars.v14.1" />
     <Reference Include="DevExpress.Sparkline.v14.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v14.1" />
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,6 +64,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="Views\LoginCambiarContraseña.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginCambiarContraseña.Designer.cs">
+      <DependentUpon>LoginCambiarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginIngresoNormal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -66,6 +81,12 @@
     </Compile>
     <Compile Include="Views\LoginRecuperarContraseña.Designer.cs">
       <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\winConfirmarRecuperarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\winConfirmarRecuperarPassword.Designer.cs">
+      <DependentUpon>winConfirmarRecuperarPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\winLogin.cs">
       <SubType>Form</SubType>
@@ -84,15 +105,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\LoginCambiarContraseña.resx">
+      <DependentUpon>LoginCambiarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginIngresoNormal.resx">
       <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginRecuperarContraseña.resx">
       <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\winConfirmarRecuperarPassword.resx">
+      <DependentUpon>winConfirmarRecuperarPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\winLogin.resx">
       <DependentUpon>winLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -111,6 +140,14 @@
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{947eb898-5c1a-4a8d-a9b9-3e0cdfdb9722}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infraestructura\Infraestructura.csproj">
+      <Project>{2bc801f1-26c1-4d46-a402-8fcd15b92d36}</Project>
+      <Name>Infraestructura</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Servicios\Servicios.csproj">
+      <Project>{67b3698a-c074-472d-ba3e-b71160f0fa69}</Project>
+      <Name>Servicios</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +237,7 @@
     <Content Include="Imagenes\printer_48.png" />
     <Content Include="Imagenes\print_48.png" />
     <Content Include="Imagenes\pyramid_48.png" />
+    <None Include="Imagenes\realvista_general_lock_128.png" />
     <Content Include="Imagenes\refresh_48.png" />
     <Content Include="Imagenes\reload_48.png" />
     <Content Include="Imagenes\round_48.png" />
