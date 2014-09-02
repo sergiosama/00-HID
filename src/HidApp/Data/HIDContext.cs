@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace Data
 
     public DbSet<Usuario> Usuarios { get; set; }
 
+    public DbSet<AuditInfo> Auditoria { get; set; }
+
     public HIDContext()
       : base("Server=HAL9000;Database=HID;Trusted_Connection=true;")
     {
@@ -26,6 +29,8 @@ namespace Data
       //base.OnModelCreating(modelBuilder);
       modelBuilder.Configurations.Add(new ConfiguracionUsuarios());
       modelBuilder.Configurations.Add(new ConfiguracionRecursos());
+      modelBuilder.Configurations.Add(new ConfiguracionAuditoria());
+      //
       modelBuilder.Configurations.Add(new ConfiguracionCategorias());
       modelBuilder.Configurations.Add(new ConfiguracionTipoIVA());
     }
@@ -60,6 +65,31 @@ namespace Data
       //HasOptional<enTCategoriaRecurso>(et => et.Categoria).WithOptionalDependent();
       HasOptional(et => et.Categoria).WithMany().Map(x => x.MapKey("IdCategoria"));
       HasOptional(et => et.SituacionAFIP).WithMany().Map(x => x.MapKey("IdTipoIVA"));
+    }
+  }
+
+  public class ConfiguracionAuditoria : EntityTypeConfiguration<AuditInfo>
+  {
+    public ConfiguracionAuditoria()
+    {
+      //  mapear tabla en otro schema
+      ToTable("tAuditoria", "AUDIT");
+
+      //  mapear clave primaria + identity
+      Property(et => et.ID)
+        .HasColumnName("IdAuditoria")
+        .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+      
+      //  HasKey no hace falta porque la propiedad ya se llama ID
+
+      //  mapear nombres de campos y propiedades
+      Property(et => et.Source)
+        .HasColumnName("Origen")
+        .IsRequired();
+
+      Property(et => et.Type)
+        .HasColumnName("Tipo")
+        .IsRequired();
     }
   }
 

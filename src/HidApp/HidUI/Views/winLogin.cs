@@ -13,7 +13,7 @@ namespace HidUI.Views
     {
       InitializeComponent();
       //
-      this.KeyPreview = true;
+      //this.KeyPreview = true;
 
       viewModel = new LoginViewModel();
       //
@@ -31,11 +31,11 @@ namespace HidUI.Views
       this.Close();
     }
 
-    private void Login_KeyPressed(object sender, System.Windows.Forms.KeyPressEventArgs e)
-    {
-      //  ver cual de todos los user controls esta activo...
-      loginIngreso.OnKeyPress(sender, e);
-    }
+//    private void Login_KeyPressed(object sender, System.Windows.Forms.KeyPressEventArgs e)
+//    {
+//      //  ver cual de todos los user controls esta activo...
+//      loginIngreso.OnKeyPress(sender, e);
+//    }
 
     private void LoginCorrecto(object sender, Sesion newSes)
     {

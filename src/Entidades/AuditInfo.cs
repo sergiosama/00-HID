@@ -9,6 +9,11 @@ namespace Entidades
   public class AuditInfo
   {
     /// <summary>
+    /// Necesario para manejar entidades en E-F
+    /// </summary>
+    public int ID { get; set; }
+
+    /// <summary>
     /// Representa la direccion del punto de origen de la informacion de auditoria
     /// </summary>
     public string Source { get; set; }
@@ -22,6 +27,18 @@ namespace Entidades
     /// Fecha/hora de produccion del evento de auditoria
     /// </summary>
     public DateTime Fecha { get; set; }
+
+    /// <summary>
+    /// Contenido de la información auditada, puede ser un detalle importante o absolutamente nada
+    /// </summary>
+    public string Detalles { get; set; }
+
+    public AuditInfo()
+    {
+      Fecha = DateTime.Now;
+      Type = InfoType.Otros;
+      Source = "Test Entry";
+    }
   }
 
   /// <summary>

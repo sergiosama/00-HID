@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,13 +36,15 @@ namespace Servicios
 
       HIDContext ctx = DB.Context;
 
-      Usuario usr = ctx.Usuarios.Where(x => x.Login == user).FirstOrDefault();
+      Usuario usr = ctx.Usuarios.FirstOrDefault(x => x.Login == user);
 
       if (usr != null)
       {
         //  seguimos intentando con la pass (primero la convertimos)
 
-        int result = ctx.Database.SqlQuery<int>("SEGU.ValidarUsuarioPassword @p0, @p1", user, GetCyphredPass(pass)).FirstOrDefault();
+        int result =
+          ctx.Database.SqlQuery<int>("SEGU.ValidarUsuarioPassword @p0, @p1", user, GetCyphredPass(pass))
+            .FirstOrDefault();
 
         if (result == 1)
         {
@@ -49,12 +52,20 @@ namespace Servicios
           ses = new Sesion {Usuario = usr};
 
           //  TODO Auditar ingreso exitoso
+          Audit(InfoType.Ingreso, string.Format("{0} --> ingreso correcto al sistema", user));
         }
         else
-          throw new HidAuthException("Las credenciales proporcionadas no son válidas. Intente nuevamente");   //  TODO auditar pass incorrecta
+        {
+          //  TODO auditar pass incorrecta
+          Audit(InfoType.Acceso, string.Format("{0} --> intento de acceso denegado por contraseña incorrecta", user));
+          throw new HidAuthException("Las credenciales proporcionadas no son válidas. Intente nuevamente");
+        }
       }
       else
+      {
+        Audit(InfoType.Acceso, string.Format("{0} --> intento de acceso denegado por usuario inexistente", user));
         throw new HidAuthException("Las credenciales proporcionadas no son válidas. Intente nuevamente");   //  TODO auditar? info nombre user
+      }
       return ses;
     }
 
@@ -77,6 +88,16 @@ namespace Servicios
         result = Convert.ToBase64String(crypBytes);
       }
       return result;
+    }
+
+    private void Audit(InfoType tipo, string detalle)
+    {
+      //  TODO eliminar la dependencia implementando un servicio de registro singleton o una inversion de dependencia con interface
+      AuditServices audit = new AuditServices();
+      AuditInfo ai = new AuditInfo() {Detalles = detalle, Type = tipo};
+
+      ai.Source = @"SecurityServices\LoginUSer";    //  NOOOO!!! esto tiene que estar en la llamada
+      audit.SaveAuditInfo(ai);
     }
   }
 }

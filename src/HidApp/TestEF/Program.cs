@@ -5,6 +5,7 @@ using System.Text;
 
 using Data;
 using Entidades;
+using Servicios;
 
 namespace TestEF
 {
@@ -12,7 +13,23 @@ namespace TestEF
   {
     static void Main(string[] args)
     {
+/*
       HIDContext db = new HIDContext();
+
+      AuditInfo ai = new AuditInfo();
+
+      ai.Detalles = "Hola, mundo!!!!";
+
+      db.Auditoria.Add(ai);
+
+      db.SaveChanges();
+*/
+      AuditServices audit  = new AuditServices();
+
+      audit.SaveAuditInfo(new AuditInfo(){ Detalles = "Hola Mundo del Orrrrto!!" });
+
+      Console.WriteLine("TERMINADO!!");
+      Console.ReadLine();
 
       //db.Configuration.LazyLoadingEnabled = false;
       //foreach (var usuario in db.Usuarios)
@@ -43,6 +60,7 @@ namespace TestEF
       //Console.ReadLine();
 
 
+/*
       var rec = db.Recursos.Where(x => x.Nombre.Contains("Enrique")).FirstOrDefault();
 
       if (rec.Categoria != null)
@@ -55,6 +73,7 @@ namespace TestEF
       //  probando stored que retorna 0 o 1
       var xx = db.Database.SqlQuery<int>("SEGU.ValidarUsuarioPassword @p0, @p1", "ethedy", "6nDaANLlLtb68GkKXhdlkeJc5z7b6j29QE2eoi/t9HY=").FirstOrDefault();
       //  var xx = db.Database.SqlQuery<int>("select top 1 IdRecurso from tUsuarios").FirstOrDefault();
+*/
 
 
     }
