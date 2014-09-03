@@ -61,9 +61,7 @@ namespace HidUI.ViewModel
         void AddArticuloExecute(object parameters)
         {
 
-
-            Articulo.Add(new enTArticulo { AvisoStockMinimo=null, CodeBar=null, DetalleArticulo=null,IdArticulo=0, IdCategoria=0,IdTipoArticulo=0, PrecioAlquiler=0, Imagen=null, PrecioCompra=0, PrecioVenta=0, Stock=0, StockMinimo=0 });
-            
+            Articulo.Add(new enTArticulo(){ AvisoStockMinimo=null, CodeBar=null, DetalleArticulo=null,IdArticulo=0, IdCategoria=0,IdTipoArticulo=0, PrecioAlquiler=0, Imagen=null, PrecioCompra=0, PrecioVenta=0, Stock=0, StockMinimo=0 });
         }
 
         bool AddArticuloCanExecute(object parameters)
