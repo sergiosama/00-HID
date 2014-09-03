@@ -2,8 +2,8 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\winlogin.cs</string>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\winlogin.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\winLogin.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\winLogin.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>c:\desarrollo\00-hid\src\hidapp\data\db.cs</string>
@@ -34,7 +34,7 @@
       <string>c:\desarrollo\00-hid\src\hidapp\servicios\auditservices.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\Entidades\AuditInfo.cs</string>
+      <string>c:\desarrollo\00-hid\src\entidades\auditinfo.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

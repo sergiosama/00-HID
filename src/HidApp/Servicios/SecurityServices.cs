@@ -51,20 +51,21 @@ namespace Servicios
           //  all right!!
           ses = new Sesion {Usuario = usr};
 
-          //  TODO Auditar ingreso exitoso
+          //  Auditar ingreso exitoso
           Audit(InfoType.Ingreso, string.Format("{0} --> ingreso correcto al sistema", user));
         }
         else
         {
-          //  TODO auditar pass incorrecta
+          //  Auditar pass incorrecta
           Audit(InfoType.Acceso, string.Format("{0} --> intento de acceso denegado por contraseña incorrecta", user));
           throw new HidAuthException("Las credenciales proporcionadas no son válidas. Intente nuevamente");
         }
       }
       else
       {
+        //  Auditar? info nombre user
         Audit(InfoType.Acceso, string.Format("{0} --> intento de acceso denegado por usuario inexistente", user));
-        throw new HidAuthException("Las credenciales proporcionadas no son válidas. Intente nuevamente");   //  TODO auditar? info nombre user
+        throw new HidAuthException("Las credenciales proporcionadas no son válidas. Intente nuevamente");   
       }
       return ses;
     }

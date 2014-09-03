@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Diagnostics;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
-using Maquetas.Common;
+using HidUI.Common;
 
-namespace Maquetas.ViewModel
+namespace HidUI.ViewModel
 {
   public class AboutViewModel : ViewModelBase
   {

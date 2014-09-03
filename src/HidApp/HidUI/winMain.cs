@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using DevExpress.Mvvm.POCO;
-using Maquetas.Common;
-using Maquetas.ViewModel;
-using Maquetas.Views;
+using HidUI.Common;
+using HidUI.ViewModel;
+using HidUI.Views;
+using Infraestructura;
 
-namespace Maquetas
+namespace HidUI
 {
-  public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
+  public partial class winMain : DevExpress.XtraBars.Ribbon.RibbonForm
   {
     private readonly MainViewModel _viewModel;
-    public frmMain()
+
+    public winMain()
     {
       Helpers.MainForm = this;
       InitializeComponent();
@@ -26,6 +22,7 @@ namespace Maquetas
 
       _viewModel.ViewAdded += ViewModelOnViewAdded;
       _viewModel.ViewRemoved += ViewModelOnViewRemoved;
+      _viewModel.BindingChanged += ViewModelOnBindingChanged;
       BindCommands();
     }
 
@@ -37,7 +34,7 @@ namespace Maquetas
     {
       base.OnLoad(e);
 
-      _viewModel.SelectedViewType = ViewType.StartMenu;
+      _viewModel.TryLogin();
     }
 
     private void ViewModelOnViewRemoved(object sender, EventArgs eventArgs)
@@ -73,6 +70,12 @@ namespace Maquetas
         }
         //  cambiar titulo de barra segun la vista!!
       }
+    }
+
+    private void ViewModelOnBindingChanged(object sender, EventArgs e)
+    {
+      if (Contexto.Current.Sesion != null)
+        barUserName.Caption = Contexto.Current.Sesion.FullName;
     }
 
     private void BindCommands()

@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
-using Maquetas.Common;
+using HidUI.Common;
+using HidUI.Views;
+using Infraestructura;
 
-namespace Maquetas.ViewModel
+namespace HidUI.ViewModel
 {
   public class MainViewModel : ViewModelBase
   {
@@ -64,6 +60,7 @@ namespace Maquetas.ViewModel
     public event EventHandler ViewRemoved;
     public event EventHandler SelectedViewChanged;
     public event EventHandler SelectedViewTypeChanged;
+    public event EventHandler BindingChanged;
 
     #endregion
 
@@ -73,12 +70,12 @@ namespace Maquetas.ViewModel
     [Command(UseCommandManager = false)]
     public void Login()
     {
-      Debug.WriteLine("Mostrar dialogo de login");
+      TryLogin();
     }
 
     public bool CanLogin()
     {
-      return false;
+      return Contexto.Current.Sesion == null;
     }
 
     [Command(UseCommandManager = false)]
@@ -96,7 +93,7 @@ namespace Maquetas.ViewModel
 
     public bool CanLogout()
     {
-      return true;
+      return Contexto.Current.Sesion != null;
     }
 
     /// <summary>
@@ -141,6 +138,22 @@ namespace Maquetas.ViewModel
 
     #endregion
 
+    public void TryLogin()
+    {
+      if (Contexto.Current.Sesion == null)
+      {
+        //  a loguearse!!!
+        winLogin login = new winLogin();
+
+        login.ShowDialog();
+        if (Contexto.Current.Sesion != null)
+        {
+          if (BindingChanged != null)
+            BindingChanged(this, null);
+          SelectedViewType = ViewType.StartMenu;
+        }
+      }
+    }
 
     protected void OnSelectedViewTypeChanged(ViewType oldType)
     {

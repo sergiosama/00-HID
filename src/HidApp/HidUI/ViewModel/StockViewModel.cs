@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevExpress.Mvvm;
-using Maquetas.Common;
+﻿using DevExpress.Mvvm;
+using HidUI.Common;
 
-namespace Maquetas.ViewModel
+namespace HidUI.ViewModel
 {
   //
   //  Este es un VM que pertenece a una NavigableView, no deberia tener algo que lo distinga?

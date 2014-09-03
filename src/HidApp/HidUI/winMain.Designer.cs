@@ -1,6 +1,6 @@
-﻿namespace Maquetas
+﻿namespace HidUI
 {
-  partial class frmMain
+  partial class winMain
   {
     /// <summary>
     /// Required designer variable.
@@ -28,32 +28,42 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winMain));
       this.ribMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.bbiLogin = new DevExpress.XtraBars.BarButtonItem();
       this.bbiAbout = new DevExpress.XtraBars.BarButtonItem();
       this.bbiLogout = new DevExpress.XtraBars.BarButtonItem();
+      this.barUserName = new DevExpress.XtraBars.BarStaticItem();
       this.rbpgInicio = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+      this.repositoryItemPopupContainerEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
       this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
       this.pnlContainer = new DevExpress.XtraEditors.XtraUserControl();
       ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupContainerEdit1)).BeginInit();
       this.SuspendLayout();
       // 
       // ribMain
       // 
       this.ribMain.Cursor = System.Windows.Forms.Cursors.Default;
       this.ribMain.ExpandCollapseItem.Id = 0;
+      this.ribMain.Font = new System.Drawing.Font("Segoe UI", 12F);
       this.ribMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribMain.ExpandCollapseItem,
             this.bbiLogin,
             this.bbiAbout,
-            this.bbiLogout});
+            this.bbiLogout,
+            this.barUserName});
       this.ribMain.Location = new System.Drawing.Point(0, 0);
-      this.ribMain.MaxItemId = 4;
+      this.ribMain.MaxItemId = 8;
       this.ribMain.Name = "ribMain";
       this.ribMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpgInicio});
+      this.ribMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit1,
+            this.repositoryItemPopupContainerEdit1});
       this.ribMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
       this.ribMain.Size = new System.Drawing.Size(1193, 144);
       this.ribMain.StatusBar = this.ribbonStatusBar1;
@@ -84,6 +94,15 @@
       this.bbiLogout.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiLogout.LargeGlyph")));
       this.bbiLogout.Name = "bbiLogout";
       // 
+      // barUserName
+      // 
+      this.barUserName.Caption = "Desconectado";
+      this.barUserName.Glyph = global::HidUI.Properties.Resources.administrator_48;
+      this.barUserName.Id = 7;
+      this.barUserName.LargeGlyph = global::HidUI.Properties.Resources.administrator_48;
+      this.barUserName.Name = "barUserName";
+      this.barUserName.TextAlignment = System.Drawing.StringAlignment.Near;
+      // 
       // rbpgInicio
       // 
       this.rbpgInicio.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -99,8 +118,22 @@
       this.ribbonPageGroup1.Name = "ribbonPageGroup1";
       this.ribbonPageGroup1.Text = "Acceso";
       // 
+      // repositoryItemMemoEdit1
+      // 
+      this.repositoryItemMemoEdit1.LinesCount = 20;
+      this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+      // 
+      // repositoryItemPopupContainerEdit1
+      // 
+      this.repositoryItemPopupContainerEdit1.AutoHeight = false;
+      this.repositoryItemPopupContainerEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+      this.repositoryItemPopupContainerEdit1.Name = "repositoryItemPopupContainerEdit1";
+      this.repositoryItemPopupContainerEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+      // 
       // ribbonStatusBar1
       // 
+      this.ribbonStatusBar1.ItemLinks.Add(this.barUserName);
       this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 791);
       this.ribbonStatusBar1.Name = "ribbonStatusBar1";
       this.ribbonStatusBar1.Ribbon = this.ribMain;
@@ -116,7 +149,7 @@
       this.pnlContainer.Size = new System.Drawing.Size(1193, 647);
       this.pnlContainer.TabIndex = 3;
       // 
-      // frmMain
+      // winMain
       // 
       this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,12 +158,14 @@
       this.Controls.Add(this.pnlContainer);
       this.Controls.Add(this.ribbonStatusBar1);
       this.Controls.Add(this.ribMain);
-      this.Name = "frmMain";
+      this.Name = "winMain";
       this.Ribbon = this.ribMain;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.StatusBar = this.ribbonStatusBar1;
       this.Text = "HID Sistema - Pantalla Inicial";
       ((System.ComponentModel.ISupportInitialize)(this.ribMain)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupContainerEdit1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -146,6 +181,9 @@
     private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
     private DevExpress.XtraEditors.XtraUserControl pnlContainer;
     private DevExpress.XtraBars.BarButtonItem bbiLogout;
+    private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+    private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit repositoryItemPopupContainerEdit1;
+    private DevExpress.XtraBars.BarStaticItem barUserName;
   }
 }
 

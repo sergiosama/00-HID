@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Maquetas.Common;
+﻿using System.Collections.Generic;
+using HidUI.Common;
 
-using System.Runtime.Caching;
-
-namespace Maquetas.Views
+namespace HidUI.Views
 {
   public class Localizador : IViewLocator
   {
