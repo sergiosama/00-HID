@@ -60,7 +60,7 @@ namespace HidUI.ViewModel
 
         void AddArticuloExecute(object parameters)
         {
-            Articulo.Add(new enTArticulo {            });
+            Articulo.Add(new enTArticulo {             });
         }
 
         bool AddArticuloCanExecute(object parameters)

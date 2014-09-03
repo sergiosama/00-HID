@@ -64,9 +64,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Barcode.cs" />
     <Compile Include="Common\Comunes.cs" />
     <Compile Include="Common\Helpers.cs" />
-    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="Common\DelegateCommand.cs" />
     <Compile Include="ViewModel\ArticulosViewModel.cs" />
     <Compile Include="winMain.cs">
       <SubType>Form</SubType>
