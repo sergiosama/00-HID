@@ -1,4 +1,4 @@
-﻿namespace Maquetas.Views
+﻿namespace HidUI.Views
 {
   partial class StartView
   {
@@ -113,7 +113,7 @@
       tileItemElement2.Text = "Insumos, Alquilables, Etiquetas, Reportes";
       tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual;
       tileItemElement2.TextLocation = new System.Drawing.Point(75, 27);
-      tileItemElement3.Image = global::Maquetas.Properties.Resources.technical_hammer_48;
+      tileItemElement3.Image = global::HidUI.Properties.Resources.technical_hammer_48;
       tileItemElement3.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual;
       tileItemElement3.ImageLocation = new System.Drawing.Point(4, 8);
       tileItemElement3.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomOutside;

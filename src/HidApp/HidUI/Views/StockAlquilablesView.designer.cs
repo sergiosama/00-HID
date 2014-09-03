@@ -1,4 +1,4 @@
-﻿namespace Maquetas.Views
+﻿namespace HidUI.Views
 {
   partial class StockAlquilablesView
   {
@@ -48,7 +48,7 @@
       this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Transparent;
       this.simpleButton1.Appearance.Options.UseBackColor = true;
       this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-      this.simpleButton1.Image = global::Maquetas.Properties.Resources.arrow_left_48;
+      this.simpleButton1.Image = global::HidUI.Properties.Resources.arrow_left_48;
       this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
       this.simpleButton1.Location = new System.Drawing.Point(3, 249);
       this.simpleButton1.Name = "simpleButton1";

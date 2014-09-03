@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevExpress.XtraBars.Ribbon;
-using Maquetas.ViewModel;
+﻿using DevExpress.XtraBars.Ribbon;
 
-namespace Maquetas.Common
+namespace HidUI.Common
 {
   /// <summary>
   /// Define cada tipo de vista dentro del sistema

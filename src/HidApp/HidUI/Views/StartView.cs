@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.Mvvm.POCO;
+﻿using DevExpress.Mvvm.POCO;
 using DevExpress.XtraEditors;
-using Maquetas.ViewModel;
+using HidUI.ViewModel;
 
-namespace Maquetas.Views
+namespace HidUI.Views
 {
   public partial class StartView : XtraUserControl
   {

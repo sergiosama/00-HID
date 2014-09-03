@@ -7,7 +7,7 @@ namespace HidUI.Views
 {
   public partial class winLogin : DevExpress.XtraEditors.XtraForm
   {
-    private LoginViewModel viewModel;
+    private readonly LoginViewModel _viewModel;
 
     public winLogin()
     {
@@ -15,7 +15,7 @@ namespace HidUI.Views
       //
       //this.KeyPreview = true;
 
-      viewModel = new LoginViewModel();
+      _viewModel = new LoginViewModel();
       //
       loginIngreso.LoginOK += LoginCorrecto;
       loginIngreso.LoginIssues += FallasLogin;
@@ -39,8 +39,10 @@ namespace HidUI.Views
 
     private void LoginCorrecto(object sender, Sesion newSes)
     {
-      MessageBox.Show(string.Format("Bienvenido/a {0} {1} - Sesion creada!!", 
-        newSes.Usuario.Recurso.Nombre, newSes.Usuario.Recurso.Apellido), "Todo OK");
+      //  MessageBox.Show(string.Format("Bienvenido/a {0} {1} - Sesion creada!!", newSes.Usuario.Recurso.Nombre, newSes.Usuario.Recurso.Apellido), "Todo OK");
+      
+      _viewModel.SetSesion(newSes);
+
       this.Close();
     }
 

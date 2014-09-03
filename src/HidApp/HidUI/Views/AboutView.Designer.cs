@@ -1,4 +1,4 @@
-﻿namespace Maquetas.Views
+﻿namespace HidUI.Views
 {
   partial class AboutView
   {

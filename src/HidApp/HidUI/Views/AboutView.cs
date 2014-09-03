@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DevExpress.Mvvm.POCO;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
-using Maquetas.Common;
-using Maquetas.ViewModel;
+using HidUI.Common;
+using HidUI.ViewModel;
 
-namespace Maquetas.Views
+namespace HidUI.Views
 {
   public partial class AboutView : XtraUserControl, ISupportRibbon, ISupportPreviousView
   {

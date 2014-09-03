@@ -1,4 +1,4 @@
-﻿namespace Maquetas.Reportes
+﻿namespace HidUI.Reportes
 {
     partial class etiquetas
     {

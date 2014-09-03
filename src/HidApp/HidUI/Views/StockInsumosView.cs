@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using DevExpress.Mvvm.POCO;
 using DevExpress.XtraEditors;
-using Maquetas.Common;
-using Maquetas.ViewModel;
+using HidUI.Common;
+using HidUI.ViewModel;
 
-namespace Maquetas.Views
+namespace HidUI.Views
 {
   /// <summary>
   /// Una WorkView que DEBE estar dentro de una NavigableView

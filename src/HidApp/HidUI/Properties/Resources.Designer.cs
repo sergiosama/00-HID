@@ -63,6 +63,26 @@ namespace HidUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap administrator_48 {
+            get {
+                object obj = ResourceManager.GetObject("administrator_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_left_48 {
+            get {
+                object obj = ResourceManager.GetObject("arrow_left_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HID_Logo {
             get {
                 object obj = ResourceManager.GetObject("HID_Logo", resourceCulture);
@@ -76,6 +96,16 @@ namespace HidUI.Properties {
         internal static System.Drawing.Bitmap realvista_general_lock_128 {
             get {
                 object obj = ResourceManager.GetObject("realvista_general_lock_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap technical_hammer_48 {
+            get {
+                object obj = ResourceManager.GetObject("technical_hammer_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
