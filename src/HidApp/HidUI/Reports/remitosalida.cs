@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace Maquetas.Reportes
 {
-    public partial class etiquetas : DevExpress.XtraReports.UI.XtraReport
+    public partial class remitosalida : DevExpress.XtraReports.UI.XtraReport
     {
-        public etiquetas()
+        public remitosalida()
         {
             InitializeComponent();
         }

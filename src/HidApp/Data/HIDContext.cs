@@ -18,6 +18,8 @@ namespace Data
 
     public DbSet<AuditInfo> Auditoria { get; set; }
 
+    public DbSet<enTArticulo> Articulos { get; set; }
+
     public HIDContext()
       : base("Server=HAL9000;Database=HID;Trusted_Connection=true;")
     {
@@ -33,10 +35,24 @@ namespace Data
       //
       modelBuilder.Configurations.Add(new ConfiguracionCategorias());
       modelBuilder.Configurations.Add(new ConfiguracionTipoIVA());
+      modelBuilder.Configurations.Add(new ConfiguracionArticulos());
+
     }
   }
 
   #region Clases para configurar mapeo de E-F
+
+
+  public class ConfiguracionArticulos : EntityTypeConfiguration<enTArticulo>
+  {
+      public ConfiguracionArticulos()
+      {
+          ToTable("TArticulo");
+          HasKey(et => et.IdArticulo);
+         
+      
+      }
+  }
 
   public class ConfiguracionUsuarios : EntityTypeConfiguration<Usuario>
   {
@@ -50,9 +66,13 @@ namespace Data
       Property(et => et.MustChangePassword).HasColumnName("MustChangePass");
 
       HasRequired(et => et.Recurso).WithOptional().Map(x => x.MapKey("IdRecurso"));
+       
       //HasRequired<enTRecurso>(x => x.Recurso);
     }
   }
+
+
+
 
   public class ConfiguracionRecursos : EntityTypeConfiguration<enTRecurso>
   {
@@ -111,5 +131,10 @@ namespace Data
     }
   }
 
+    
   #endregion
+
+
+
+
 }

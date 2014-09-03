@@ -33,15 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v14.1" />
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v14.1.Core" />
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v14.1" />
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v14.1" />
     <Reference Include="DevExpress.Sparkline.v14.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v14.1" />
+    <Reference Include="DevExpress.XtraGauges.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -61,20 +70,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DelegateCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\remitos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\remitos.designer.cs">
+      <DependentUpon>remitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\remitosalida.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\remitosalida.designer.cs">
+      <DependentUpon>remitosalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ArticulosViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="Views\LoginCambiarContraseña.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\LoginCambiarContraseña.Designer.cs">
       <DependentUpon>LoginCambiarContraseña.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\LoginIngresoNormal.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\LoginIngresoNormal.Designer.cs">
-      <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginRecuperarContraseña.cs">
       <SubType>UserControl</SubType>
@@ -105,11 +122,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\remitos.resx">
+      <DependentUpon>remitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\remitosalida.resx">
+      <DependentUpon>remitosalida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginCambiarContraseña.resx">
       <DependentUpon>LoginCambiarContraseña.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\LoginIngresoNormal.resx">
-      <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginRecuperarContraseña.resx">
       <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
