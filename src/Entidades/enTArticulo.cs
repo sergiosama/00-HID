@@ -8,7 +8,7 @@ namespace Entidades
 
 		private int _idArticulo;
 		private string _codeBar;
-		private int _idProveedor;
+        private int _idRecurso;
 		private int _idCategoria;
 		private int _idTipoArticulo;
 		private string _detalleArticulo;
@@ -33,10 +33,10 @@ namespace Entidades
 		/// <summary>
 		/// Initializes a new instance of the enTArticulo class.
 		/// </summary>
-		public enTArticulo(string codeBar, int idProveedor, int idCategoria, int idTipoArticulo, string detalleArticulo, string avisoStockMinimo, float precioCompra, float precioVenta, float precioAlquiler, float stock, float stockminimo)
+        public enTArticulo(string codeBar, int idRecurso, int idCategoria, int idTipoArticulo, string detalleArticulo, string avisoStockMinimo, float precioCompra, float precioVenta, float precioAlquiler, float stock, float stockminimo)
 		{
 			this._codeBar = codeBar;
-			this._idProveedor = idProveedor;
+            this._idRecurso = idRecurso;
 			this._idCategoria = idCategoria;
 			this._idTipoArticulo = idTipoArticulo;
 			this._detalleArticulo = detalleArticulo;
@@ -51,11 +51,11 @@ namespace Entidades
 		/// <summary>
 		/// Initializes a new instance of the enTArticulo class.
 		/// </summary>
-		public enTArticulo(int idArticulo, string codeBar, int idProveedor, int idCategoria, int idTipoArticulo, string detalleArticulo, string avisoStockMinimo, float precioCompra, float precioVenta, float precioAlquiler, float stock, float stockminimo)
+        public enTArticulo(int idArticulo, string codeBar, int idRecurso, int idCategoria, int idTipoArticulo, string detalleArticulo, string avisoStockMinimo, float precioCompra, float precioVenta, float precioAlquiler, float stock, float stockminimo)
 		{
 			this._idArticulo = idArticulo;
 			this._codeBar = codeBar;
-			this._idProveedor = idProveedor;
+            this._idRecurso = idRecurso;
 			this._idCategoria = idCategoria;
 			this._idTipoArticulo = idTipoArticulo;
 			this._detalleArticulo = detalleArticulo;
@@ -91,10 +91,10 @@ namespace Entidades
 		/// <summary>
 		/// Gets or sets the IdProveedor value.
 		/// </summary>
-		public virtual int IdProveedor
+        public virtual int IdRecurso
 		{
-			get { return _idProveedor; }
-			set { _idProveedor = value; }
+            get { return _idRecurso; }
+            set { _idRecurso = value; }
 		}
 
 		/// <summary>

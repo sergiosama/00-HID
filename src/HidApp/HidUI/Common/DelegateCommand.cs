@@ -19,8 +19,7 @@ namespace HidUI
         {
         }
 
-        public DelegateCommand(Action<object> execute,
-                       Predicate<object> canExecute)
+        public DelegateCommand(Action<object> execute,  Predicate<object> canExecute)
         {
             _execute = execute;
             _canExecute = canExecute;

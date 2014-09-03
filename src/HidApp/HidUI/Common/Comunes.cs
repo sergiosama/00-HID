@@ -38,7 +38,7 @@ namespace HidUI.Common
     /// <summary>
     /// UC integrable, permite administrar la impresion de etiquetas
     /// </summary>
-    StockEtiquetas,
+    ///StockEtiquetas,
     /// <summary>
     /// UC integrable, permite incorporar la impresión de reportes relacionados con el stock
     /// </summary>
