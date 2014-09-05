@@ -19,6 +19,9 @@ namespace Data
     public DbSet<AuditInfo> Auditoria { get; set; }
 
     public DbSet<enTArticulo> Articulos { get; set; }
+    public DbSet<enTCategoriaRecurso> CategoriaRecurso { get; set; }
+
+    public DbSet<enTCategoria> Categoria { get; set; }
 
     public HIDContext()
       : base("Server=HAL9000;Database=HID;Trusted_Connection=true;")
@@ -122,15 +125,18 @@ namespace Data
     }
   }
 
-  public class ConfiguracionCategorias : EntityTypeConfiguration<enTCategoriaRecurso>
+  public class ConfiguracionCategoriasRecursos : EntityTypeConfiguration<enTCategoriaRecurso>
   {
-    public ConfiguracionCategorias()
+    public ConfiguracionCategoriasRecursos()
     {
       ToTable("TCategoriaRecurso");
       HasKey(et => et.IdCategoria);
     }
+
   }
 
+
+  
     
   #endregion
 

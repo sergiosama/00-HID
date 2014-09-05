@@ -9,7 +9,7 @@ using DevExpress.XtraReports.UI;
 
     
 
-namespace Maquetas
+namespace HidUI
 {
     class Barcode
     {
