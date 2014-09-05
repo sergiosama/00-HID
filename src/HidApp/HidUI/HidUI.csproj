@@ -69,6 +69,18 @@
     <Compile Include="Common\Helpers.cs" />
     <Compile Include="Common\DelegateCommand.cs" />
     <Compile Include="ViewModel\ArticulosViewModel.cs" />
+    <Compile Include="Views\LoginIngresoNormal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginIngresoNormal.Designer.cs">
+      <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginRecuperarContraseña.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginRecuperarContraseña.designer.cs">
+      <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="winMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +144,12 @@
     <Compile Include="Views\winLogin.designer.cs">
       <DependentUpon>winLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\LoginIngresoNormal.resx">
+      <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginRecuperarContraseña.resx">
+      <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="winMain.resx">
       <DependentUpon>winMain.cs</DependentUpon>
     </EmbeddedResource>

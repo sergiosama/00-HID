@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace HidUI
+namespace HidUI.Common
 {
     public class DelegateCommand : ICommand
     {
@@ -25,7 +21,7 @@ namespace HidUI
             _canExecute = canExecute;
         }
 
-        public override bool CanExecute(object parameter)
+        public bool CanExecute(object parameter)
         {
             if (_canExecute == null)
             {
@@ -35,7 +31,7 @@ namespace HidUI
             return _canExecute(parameter);
         }
 
-        public override void Execute(object parameter)
+        public void Execute(object parameter)
         {
             _execute(parameter);
         }
