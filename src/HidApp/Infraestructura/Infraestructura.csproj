@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexto.cs" />
     <Compile Include="HidAuthException.cs" />
     <Compile Include="HidPasswordExpiredException.cs" />
     <Compile Include="IAuditable.cs" />

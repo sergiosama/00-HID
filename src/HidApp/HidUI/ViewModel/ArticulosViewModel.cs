@@ -8,6 +8,7 @@ using Data;
 using Entidades;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using HidUI.Common;
 
 namespace HidUI.ViewModel
 {

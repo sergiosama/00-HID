@@ -52,8 +52,6 @@ namespace Data
       {
           ToTable("TArticulo");
           HasKey(et => et.IdArticulo);
-         
-      
       }
   }
 
