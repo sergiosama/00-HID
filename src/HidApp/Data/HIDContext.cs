@@ -19,9 +19,16 @@ namespace Data
     public DbSet<AuditInfo> Auditoria { get; set; }
 
     public DbSet<enTArticulo> Articulos { get; set; }
+
     public DbSet<enTCategoriaRecurso> CategoriaRecurso { get; set; }
 
-    public DbSet<enTCategoria> Categoria { get; set; }
+    public DbSet<enTDetalleOrden> DetalleOrden { get; set; }
+
+    public DbSet<enTRecurso> Recursos { get; set; }
+
+    public DbSet<enTOrden> Orden { get; set; }
+
+
 
     public HIDContext()
       : base("Server=HAL9000;Database=HID;Trusted_Connection=true;")
@@ -36,7 +43,7 @@ namespace Data
       modelBuilder.Configurations.Add(new ConfiguracionRecursos());
       modelBuilder.Configurations.Add(new ConfiguracionAuditoria());
       //
-      modelBuilder.Configurations.Add(new ConfiguracionCategorias());
+      modelBuilder.Configurations.Add(new ConfiguracionCategoriasRecursos());
       modelBuilder.Configurations.Add(new ConfiguracionTipoIVA());
       modelBuilder.Configurations.Add(new ConfiguracionArticulos());
 
@@ -133,8 +140,7 @@ namespace Data
 
   }
 
-
-  
+    
     
   #endregion
 
