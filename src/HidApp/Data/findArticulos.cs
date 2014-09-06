@@ -13,14 +13,17 @@ namespace Data
 
         private bool Find { get; set; }
 
-        
+        List<enTArticulo> Articulos= new List<enTArticulo>();
 
-        private IList<enTArticulo>  
+        public IList<enTArticulo> articulos
+        {
+            get { return Articulos; }
+        }        
 
-        private List<enTArticulo> SelectAllByIdCategoria(int idCategoria)
-		{
-			return 
-		}
+
+
+
+  
 
 
 
