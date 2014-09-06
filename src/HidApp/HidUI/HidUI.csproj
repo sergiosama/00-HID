@@ -68,6 +68,12 @@
     <Compile Include="Common\Comunes.cs" />
     <Compile Include="Common\Helpers.cs" />
     <Compile Include="Common\DelegateCommand.cs" />
+    <Compile Include="Reports\RemitoSalida.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RemitoSalida.Designer.cs">
+      <DependentUpon>RemitoSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ArticulosViewModel.cs" />
     <Compile Include="Views\LoginIngresoNormal.cs">
       <SubType>UserControl</SubType>
@@ -144,6 +150,9 @@
     <Compile Include="Views\winLogin.designer.cs">
       <DependentUpon>winLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\RemitoSalida.resx">
+      <DependentUpon>RemitoSalida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginIngresoNormal.resx">
       <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,9 +343,7 @@
     <Content Include="Imagenes\zoom_in_48.png" />
     <Content Include="Imagenes\zoom_out_48.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reports\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

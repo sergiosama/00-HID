@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="AuditInfo.cs" />
     <Compile Include="enTArticulo.cs" />
-    <Compile Include="enTCategoria.cs" />
     <Compile Include="enTCategoriaRecurso.cs" />
     <Compile Include="enTCodigoNomenclador.cs" />
     <Compile Include="enTCtaCtePaciente.cs" />
