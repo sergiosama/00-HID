@@ -10,8 +10,7 @@ namespace Data
   public class DB
   {
     private static HIDContext _ctx;
-    private DbTransaction _transaction; 
-
+    
     static DB()
     {
       _ctx = new HIDContext();
@@ -26,10 +25,7 @@ namespace Data
     {
       
     }
-
-
     
-
     
 
 
@@ -38,4 +34,6 @@ namespace Data
 
 
   }
+
+   
 }

@@ -58,8 +58,8 @@ namespace HidUI.ViewModel
 
     public event EventHandler ViewAdded;
     public event EventHandler ViewRemoved;
-    public event EventHandler SelectedViewChanged;
-    public event EventHandler SelectedViewTypeChanged;
+    //public event EventHandler SelectedViewChanged;
+    //public event EventHandler SelectedViewTypeChanged;
     public event EventHandler BindingChanged;
 
     #endregion

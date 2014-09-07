@@ -305,6 +305,7 @@
     <Content Include="Imagenes\music_library_48.png" />
     <Content Include="Imagenes\network_48.png" />
     <Content Include="Imagenes\notepad_48.png" />
+    <Content Include="Imagenes\no_imagen.jpg" />
     <Content Include="Imagenes\paste2_48.png" />
     <Content Include="Imagenes\paste_48.png" />
     <Content Include="Imagenes\phone_48.png" />
@@ -314,6 +315,7 @@
     <Content Include="Imagenes\printer_48.png" />
     <Content Include="Imagenes\print_48.png" />
     <Content Include="Imagenes\pyramid_48.png" />
+    <None Include="Resources\no_imagen.jpg" />
     <None Include="Imagenes\realvista_general_lock_128.png" />
     <Content Include="Imagenes\refresh_48.png" />
     <Content Include="Imagenes\reload_48.png" />
