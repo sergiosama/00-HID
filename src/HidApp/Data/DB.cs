@@ -28,15 +28,9 @@ namespace Data
     }
 
 
-    // 4/9 nuevos metodos
-    public int Save()
-    {
-        return _ctx.SaveChanges();
-        
-    }
-
     
 
+    
 
 
 
