@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DB.cs" />
-    <Compile Include="findArticulos.cs" />
+    <Compile Include="CtrlArticulos.cs" />
     <Compile Include="HIDContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

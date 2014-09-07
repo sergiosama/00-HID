@@ -23,9 +23,7 @@ namespace Data
     public DbSet<enTCategoriaRecurso> CategoriaRecurso { get; set; }
 
     public DbSet<enTDetalleOrden> DetalleOrden { get; set; }
-
-    public DbSet<enTRecurso> Recursos { get; set; }
-
+        
     public DbSet<enTOrden> Orden { get; set; }
 
 
