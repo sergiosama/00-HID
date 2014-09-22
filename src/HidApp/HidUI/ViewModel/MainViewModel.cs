@@ -10,8 +10,8 @@ namespace HidUI.ViewModel
 {
   public class MainViewModel : ViewModelBase
   {
-    private ViewType _selectedViewType;
-    private object _selectedView;
+    //private ViewType _selectedViewType;
+    //private object _selectedView;
     private readonly IViewLocator _locator;
 
     public MainViewModel(IViewLocator locator)

@@ -42,7 +42,8 @@ namespace HidUI.Common
     /// <summary>
     /// UC integrable, permite incorporar la impresión de reportes relacionados con el stock
     /// </summary>
-    StockReportes
+    StockReportes,
+    PacientesView
   }
 
   /// <summary>
