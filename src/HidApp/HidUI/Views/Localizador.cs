@@ -34,7 +34,7 @@ namespace HidUI.Views
             break;
 
           case ViewType.Stock:
-            result = new StockView();
+            result = new StockView(this);   //  WARNING!!!
             break;
 
           case ViewType.StockInsumos:
@@ -45,5 +45,7 @@ namespace HidUI.Views
       }
       return result;
     }
+
+    //  chequear el arbol de vistas, ver si es necesario activar primero una vista parent (podria haber mas de una??)
   }
 }

@@ -95,7 +95,7 @@
       // panelControl1
       // 
       this.panelControl1.AutoSize = true;
-      this.panelControl1.ContentImage = global::HidUI.Properties.Resources.realvista_general_lock_128;
+      this.panelControl1.ContentImage = global::HidUI.Properties.Resources.candado_128;
       this.panelControl1.Location = new System.Drawing.Point(12, 12);
       this.panelControl1.Name = "panelControl1";
       this.panelControl1.Size = new System.Drawing.Size(127, 131);

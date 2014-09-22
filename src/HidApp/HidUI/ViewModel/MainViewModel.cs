@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Xml;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
+using DevExpress.Mvvm.POCO;
+using Entidades;
 using HidUI.Common;
 using HidUI.Views;
 using Infraestructura;
+using Servicios;
 
 namespace HidUI.ViewModel
 {
@@ -12,18 +16,27 @@ namespace HidUI.ViewModel
   {
     private ViewType _selectedViewType;
     private object _selectedView;
+    private string _texto;
     private readonly IViewLocator _locator;
 
     public MainViewModel(IViewLocator locator)
     {
       _locator = locator;
+      FullName = null;
     }
 
     public virtual ViewType SelectedViewType { get; set; }
 
     public virtual object SelectedView { get; set; }
 
+    /// <summary>
+    /// Propiedad que utilizo para enlazar con un textbox oculto y asi poder obtener el valor que mostraria en el BarButtonItem
+    /// </summary>
+    public virtual string FullName { get; set; }
+
     /*
+        [BindableProperty(OnPropertyChangedMethodName = "OnTextoChanged")]
+
         [BindableProperty(OnPropertyChangedMethodName = "OnSelectedViewTypeChanged")]
         public virtual ViewType SelectedViewType
         {
@@ -60,7 +73,10 @@ namespace HidUI.ViewModel
     public event EventHandler ViewRemoved;
     public event EventHandler SelectedViewChanged;
     public event EventHandler SelectedViewTypeChanged;
-    public event EventHandler BindingChanged;
+    /// <summary>
+    /// Evento necesario para tratar con cambios que no puedan asociarse con Comandos
+    /// </summary>
+    public event EventHandler UserConnectedChanged;
 
     #endregion
 
@@ -88,10 +104,35 @@ namespace HidUI.ViewModel
     [Command(UseCommandManager = false)]
     public void Logout()
     {
-      Debug.WriteLine("Realizar logout del usuario");
+      SecurityServices security = new SecurityServices();
+      
+      security.LogoutUser();
+      //  Debug.WriteLine("Realizar logout del usuario");
+
+      if (Contexto.Current.Sesion == null)
+      {
+        this.RaiseCanExecuteChanged(x => x.Logout());
+        this.RaiseCanExecuteChanged(x => x.Login());
+        this.RaiseCanExecuteChanged(x => x.UserInfo());
+
+        SelectedViewType = ViewType.Ninguno;
+        //  Esto anda!!
+        FullName = null;
+      }
     }
 
     public bool CanLogout()
+    {
+      return Contexto.Current.Sesion != null;
+    }
+
+    [Command(UseCommandManager = false)]
+    public void UserInfo()
+    {
+      //  No hago nada...
+    }
+
+    public bool CanUserInfo()
     {
       return Contexto.Current.Sesion != null;
     }
@@ -138,18 +179,40 @@ namespace HidUI.ViewModel
 
     #endregion
 
+/*
+ *  Si quiero usar esta construccion, la descomento y dejo de usar la var local loginService en TryLogin
+    [ServiceProperty]
+    public virtual ILoginService LoginService
+    {
+      get { throw new NotImplementedException(); }
+    }
+*/
+
     public void TryLogin()
     {
       if (Contexto.Current.Sesion == null)
       {
         //  a loguearse!!!
-        winLogin login = new winLogin();
+//        winLogin login = new winLogin();
+//
+//        login.ShowDialog();
+        //  Usamos loginService para logearnos...
+        var loginService = GetService<ILoginService>();
 
-        login.ShowDialog();
+        loginService.Show();
+
         if (Contexto.Current.Sesion != null)
         {
-          if (BindingChanged != null)
-            BindingChanged(this, null);
+          this.RaiseCanExecuteChanged(x => x.Logout());
+          this.RaiseCanExecuteChanged(x => x.Login());
+          this.RaiseCanExecuteChanged(x => x.UserInfo());
+
+          //  IT WORKS!!!
+          enTRecurso recurso = Contexto.Current.Sesion.Usuario.Recurso;
+
+          FullName = string.Format("{0} {1}", recurso.Nombre, recurso.Apellido);
+          //if (BindingChanged != null)
+          //  BindingChanged(this, null);
           SelectedViewType = ViewType.StartMenu;
         }
       }
@@ -159,10 +222,12 @@ namespace HidUI.ViewModel
     {
       Debug.WriteLine("OnSelectedViewTypeChanged: oldType = {0}", oldType);
 
+      //  aca tenemos que ver si la vista en realidad necesita otra...
+      //  lo tiene que decidir el locator
       SelectedView = _locator.GetView(SelectedViewType);
       //  RaiseSelectedViewTypeChanged()
 
-      //  esto es mio... si soporta vista anterior, coloco oldView para que quede registro de donde tiene que volver
+      //  esto es mio... si soporta vista anterior, coloco oldView para que quede registrado donde tiene que volver
       if (SelectedView is ISupportPreviousView)
         ((ISupportPreviousView)SelectedView).PreviousView = oldType;
 

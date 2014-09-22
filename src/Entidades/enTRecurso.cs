@@ -1,11 +1,12 @@
 using System;
+using System.ComponentModel;
 
 namespace Entidades
 {
   /// <summary>
   /// Clase que representa a un integrante de la empresa, cualquiera sea su actividad
   /// </summary>
-	public class enTRecurso
+	public class enTRecurso : INotifyPropertyChanged
 	{
 		#region Fields
 
@@ -119,7 +120,7 @@ namespace Entidades
 		public virtual string Apellido
 		{
 			get { return _apellido; }
-			set { _apellido = value; }
+			set { _apellido = value; OnPropertyChanged("Apellido"); }
 		}
 
 		/// <summary>
@@ -128,7 +129,7 @@ namespace Entidades
 		public virtual string Nombre
 		{
 			get { return _nombre; }
-			set { _nombre = value; }
+      set { _nombre = value; OnPropertyChanged("Nombre"); }
 		}
 
 		/// <summary>
@@ -263,12 +264,13 @@ namespace Entidades
 		}
 
 		/// <summary>
-		/// Gets or sets the Foto value.
+		/// Permite almacenar en la base de datos una imagen de la persona asociada al recurso...
+		/// Deberá seguir as??
 		/// </summary>
 		public virtual byte[] Foto
 		{
 			get { return _foto; }
-			set { _foto = value; }
+			set { _foto = value; OnPropertyChanged("Foto"); }
 		}
 
 /*
@@ -291,6 +293,16 @@ namespace Entidades
 			set { _observaciones = value; }
 		}
 
+    public string Sexo { get; set; }
+
 		#endregion
-	}
+
+    private void OnPropertyChanged(string prop)
+    {
+      if (PropertyChanged != null)
+        PropertyChanged(this, new PropertyChangedEventArgs(prop));
+    }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+  }
 }

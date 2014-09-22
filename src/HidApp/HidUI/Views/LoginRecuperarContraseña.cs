@@ -20,7 +20,7 @@ namespace HidUI.Views
 
     private void RecuperarPassword(object sender, EventArgs e)
     {
-
+      MessageBox.Show("No Implementado...");
     }
   }
 }

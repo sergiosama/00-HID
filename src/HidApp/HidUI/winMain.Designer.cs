@@ -1,4 +1,6 @@
-﻿namespace HidUI
+﻿using HidUI.Views;
+
+namespace HidUI
 {
   partial class winMain
   {
@@ -28,21 +30,26 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winMain));
       this.ribMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.bbiLogin = new DevExpress.XtraBars.BarButtonItem();
       this.bbiAbout = new DevExpress.XtraBars.BarButtonItem();
       this.bbiLogout = new DevExpress.XtraBars.BarButtonItem();
-      this.barUserName = new DevExpress.XtraBars.BarStaticItem();
+      this.bbUserConnected = new DevExpress.XtraBars.BarButtonItem();
+      this.ppUserInfo = new HidUI.Views.ETPopupControlContainer(this.components);
+      this.usrInfo = new HidUI.Views.UserInfoView();
       this.rbpgInicio = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-      this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-      this.repositoryItemPopupContainerEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
-      this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+      this.sbar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
       this.pnlContainer = new DevExpress.XtraEditors.XtraUserControl();
+      this.srchGlobal = new DevExpress.XtraEditors.SearchControl();
+      this.txtHidden = new DevExpress.XtraEditors.TextEdit();
       ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupContainerEdit1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ppUserInfo)).BeginInit();
+      this.ppUserInfo.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.srchGlobal.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.txtHidden.Properties)).BeginInit();
       this.SuspendLayout();
       // 
       // ribMain
@@ -55,18 +62,15 @@
             this.bbiLogin,
             this.bbiAbout,
             this.bbiLogout,
-            this.barUserName});
+            this.bbUserConnected});
       this.ribMain.Location = new System.Drawing.Point(0, 0);
-      this.ribMain.MaxItemId = 8;
+      this.ribMain.MaxItemId = 11;
       this.ribMain.Name = "ribMain";
       this.ribMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpgInicio});
-      this.ribMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemMemoEdit1,
-            this.repositoryItemPopupContainerEdit1});
       this.ribMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
       this.ribMain.Size = new System.Drawing.Size(1193, 144);
-      this.ribMain.StatusBar = this.ribbonStatusBar1;
+      this.ribMain.StatusBar = this.sbar;
       this.ribMain.PageGroupCaptionButtonClick += new DevExpress.XtraBars.Ribbon.RibbonPageGroupEventHandler(this.GrupoClick);
       this.ribMain.SelectedPageChanged += new System.EventHandler(this.Ribbon_CambiarPagina);
       // 
@@ -94,14 +98,35 @@
       this.bbiLogout.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiLogout.LargeGlyph")));
       this.bbiLogout.Name = "bbiLogout";
       // 
-      // barUserName
+      // bbUserConnected
       // 
-      this.barUserName.Caption = "Desconectado";
-      this.barUserName.Glyph = global::HidUI.Properties.Resources.administrator_48;
-      this.barUserName.Id = 7;
-      this.barUserName.LargeGlyph = global::HidUI.Properties.Resources.administrator_48;
-      this.barUserName.Name = "barUserName";
-      this.barUserName.TextAlignment = System.Drawing.StringAlignment.Near;
+      this.bbUserConnected.ActAsDropDown = true;
+      this.bbUserConnected.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+      this.bbUserConnected.Caption = "<Indeterminado>";
+      this.bbUserConnected.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+      this.bbUserConnected.DropDownControl = this.ppUserInfo;
+      this.bbUserConnected.Id = 11;
+      this.bbUserConnected.Name = "bbUserConnected";
+      // 
+      // ppUserInfo
+      // 
+      this.ppUserInfo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+      this.ppUserInfo.Controls.Add(this.usrInfo);
+      this.ppUserInfo.DropDirection = HidUI.Views.DropDirection.DropUp;
+      this.ppUserInfo.Location = new System.Drawing.Point(210, 366);
+      this.ppUserInfo.Name = "ppUserInfo";
+      this.ppUserInfo.Size = new System.Drawing.Size(300, 160);
+      this.ppUserInfo.TabIndex = 6;
+      this.ppUserInfo.Visible = false;
+      this.ppUserInfo.Popup += new System.EventHandler(this.UserInfo_Popup);
+      // 
+      // usrInfo
+      // 
+      this.usrInfo.Location = new System.Drawing.Point(4, 3);
+      this.usrInfo.Name = "usrInfo";
+      this.usrInfo.Size = new System.Drawing.Size(293, 154);
+      this.usrInfo.TabIndex = 13;
+      this.usrInfo.VerPerfil += new System.EventHandler(this.ViewPerfilUsuario);
       // 
       // rbpgInicio
       // 
@@ -118,26 +143,13 @@
       this.ribbonPageGroup1.Name = "ribbonPageGroup1";
       this.ribbonPageGroup1.Text = "Acceso";
       // 
-      // repositoryItemMemoEdit1
+      // sbar
       // 
-      this.repositoryItemMemoEdit1.LinesCount = 20;
-      this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
-      // 
-      // repositoryItemPopupContainerEdit1
-      // 
-      this.repositoryItemPopupContainerEdit1.AutoHeight = false;
-      this.repositoryItemPopupContainerEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-      this.repositoryItemPopupContainerEdit1.Name = "repositoryItemPopupContainerEdit1";
-      this.repositoryItemPopupContainerEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
-      // 
-      // ribbonStatusBar1
-      // 
-      this.ribbonStatusBar1.ItemLinks.Add(this.barUserName);
-      this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 791);
-      this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-      this.ribbonStatusBar1.Ribbon = this.ribMain;
-      this.ribbonStatusBar1.Size = new System.Drawing.Size(1193, 31);
+      this.sbar.ItemLinks.Add(this.bbUserConnected);
+      this.sbar.Location = new System.Drawing.Point(0, 791);
+      this.sbar.Name = "sbar";
+      this.sbar.Ribbon = this.ribMain;
+      this.sbar.Size = new System.Drawing.Size(1193, 31);
       // 
       // pnlContainer
       // 
@@ -149,23 +161,55 @@
       this.pnlContainer.Size = new System.Drawing.Size(1193, 647);
       this.pnlContainer.TabIndex = 3;
       // 
+      // srchGlobal
+      // 
+      this.srchGlobal.Dock = System.Windows.Forms.DockStyle.Top;
+      this.srchGlobal.Location = new System.Drawing.Point(0, 144);
+      this.srchGlobal.MenuManager = this.ribMain;
+      this.srchGlobal.Name = "srchGlobal";
+      this.srchGlobal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+      this.srchGlobal.Properties.Appearance.Options.UseFont = true;
+      this.srchGlobal.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 12F);
+      this.srchGlobal.Properties.AppearanceDropDown.Options.UseFont = true;
+      this.srchGlobal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Repository.ClearButton(),
+            new DevExpress.XtraEditors.Repository.SearchButton(),
+            new DevExpress.XtraEditors.Repository.MRUButton()});
+      this.srchGlobal.Properties.ShowMRUButton = true;
+      this.srchGlobal.Size = new System.Drawing.Size(1193, 28);
+      this.srchGlobal.TabIndex = 10;
+      // 
+      // txtHidden
+      // 
+      this.txtHidden.Location = new System.Drawing.Point(784, 727);
+      this.txtHidden.MenuManager = this.ribMain;
+      this.txtHidden.Name = "txtHidden";
+      this.txtHidden.Size = new System.Drawing.Size(248, 20);
+      this.txtHidden.TabIndex = 13;
+      this.txtHidden.TextChanged += new System.EventHandler(this.CambiarBinding);
+      // 
       // winMain
       // 
       this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1193, 822);
+      this.Controls.Add(this.srchGlobal);
+      this.Controls.Add(this.ppUserInfo);
       this.Controls.Add(this.pnlContainer);
-      this.Controls.Add(this.ribbonStatusBar1);
+      this.Controls.Add(this.sbar);
+      this.Controls.Add(this.txtHidden);
       this.Controls.Add(this.ribMain);
       this.Name = "winMain";
       this.Ribbon = this.ribMain;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.StatusBar = this.ribbonStatusBar1;
+      this.StatusBar = this.sbar;
       this.Text = "HID Sistema - Pantalla Inicial";
       ((System.ComponentModel.ISupportInitialize)(this.ribMain)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPopupContainerEdit1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ppUserInfo)).EndInit();
+      this.ppUserInfo.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.srchGlobal.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.txtHidden.Properties)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -178,12 +222,16 @@
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     private DevExpress.XtraBars.BarButtonItem bbiLogin;
     private DevExpress.XtraBars.BarButtonItem bbiAbout;
-    private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+    private DevExpress.XtraBars.Ribbon.RibbonStatusBar sbar;
     private DevExpress.XtraEditors.XtraUserControl pnlContainer;
     private DevExpress.XtraBars.BarButtonItem bbiLogout;
-    private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
-    private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit repositoryItemPopupContainerEdit1;
-    private DevExpress.XtraBars.BarStaticItem barUserName;
+    private DevExpress.XtraBars.BarButtonItem bbUserConnected;
+    //
+    //  workaround para el control de usuario
+    private ETPopupControlContainer ppUserInfo;
+    private DevExpress.XtraEditors.SearchControl srchGlobal;
+    private UserInfoView usrInfo;
+    private DevExpress.XtraEditors.TextEdit txtHidden;
   }
 }
 

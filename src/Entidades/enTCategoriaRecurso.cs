@@ -63,5 +63,10 @@ namespace Entidades
 		}
 
 		#endregion
+
+    public override string ToString()
+    {
+      return Detalle;
+    }
 	}
 }

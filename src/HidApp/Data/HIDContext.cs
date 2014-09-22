@@ -21,10 +21,12 @@ namespace Data
     public DbSet<enTArticulo> Articulos { get; set; }
 
     public HIDContext()
-      : base("Server=HAL9000;Database=HID;Trusted_Connection=true;")
+      : base("Server=localhost;Database=HID;Trusted_Connection=true;")
     {
       
     }
+
+    public HIDContext(string cstrConn) : base(cstrConn) { }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
@@ -33,15 +35,13 @@ namespace Data
       modelBuilder.Configurations.Add(new ConfiguracionRecursos());
       modelBuilder.Configurations.Add(new ConfiguracionAuditoria());
       //
-      modelBuilder.Configurations.Add(new ConfiguracionCategorias());
+      modelBuilder.Configurations.Add(new ConfiguracionCategoriaRecurso());
       modelBuilder.Configurations.Add(new ConfiguracionTipoIVA());
       modelBuilder.Configurations.Add(new ConfiguracionArticulos());
-
     }
   }
 
   #region Clases para configurar mapeo de E-F
-
 
   public class ConfiguracionArticulos : EntityTypeConfiguration<enTArticulo>
   {
@@ -69,9 +69,6 @@ namespace Data
     }
   }
 
-
-
-
   public class ConfiguracionRecursos : EntityTypeConfiguration<enTRecurso>
   {
     public ConfiguracionRecursos()
@@ -80,9 +77,27 @@ namespace Data
       ToTable("TRecursos");
       Property(et => et.IdRecurso).HasColumnName("IdRecurso");
       HasKey(et => et.IdRecurso);
-      //HasOptional<enTCategoriaRecurso>(et => et.Categoria).WithOptionalDependent();
-      HasOptional(et => et.Categoria).WithMany().Map(x => x.MapKey("IdCategoria"));
-      HasOptional(et => et.SituacionAFIP).WithMany().Map(x => x.MapKey("IdTipoIVA"));
+
+      Property(et => et.Sexo)
+        .HasMaxLength(1)
+        .HasColumnName("Sexo")
+        .HasColumnType("char")
+        .IsFixedLength();
+      
+      //  Mapeos de relaciones (FK)
+      //  HasOptional<enTCategoriaRecurso>(et => et.Categoria).WithOptionalDependent();
+      HasOptional(et => et.Categoria)
+        .WithMany()
+        .Map(x => x.MapKey("IdCategoria"));
+
+      HasOptional(et => et.SituacionAFIP)
+        .WithMany()
+        .Map(x => x.MapKey("IdTipoIVA"));
+
+      //  Mapeos de columnas puntuales
+      Property(et => et.Foto)
+        .HasColumnName("Foto")
+        .HasColumnType("Image");
     }
   }
 
@@ -120,15 +135,14 @@ namespace Data
     }
   }
 
-  public class ConfiguracionCategorias : EntityTypeConfiguration<enTCategoriaRecurso>
+  public class ConfiguracionCategoriaRecurso : EntityTypeConfiguration<enTCategoriaRecurso>
   {
-    public ConfiguracionCategorias()
+    public ConfiguracionCategoriaRecurso()
     {
       ToTable("TCategoriaRecurso");
       HasKey(et => et.IdCategoria);
     }
   }
-
     
   #endregion
 

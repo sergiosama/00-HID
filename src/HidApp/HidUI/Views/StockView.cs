@@ -13,10 +13,19 @@ namespace HidUI.Views
   {
     private readonly StockViewModel _viewModel;
 
-    public StockView()
+    public static void RegisterViews()
+    {
+      ViewManager.Current.AddView(ViewType.StockInsumos, ViewType.Stock, null);
+      ViewManager.Current.AddView(ViewType.StockAlquilables, ViewType.Stock, null);
+      ViewManager.Current.AddView(ViewType.StockReportes, ViewType.Stock, null);
+    }
+
+    //  public static 
+    public StockView(IViewLocator locator)
     {
       InitializeComponent();
-      _viewModel = ViewModelSource.Create(() => new StockViewModel(new Localizador()));
+      //  _viewModel = ViewModelSource.Create(() => new StockViewModel(new Localizador()));
+      _viewModel = ViewModelSource.Create(() => new StockViewModel(locator));
     }
 
 #region Command Binding
@@ -38,7 +47,8 @@ namespace HidUI.Views
     {
       //  ojo: guardar donde estaba posicionado...
       //
-      ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
+      //  ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
+      ribbon.SelectedPage = ribStock.Pages["ALQUILABLES"];
     }
   }
 }

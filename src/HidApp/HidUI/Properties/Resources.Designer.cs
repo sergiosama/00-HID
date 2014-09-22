@@ -83,6 +83,66 @@ namespace HidUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap candado_128 {
+            get {
+                object obj = ResourceManager.GetObject("candado_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap F_Avatar_128 {
+            get {
+                object obj = ResourceManager.GetObject("F_Avatar_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap F_Avatar_24 {
+            get {
+                object obj = ResourceManager.GetObject("F_Avatar_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap F_Avatar_256 {
+            get {
+                object obj = ResourceManager.GetObject("F_Avatar_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap F_Avatar_32 {
+            get {
+                object obj = ResourceManager.GetObject("F_Avatar_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap F_Avatar_48 {
+            get {
+                object obj = ResourceManager.GetObject("F_Avatar_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HID_Logo {
             get {
                 object obj = ResourceManager.GetObject("HID_Logo", resourceCulture);
@@ -93,9 +153,539 @@ namespace HidUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap realvista_general_lock_128 {
+        internal static System.Drawing.Bitmap M_Avatar_128 {
             get {
-                object obj = ResourceManager.GetObject("realvista_general_lock_128", resourceCulture);
+                object obj = ResourceManager.GetObject("M_Avatar_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap M_Avatar_24 {
+            get {
+                object obj = ResourceManager.GetObject("M_Avatar_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap M_Avatar_256 {
+            get {
+                object obj = ResourceManager.GetObject("M_Avatar_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap M_Avatar_32 {
+            get {
+                object obj = ResourceManager.GetObject("M_Avatar_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap M_Avatar_48 {
+            get {
+                object obj = ResourceManager.GetObject("M_Avatar_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap man_48 {
+            get {
+                object obj = ResourceManager.GetObject("man_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_barcode_128 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_barcode_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_barcode_16 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_barcode_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_barcode_24 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_barcode_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_barcode_256 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_barcode_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_barcode_32 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_barcode_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_barcode_48 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_barcode_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_basket_128 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_basket_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_basket_16 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_basket_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_basket_24 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_basket_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_basket_256 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_basket_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_basket_32 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_basket_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_basket_48 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_basket_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_calculator_128 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_calculator_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_calculator_16 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_calculator_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_calculator_24 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_calculator_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_calculator_256 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_calculator_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_calculator_32 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_calculator_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_calculator_48 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_calculator_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_coins_128 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_coins_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_coins_16 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_coins_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_coins_24 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_coins_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_coins_256 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_coins_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_coins_32 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_coins_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_coins_48 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_coins_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_credit_128 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_credit_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_credit_16 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_credit_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_credit_24 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_credit_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_credit_256 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_credit_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_credit_32 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_credit_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_credit_48 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_credit_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_loan_128 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_loan_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_loan_16 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_loan_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_loan_24 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_loan_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_loan_256 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_loan_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_loan_32 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_loan_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_loan_48 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_loan_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_sign_dollar_128 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_sign_dollar_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_sign_dollar_16 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_sign_dollar_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_sign_dollar_24 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_sign_dollar_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_sign_dollar_256 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_sign_dollar_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_sign_dollar_32 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_sign_dollar_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_sign_dollar_48 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_sign_dollar_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_time_frame_128 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_time_frame_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_time_frame_16 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_time_frame_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_time_frame_24 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_time_frame_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_time_frame_256 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_time_frame_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_time_frame_32 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_time_frame_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap realvista_accounting_time_frame_48 {
+            get {
+                object obj = ResourceManager.GetObject("realvista_accounting_time_frame_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +696,16 @@ namespace HidUI.Properties {
         internal static System.Drawing.Bitmap technical_hammer_48 {
             get {
                 object obj = ResourceManager.GetObject("technical_hammer_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap woman_48 {
+            get {
+                object obj = ResourceManager.GetObject("woman_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
