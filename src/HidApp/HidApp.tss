@@ -11,40 +11,40 @@
       <string>c:\desarrollo\00-hid\src\hidapp\servicios\securityservices.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\winmain.cs</string>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\winmain.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
       <string>c:\desarrollo\00-hid\src\hidapp\data\hidcontext.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\viewservices.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>c:\desarrollo\00-hid\src\entidades\entrecurso.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\common\comunes.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
       <string>c:\desarrollo\00-hid\src\hidapp\infraestructura\sesion.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\Localizador.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\ViewManager.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockView.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockAlquilablesView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockAlquilablesView.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\ViewModel\StockViewModel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockAlquilablesView.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockAlquilablesView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockView.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\ViewManager.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\Localizador.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\winMain.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\winMain.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\ViewServices.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Common\Comunes.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

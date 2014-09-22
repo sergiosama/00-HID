@@ -213,6 +213,16 @@ namespace HidUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap no_imagen {
+            get {
+                object obj = ResourceManager.GetObject("no_imagen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap realvista_accounting_barcode_128 {
             get {
                 object obj = ResourceManager.GetObject("realvista_accounting_barcode_128", resourceCulture);

@@ -56,7 +56,7 @@ namespace HidUI
     {
       var oldVista = sender as Control;
 
-      if (oldVista is ISupportRibbon)
+      if (oldVista is ISupportRibbon || oldVista is IWorkView)
       {
         ribMain.UnMergeRibbon();
       }
@@ -84,6 +84,7 @@ namespace HidUI
           rib.FocusOnPage(ribMain);
         }
         //  cambiar titulo de barra segun la vista!!
+        //  CONECTAR A SEARCH CONTROL!!
       }
     }
 

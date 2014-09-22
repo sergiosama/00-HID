@@ -1,4 +1,5 @@
-﻿using DevExpress.Mvvm.POCO;
+﻿using System;
+using DevExpress.Mvvm.POCO;
 using DevExpress.XtraEditors;
 using HidUI.Common;
 using HidUI.ViewModel;
@@ -28,7 +29,16 @@ namespace HidUI.Views
       _viewModel = ViewModelSource.Create(() => new StockViewModel(locator));
     }
 
-#region Command Binding
+    protected override void OnLoad(EventArgs e)
+    {
+      base.OnLoad(e);
+
+      //  TODO cambiar o arregar porque cuando reingreso con otro user no llama de nuevo a OnLoad!!
+      _viewModel.SetDefaultWorkView();
+    }
+
+
+    #region Command Binding
 
     //  Tener en cuenta que por ahora tenemos todos los view models accesibles, luego deberiamos bindear solo los necesarios!!
 

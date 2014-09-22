@@ -40,6 +40,10 @@ namespace HidUI.Views
           case ViewType.StockInsumos:
             result = new StockInsumosView();
             break;
+
+          case ViewType.StockAlquilables:
+            return new StockAlquilablesView();
+            break;
         }
         _viewsCache.Add(viewType, result);
       }

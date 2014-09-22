@@ -30,14 +30,13 @@ namespace HidUI
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winMain));
       this.ribMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.bbiLogin = new DevExpress.XtraBars.BarButtonItem();
       this.bbiAbout = new DevExpress.XtraBars.BarButtonItem();
       this.bbiLogout = new DevExpress.XtraBars.BarButtonItem();
       this.bbUserConnected = new DevExpress.XtraBars.BarButtonItem();
-      this.ppUserInfo = new HidUI.Views.ETPopupControlContainer(this.components);
+      this.ppUserInfo = new HidUI.Views.ETPopupControlContainer();
       this.usrInfo = new HidUI.Views.UserInfoView();
       this.rbpgInicio = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -45,11 +44,14 @@ namespace HidUI
       this.pnlContainer = new DevExpress.XtraEditors.XtraUserControl();
       this.srchGlobal = new DevExpress.XtraEditors.SearchControl();
       this.txtHidden = new DevExpress.XtraEditors.TextEdit();
+      this.pnlMain = new DevExpress.XtraEditors.PanelControl();
       ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ppUserInfo)).BeginInit();
       this.ppUserInfo.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.srchGlobal.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtHidden.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).BeginInit();
+      this.pnlMain.SuspendLayout();
       this.SuspendLayout();
       // 
       // ribMain
@@ -153,18 +155,20 @@ namespace HidUI
       // 
       // pnlContainer
       // 
+      this.pnlContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.pnlContainer.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
       this.pnlContainer.Appearance.Options.UseBackColor = true;
-      this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.pnlContainer.Location = new System.Drawing.Point(0, 144);
+      this.pnlContainer.Location = new System.Drawing.Point(2, 28);
       this.pnlContainer.Name = "pnlContainer";
-      this.pnlContainer.Size = new System.Drawing.Size(1193, 647);
+      this.pnlContainer.Size = new System.Drawing.Size(1189, 648);
       this.pnlContainer.TabIndex = 3;
       // 
       // srchGlobal
       // 
-      this.srchGlobal.Dock = System.Windows.Forms.DockStyle.Top;
-      this.srchGlobal.Location = new System.Drawing.Point(0, 144);
+      this.srchGlobal.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.srchGlobal.Location = new System.Drawing.Point(2, 2);
       this.srchGlobal.MenuManager = this.ribMain;
       this.srchGlobal.Name = "srchGlobal";
       this.srchGlobal.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
@@ -176,7 +180,7 @@ namespace HidUI
             new DevExpress.XtraEditors.Repository.SearchButton(),
             new DevExpress.XtraEditors.Repository.MRUButton()});
       this.srchGlobal.Properties.ShowMRUButton = true;
-      this.srchGlobal.Size = new System.Drawing.Size(1193, 28);
+      this.srchGlobal.Size = new System.Drawing.Size(1189, 28);
       this.srchGlobal.TabIndex = 10;
       // 
       // txtHidden
@@ -188,16 +192,25 @@ namespace HidUI
       this.txtHidden.TabIndex = 13;
       this.txtHidden.TextChanged += new System.EventHandler(this.CambiarBinding);
       // 
+      // pnlMain
+      // 
+      this.pnlMain.Controls.Add(this.srchGlobal);
+      this.pnlMain.Controls.Add(this.pnlContainer);
+      this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.pnlMain.Location = new System.Drawing.Point(0, 144);
+      this.pnlMain.Name = "pnlMain";
+      this.pnlMain.Size = new System.Drawing.Size(1193, 678);
+      this.pnlMain.TabIndex = 15;
+      // 
       // winMain
       // 
       this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(1193, 822);
-      this.Controls.Add(this.srchGlobal);
       this.Controls.Add(this.ppUserInfo);
-      this.Controls.Add(this.pnlContainer);
       this.Controls.Add(this.sbar);
+      this.Controls.Add(this.pnlMain);
       this.Controls.Add(this.txtHidden);
       this.Controls.Add(this.ribMain);
       this.Name = "winMain";
@@ -210,6 +223,8 @@ namespace HidUI
       this.ppUserInfo.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.srchGlobal.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtHidden.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pnlMain)).EndInit();
+      this.pnlMain.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -232,6 +247,7 @@ namespace HidUI
     private DevExpress.XtraEditors.SearchControl srchGlobal;
     private UserInfoView usrInfo;
     private DevExpress.XtraEditors.TextEdit txtHidden;
+    private DevExpress.XtraEditors.PanelControl pnlMain;
   }
 }
 

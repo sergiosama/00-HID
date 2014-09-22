@@ -27,7 +27,6 @@ namespace Data
     public DbSet<enTOrden> Orden { get; set; }
 
 
-
     public HIDContext()
       : base("Server=localhost;Database=HID;Trusted_Connection=true;")
     {
@@ -42,6 +41,8 @@ namespace Data
       modelBuilder.Configurations.Add(new ConfiguracionUsuarios());
       modelBuilder.Configurations.Add(new ConfiguracionRecursos());
       modelBuilder.Configurations.Add(new ConfiguracionAuditoria());
+      modelBuilder.Configurations.Add(new ConfiguracionOrdenes());
+      modelBuilder.Configurations.Add(new ConfiguracionDetalleOrdenes());
       //
       modelBuilder.Configurations.Add(new ConfiguracionCategoriaRecurso());
       modelBuilder.Configurations.Add(new ConfiguracionTipoIVA());
@@ -55,9 +56,30 @@ namespace Data
   {
       public ConfiguracionArticulos()
       {
-          ToTable("TArticulo");
-          HasKey(et => et.IdArticulo);
+        ToTable("TArticulos");
+        HasKey(et => et.IdArticulo);
       }
+  }
+
+  public class ConfiguracionOrdenes : EntityTypeConfiguration<enTOrden>
+  {
+    public ConfiguracionOrdenes()
+    {
+      ToTable("TOrdenes");
+      HasKey(et => et.IdOrder);
+    }
+  }
+
+  //  OJO!!! Tiene que tener PK compuesta
+  //  Ademas es una tabla de paso para una relacion m x n
+  //
+  public class ConfiguracionDetalleOrdenes : EntityTypeConfiguration<enTDetalleOrden>
+  {
+    public ConfiguracionDetalleOrdenes()
+    {
+      ToTable("TDetalleOrden");
+      HasKey(et => et.IdOrder);
+    }
   }
 
   public class ConfiguracionUsuarios : EntityTypeConfiguration<Usuario>
@@ -153,7 +175,6 @@ namespace Data
 
   }
 
-    
   #endregion
 
 

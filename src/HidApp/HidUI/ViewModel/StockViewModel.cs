@@ -16,5 +16,10 @@ namespace HidUI.ViewModel
     {
       //  ojo el IViewLocator deberia ser unico para toda la app!!!
     }
+
+    public void SetDefaultWorkView()
+    {
+      Helpers.MainForm.MainViewModel.NavigateTo(ViewType.StockInsumos);
+    }
   }
 }

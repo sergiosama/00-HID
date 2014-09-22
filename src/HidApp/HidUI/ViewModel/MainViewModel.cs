@@ -147,7 +147,7 @@ namespace HidUI.ViewModel
     }
 
     /// <summary>
-    /// PSEUDO COMMAND
+    /// [[PSEUDO COMMAND]]
     /// Cierra la unica vista que puede estar abierta (la SelectedView)
     /// Si no hay ninguna, no hace nada...
     /// Si SelectedView soporta vista anterior
@@ -168,13 +168,25 @@ namespace HidUI.ViewModel
     }
 
     /// <summary>
-    /// PSEUDO COMMAND
+    /// [[PSEUDO COMMAND]]
     /// Se recibe desde el StartViewModel (navegador)
     /// </summary>
     public void NavigateTo(ViewType newViewType)
     {
       //  algo distinto deberia hacer.... por ejemplo guardar el estado...
       SelectedViewType = newViewType;
+    }
+
+    /// <summary>
+    /// [[PSEUDO COMMAND]]
+    /// 
+    ///  Aca iria el comando que prueva pasar a una vista en base a una busqueda
+    /// Como la vista necesita otra primero (parente) carga la parent y a continuacion la final
+    /// 
+    /// </summary>
+    public void DummyNavigate()
+    {
+      throw new ApplicationException("Dummy Navigate: No implementado!!");
     }
 
     #endregion
@@ -231,7 +243,7 @@ namespace HidUI.ViewModel
       if (SelectedView is ISupportPreviousView)
         ((ISupportPreviousView)SelectedView).PreviousView = oldType;
 
-      //  esto tambien es mio... si la vista es tipo navegador, los eventos de navegación deberian replicarse en 
+      //  esto tambien es mio... si la vista es tipo navegador, los eventos de navegación deberian replicarse ....
     }
 
     protected void OnSelectedViewChanged(object oldView)

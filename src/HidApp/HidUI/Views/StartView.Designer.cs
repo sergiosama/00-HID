@@ -161,7 +161,7 @@
       // labelControl1
       // 
       this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 28F);
-      this.labelControl1.Location = new System.Drawing.Point(26, 28);
+      this.labelControl1.Location = new System.Drawing.Point(0, 0);
       this.labelControl1.Name = "labelControl1";
       this.labelControl1.Padding = new System.Windows.Forms.Padding(10);
       this.labelControl1.Size = new System.Drawing.Size(108, 70);

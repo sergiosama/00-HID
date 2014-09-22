@@ -328,6 +328,7 @@
     <Content Include="Imagenes\list_48.png" />
     <Content Include="Imagenes\lock_closed_48.png" />
     <Content Include="Imagenes\lock_open_48.png" />
+    <Content Include="Imagenes\logoHID 320.png" />
     <Content Include="Imagenes\man_48.png" />
     <Content Include="Imagenes\man_slim_48.png" />
     <Content Include="Imagenes\microphone_48.png" />
@@ -338,6 +339,7 @@
     <Content Include="Imagenes\music_library_48.png" />
     <Content Include="Imagenes\network_48.png" />
     <Content Include="Imagenes\notepad_48.png" />
+    <Content Include="Imagenes\no_imagen.jpg" />
     <Content Include="Imagenes\paste2_48.png" />
     <Content Include="Imagenes\paste_48.png" />
     <Content Include="Imagenes\phone_48.png" />
@@ -347,6 +349,7 @@
     <Content Include="Imagenes\printer_48.png" />
     <Content Include="Imagenes\print_48.png" />
     <Content Include="Imagenes\pyramid_48.png" />
+    <Content Include="Resources\no_imagen.jpg" />
     <None Include="Resources\realvista_accounting_time_frame_256.png" />
     <None Include="Resources\realvista_accounting_time_frame_128.png" />
     <None Include="Resources\realvista_accounting_time_frame_48.png" />
@@ -434,9 +437,7 @@
     <Content Include="Imagenes\zoom_in_48.png" />
     <Content Include="Imagenes\zoom_out_48.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Reports\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
