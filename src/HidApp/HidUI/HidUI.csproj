@@ -86,6 +86,12 @@
     <Compile Include="Common\Comunes.cs" />
     <Compile Include="Common\Helpers.cs" />
     <Compile Include="Common\DelegateCommand.cs" />
+    <Compile Include="Reports\RemitoSalida.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RemitoSalida.Designer.cs">
+      <DependentUpon>RemitoSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,6 +184,9 @@
     <Compile Include="Views\winLogin.designer.cs">
       <DependentUpon>winLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\RemitoSalida.resx">
+      <DependentUpon>RemitoSalida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginIngresoNormal.resx">
       <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
     </EmbeddedResource>

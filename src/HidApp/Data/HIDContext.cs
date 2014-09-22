@@ -20,6 +20,14 @@ namespace Data
 
     public DbSet<enTArticulo> Articulos { get; set; }
 
+    public DbSet<enTCategoriaRecurso> CategoriaRecurso { get; set; }
+
+    public DbSet<enTDetalleOrden> DetalleOrden { get; set; }
+        
+    public DbSet<enTOrden> Orden { get; set; }
+
+
+
     public HIDContext()
       : base("Server=localhost;Database=HID;Trusted_Connection=true;")
     {
@@ -142,7 +150,9 @@ namespace Data
       ToTable("TCategoriaRecurso");
       HasKey(et => et.IdCategoria);
     }
+
   }
+
     
   #endregion
 
