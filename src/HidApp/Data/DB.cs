@@ -7,33 +7,24 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-  public class DB
-  {
-    private static HIDContext _ctx;
-    
-    static DB()
+    public class DB
     {
-      _ctx = new HIDContext();
+        private static HIDContext _ctx;
+
+        static DB()
+        {
+            _ctx = new HIDContext();
+        }
+
+        public static HIDContext Context
+        {
+            get { return _ctx; }
+        }
+
+        private DB()
+        {
+
+        }
     }
 
-    public static HIDContext Context
-    {
-      get { return _ctx;  }
-    }
-
-    private DB()
-    {
-      
-    }
-    
-    
-
-
-
-
-
-
-  }
-
-   
 }
