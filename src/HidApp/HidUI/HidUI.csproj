@@ -12,8 +12,7 @@
     <AssemblyName>HidUI</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>c:\Instalar\</PublishUrl>
+    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,12 +22,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>http://ftp.sergiosama.com.ar/hid/</UpdateUrl>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
-    <PublishWizardCompleted>true</PublishWizardCompleted>
-    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,58 +47,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>4E557FCA833E0ED8008DC5F084D1976FCD774DDA</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>HidUI_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>Immunologist_Male_Light.ico</ApplicationIcon>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v14.1">
-      <Private>True</Private>
+    <Reference Include="C5">
+      <HintPath>..\packages\C5.2.3.0.1\lib\net40\C5.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Mvvm.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Printing.v14.1.Core">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Utils.v14.1">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraBars.v14.1">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.Sparkline.v14.1.Core">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraEditors.v14.1">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="DevExpress.Data.v14.1" />
+    <Reference Include="DevExpress.Mvvm.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.1.Core" />
+    <Reference Include="DevExpress.Utils.v14.1" />
+    <Reference Include="DevExpress.XtraBars.v14.1" />
+    <Reference Include="DevExpress.Sparkline.v14.1.Core" />
+    <Reference Include="DevExpress.XtraEditors.v14.1" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -130,6 +92,11 @@
     <Compile Include="Reports\RemitoSalida.Designer.cs">
       <DependentUpon>RemitoSalida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ArticulosViewModel.cs" />
     <Compile Include="Views\LoginIngresoNormal.cs">
       <SubType>UserControl</SubType>
@@ -143,12 +110,17 @@
     <Compile Include="Views\LoginRecuperarContraseña.designer.cs">
       <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\PacientesView.cs">
+    <Compile Include="Views\ETPopupControlContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\UserInfoView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\PacientesView.Designer.cs">
-      <DependentUpon>PacientesView.cs</DependentUpon>
+    <Compile Include="Views\UserInfoView.Designer.cs">
+      <DependentUpon>UserInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewManager.cs" />
+    <Compile Include="Views\ViewServices.cs" />
     <Compile Include="winMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,8 +193,8 @@
     <EmbeddedResource Include="Views\LoginRecuperarContraseña.resx">
       <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\PacientesView.resx">
-      <DependentUpon>PacientesView.cs</DependentUpon>
+    <EmbeddedResource Include="Views\UserInfoView.resx">
+      <DependentUpon>UserInfoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="winMain.resx">
       <DependentUpon>winMain.cs</DependentUpon>
@@ -230,14 +202,9 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\AboutView.resx">
       <DependentUpon>AboutView.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,7 +230,6 @@
       <DependentUpon>winLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="HidUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -336,6 +302,7 @@
     <Content Include="Imagenes\envelope_open_48.png" />
     <Content Include="Imagenes\file2_48.png" />
     <Content Include="Imagenes\file_48.png" />
+    <Content Include="Imagenes\file_broken.png" />
     <Content Include="Imagenes\folder2_48.png" />
     <Content Include="Imagenes\folder_48.png" />
     <Content Include="Imagenes\games_card_clubs_48.png" />
@@ -361,6 +328,7 @@
     <Content Include="Imagenes\list_48.png" />
     <Content Include="Imagenes\lock_closed_48.png" />
     <Content Include="Imagenes\lock_open_48.png" />
+    <Content Include="Imagenes\logoHID 320.png" />
     <Content Include="Imagenes\man_48.png" />
     <Content Include="Imagenes\man_slim_48.png" />
     <Content Include="Imagenes\microphone_48.png" />
@@ -381,9 +349,66 @@
     <Content Include="Imagenes\printer_48.png" />
     <Content Include="Imagenes\print_48.png" />
     <Content Include="Imagenes\pyramid_48.png" />
-    <Content Include="Immunologist_Male_Light.ico" />
-    <None Include="Resources\no_imagen.jpg" />
-    <None Include="Imagenes\realvista_general_lock_128.png" />
+    <Content Include="Resources\no_imagen.jpg" />
+    <None Include="Resources\realvista_accounting_time_frame_256.png" />
+    <None Include="Resources\realvista_accounting_time_frame_128.png" />
+    <None Include="Resources\realvista_accounting_time_frame_48.png" />
+    <None Include="Resources\realvista_accounting_time_frame_32.png" />
+    <None Include="Resources\realvista_accounting_time_frame_24.png" />
+    <None Include="Resources\realvista_accounting_time_frame_16.png" />
+    <None Include="Resources\realvista_accounting_sign_dollar_256.png" />
+    <None Include="Resources\realvista_accounting_sign_dollar_128.png" />
+    <None Include="Resources\realvista_accounting_sign_dollar_48.png" />
+    <None Include="Resources\realvista_accounting_sign_dollar_32.png" />
+    <None Include="Resources\realvista_accounting_sign_dollar_24.png" />
+    <None Include="Resources\realvista_accounting_sign_dollar_16.png" />
+    <None Include="Resources\realvista_accounting_loan_256.png" />
+    <None Include="Resources\realvista_accounting_loan_128.png" />
+    <None Include="Resources\realvista_accounting_loan_48.png" />
+    <None Include="Resources\realvista_accounting_loan_32.png" />
+    <None Include="Resources\realvista_accounting_loan_24.png" />
+    <None Include="Resources\realvista_accounting_loan_16.png" />
+    <None Include="Resources\realvista_accounting_credit_256.png" />
+    <None Include="Resources\realvista_accounting_credit_128.png" />
+    <None Include="Resources\realvista_accounting_credit_48.png" />
+    <None Include="Resources\realvista_accounting_credit_32.png" />
+    <None Include="Resources\realvista_accounting_credit_24.png" />
+    <None Include="Resources\realvista_accounting_credit_16.png" />
+    <None Include="Resources\realvista_accounting_coins_256.png" />
+    <None Include="Resources\realvista_accounting_coins_128.png" />
+    <None Include="Resources\realvista_accounting_coins_48.png" />
+    <None Include="Resources\realvista_accounting_coins_32.png" />
+    <None Include="Resources\realvista_accounting_coins_24.png" />
+    <None Include="Resources\realvista_accounting_coins_16.png" />
+    <None Include="Resources\realvista_accounting_calculator_256.png" />
+    <None Include="Resources\realvista_accounting_calculator_128.png" />
+    <None Include="Resources\realvista_accounting_calculator_48.png" />
+    <None Include="Resources\realvista_accounting_calculator_32.png" />
+    <None Include="Resources\realvista_accounting_calculator_24.png" />
+    <None Include="Resources\realvista_accounting_calculator_16.png" />
+    <None Include="Resources\realvista_accounting_basket_256.png" />
+    <None Include="Resources\realvista_accounting_basket_128.png" />
+    <None Include="Resources\realvista_accounting_basket_48.png" />
+    <None Include="Resources\realvista_accounting_basket_32.png" />
+    <None Include="Resources\realvista_accounting_basket_24.png" />
+    <None Include="Resources\realvista_accounting_basket_16.png" />
+    <None Include="Resources\realvista_accounting_barcode_256.png" />
+    <None Include="Resources\realvista_accounting_barcode_128.png" />
+    <None Include="Resources\realvista_accounting_barcode_48.png" />
+    <None Include="Resources\realvista_accounting_barcode_32.png" />
+    <None Include="Resources\realvista_accounting_barcode_24.png" />
+    <None Include="Resources\realvista_accounting_barcode_16.png" />
+    <None Include="Imagenes\candado_128.png" />
+    <Content Include="Imagenes\M_Avatar_128.png" />
+    <Content Include="Imagenes\M_Avatar_24.png" />
+    <Content Include="Imagenes\M_Avatar_256.png" />
+    <Content Include="Imagenes\M_Avatar_32.png" />
+    <Content Include="Imagenes\M_Avatar_48.png" />
+    <Content Include="Imagenes\F_Avatar_128.png" />
+    <Content Include="Imagenes\F_Avatar_24.png" />
+    <Content Include="Imagenes\F_Avatar_256.png" />
+    <Content Include="Imagenes\F_Avatar_32.png" />
+    <Content Include="Imagenes\F_Avatar_48.png" />
     <Content Include="Imagenes\refresh_48.png" />
     <Content Include="Imagenes\reload_48.png" />
     <Content Include="Imagenes\round_48.png" />
@@ -412,7 +437,13 @@
     <Content Include="Imagenes\zoom_in_48.png" />
     <Content Include="Imagenes\zoom_out_48.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -423,78 +454,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <PublishFile Include="DevExpress.Charts.v14.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.Office.v14.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.PivotGrid.v14.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.RichEdit.v14.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraCharts.v14.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraGauges.v14.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraTreeList.v14.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

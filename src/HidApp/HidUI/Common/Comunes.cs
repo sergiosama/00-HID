@@ -75,4 +75,9 @@ namespace HidUI.Common
     
   }
 
+  public interface ILoginService
+  {
+    void Show();
+  }
+
 }

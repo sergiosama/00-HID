@@ -12,13 +12,23 @@ namespace Infraestructura
   /// </summary>
   public class Sesion
   {
+    public Sesion()
+    {
+      LastLogin = DateTime.Now;
+    }
+
     //  TODO quitar Usuario del grafo de update en E-F ya que no se modifica mas
+    //  Pero ojo cuando el usuario quiera cambiar su perfil porque en ese caso es necesario volver a meterlo en el grafo
     public Usuario Usuario { get; set; }
 
-    //  TODO cambiar por una estructura que retorne foto, last login, etc...para mostrar en una barra de estado
-    public string FullName {
+//    //  TODO cambiar por una estructura que retorne foto, last login, etc...para mostrar en una barra de estado
+//    Eliminado 16/09/14 --> obtengo los datos desde el control UserinfoView
+    public string FullName 
+    {
       get { return string.Format("{0} {1}", Usuario.Recurso.Nombre, Usuario.Recurso.Apellido); }
     }
+
+    public DateTime LastLogin { get; private set; }
 
     /// <summary>
     /// Obtiene una lista de posibles mensajes para el usuario

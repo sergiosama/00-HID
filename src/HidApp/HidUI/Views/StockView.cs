@@ -1,4 +1,5 @@
-﻿using DevExpress.Mvvm.POCO;
+﻿using System;
+using DevExpress.Mvvm.POCO;
 using DevExpress.XtraEditors;
 using HidUI.Common;
 using HidUI.ViewModel;
@@ -13,13 +14,31 @@ namespace HidUI.Views
   {
     private readonly StockViewModel _viewModel;
 
-    public StockView()
+    public static void RegisterViews()
     {
-      InitializeComponent();
-      _viewModel = ViewModelSource.Create(() => new StockViewModel(new Localizador()));
+      ViewManager.Current.AddView(ViewType.StockInsumos, ViewType.Stock, null);
+      ViewManager.Current.AddView(ViewType.StockAlquilables, ViewType.Stock, null);
+      ViewManager.Current.AddView(ViewType.StockReportes, ViewType.Stock, null);
     }
 
-#region Command Binding
+    //  public static 
+    public StockView(IViewLocator locator)
+    {
+      InitializeComponent();
+      //  _viewModel = ViewModelSource.Create(() => new StockViewModel(new Localizador()));
+      _viewModel = ViewModelSource.Create(() => new StockViewModel(locator));
+    }
+
+    protected override void OnLoad(EventArgs e)
+    {
+      base.OnLoad(e);
+
+      //  TODO cambiar o arregar porque cuando reingreso con otro user no llama de nuevo a OnLoad!!
+      _viewModel.SetDefaultWorkView();
+    }
+
+
+    #region Command Binding
 
     //  Tener en cuenta que por ahora tenemos todos los view models accesibles, luego deberiamos bindear solo los necesarios!!
 
@@ -38,7 +57,8 @@ namespace HidUI.Views
     {
       //  ojo: guardar donde estaba posicionado...
       //
-      ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
+      //  ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
+      ribbon.SelectedPage = ribStock.Pages["ALQUILABLES"];
     }
   }
 }

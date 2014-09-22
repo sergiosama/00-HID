@@ -32,5 +32,10 @@ namespace Infraestructura
 
     //  Propiedades publicas DE LA INSTANCIA
     public Sesion Sesion { get; set; }
+
+    public void InvalidateSesion()
+    {
+      this.Sesion = null;
+    }
   }
 }

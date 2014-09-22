@@ -36,6 +36,7 @@ namespace Servicios
 
       HIDContext ctx = DB.Context;
 
+      //  TODO incorporar usuario habilitado y no bloqueado!!
       Usuario usr = ctx.Usuarios.FirstOrDefault(x => x.Login == user);
 
       if (usr != null)
@@ -51,23 +52,39 @@ namespace Servicios
           //  all right!!
           ses = new Sesion {Usuario = usr};
 
+          usr.LastLogin = DateTime.Now;
+          ctx.SaveChanges();
+
           //  Auditar ingreso exitoso
-          Audit(InfoType.Ingreso, string.Format("{0} --> ingreso correcto al sistema", user));
+          Audit(InfoType.Ingreso, "UserLogin", string.Format("{0} --> ingreso correcto al sistema", user));
         }
         else
         {
           //  Auditar pass incorrecta
-          Audit(InfoType.Acceso, string.Format("{0} --> intento de acceso denegado por contraseña incorrecta", user));
+          Audit(InfoType.Acceso, "UserLogin", string.Format("{0} --> intento de acceso denegado por contraseña incorrecta", user));
           throw new HidAuthException("Las credenciales proporcionadas no son válidas. Intente nuevamente");
         }
       }
       else
       {
         //  Auditar? info nombre user
-        Audit(InfoType.Acceso, string.Format("{0} --> intento de acceso denegado por usuario inexistente", user));
+        Audit(InfoType.Acceso, "UserLogin", string.Format("{0} --> intento de acceso denegado por usuario inexistente", user));
         throw new HidAuthException("Las credenciales proporcionadas no son válidas. Intente nuevamente");   
       }
       return ses;
+    }
+
+    /// <summary>
+    /// Realiza el logout del usuario actual (obtenido desde la Sesion)
+    /// Elimina la sesion y audita
+    /// Podria ajustar la hora de logout en la DB...por ahora no
+    /// </summary>
+    public void LogoutUser()
+    {
+      Usuario current = Contexto.Current.Sesion.Usuario;
+
+      Audit(InfoType.Ingreso, "UserLogout", string.Format("{0} --> usuario desconectado. Conectado desde {1}", current.Login, current.LastLogin));
+      Contexto.Current.InvalidateSesion();
     }
 
     /// <summary>
@@ -91,13 +108,13 @@ namespace Servicios
       return result;
     }
 
-    private void Audit(InfoType tipo, string detalle)
+    private void Audit(InfoType tipo, string subPath, string detalle)
     {
       //  TODO eliminar la dependencia implementando un servicio de registro singleton o una inversion de dependencia con interface
       AuditServices audit = new AuditServices();
       AuditInfo ai = new AuditInfo() {Detalles = detalle, Type = tipo};
 
-      ai.Source = @"SecurityServices\LoginUSer";    //  NOOOO!!! esto tiene que estar en la llamada
+      ai.Source = string.Format("SecurityServices\\{0}", subPath); 
       audit.SaveAuditInfo(ai);
     }
   }
