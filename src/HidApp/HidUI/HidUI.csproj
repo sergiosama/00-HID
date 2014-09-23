@@ -119,7 +119,6 @@
     <Compile Include="Views\UserInfoView.Designer.cs">
       <DependentUpon>UserInfoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ViewManager.cs" />
     <Compile Include="Views\ViewServices.cs" />
     <Compile Include="winMain.cs">
       <SubType>Form</SubType>
