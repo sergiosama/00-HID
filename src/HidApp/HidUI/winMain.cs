@@ -21,7 +21,7 @@ namespace HidUI
       Helpers.MainForm = this;
       //
       //  Inicializa las vistas
-      ViewManager.Current.AddView(ViewType.Stock, null, StockView.RegisterViews);
+      //ViewManager.Current.AddView(ViewType.Stock, null, StockView.RegisterViews);
 
       InitializeComponent();
 

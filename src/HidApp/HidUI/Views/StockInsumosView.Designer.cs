@@ -28,13 +28,19 @@
     /// </summary>
     private void InitializeComponent()
     {
-            DevExpress.XtraPrinting.BarCode.EAN128Generator eaN128Generator1 = new DevExpress.XtraPrinting.BarCode.EAN128Generator();
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraPrinting.BarCode.EAN128Generator eaN128Generator1 = new DevExpress.XtraPrinting.BarCode.EAN128Generator();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tileControl1 = new DevExpress.XtraEditors.TileControl();
+            this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
+            this.tileItem1 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem2 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
+            this.grdArticulos = new DevExpress.XtraGrid.GridControl();
+            this.grdViewArticulos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cbIdRecurso = new DevExpress.XtraEditors.ComboBoxEdit();
             this.imgArticulo = new DevExpress.XtraEditors.PictureEdit();
             this.teCodigoBarra = new DevExpress.XtraEditors.TextEdit();
@@ -62,16 +68,12 @@
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem1 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem2 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
+            this.bds = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIdRecurso.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgArticulo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCodigoBarra.Properties)).BeginInit();
@@ -99,13 +101,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
             this.layoutControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.layoutControl1.Controls.Add(this.tileControl1);
-            this.layoutControl1.Controls.Add(this.gridControl1);
+            this.layoutControl1.Controls.Add(this.grdArticulos);
             this.layoutControl1.Controls.Add(this.cbIdRecurso);
             this.layoutControl1.Controls.Add(this.imgArticulo);
             this.layoutControl1.Controls.Add(this.teCodigoBarra);
@@ -128,21 +131,64 @@
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // gridControl1
+            // tileControl1
             // 
-            this.gridControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.gridControl1.Location = new System.Drawing.Point(12, 277);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(651, 172);
-            this.gridControl1.TabIndex = 20;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.tileControl1.DragSize = new System.Drawing.Size(0, 0);
+            this.tileControl1.Groups.Add(this.tileGroup1);
+            this.tileControl1.Location = new System.Drawing.Point(12, 203);
+            this.tileControl1.MaxId = 3;
+            this.tileControl1.Name = "tileControl1";
+            this.tileControl1.Size = new System.Drawing.Size(651, 70);
+            this.tileControl1.TabIndex = 21;
+            this.tileControl1.Text = "tileControl1";
             // 
-            // gridView1
+            // tileGroup1
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.tileGroup1.Items.Add(this.tileItem1);
+            this.tileGroup1.Items.Add(this.tileItem2);
+            this.tileGroup1.Items.Add(this.tileItem3);
+            this.tileGroup1.Name = "tileGroup1";
+            this.tileGroup1.Text = "tileGroup1";
+            // 
+            // tileItem1
+            // 
+            tileItemElement1.Text = "tileItem1";
+            this.tileItem1.Elements.Add(tileItemElement1);
+            this.tileItem1.Id = 0;
+            this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileItem1.Name = "tileItem1";
+            // 
+            // tileItem2
+            // 
+            tileItemElement2.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement2);
+            this.tileItem2.Id = 1;
+            this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileItem2.Name = "tileItem2";
+            // 
+            // tileItem3
+            // 
+            tileItemElement3.Text = "tileItem3";
+            this.tileItem3.Elements.Add(tileItemElement3);
+            this.tileItem3.Id = 2;
+            this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.tileItem3.Name = "tileItem3";
+            // 
+            // grdArticulos
+            // 
+            this.grdArticulos.Cursor = System.Windows.Forms.Cursors.Default;
+            this.grdArticulos.Location = new System.Drawing.Point(12, 277);
+            this.grdArticulos.MainView = this.grdViewArticulos;
+            this.grdArticulos.Name = "grdArticulos";
+            this.grdArticulos.Size = new System.Drawing.Size(651, 172);
+            this.grdArticulos.TabIndex = 20;
+            this.grdArticulos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grdViewArticulos});
+            // 
+            // grdViewArticulos
+            // 
+            this.grdViewArticulos.GridControl = this.grdArticulos;
+            this.grdViewArticulos.Name = "grdViewArticulos";
             // 
             // cbIdRecurso
             // 
@@ -183,7 +229,7 @@
             this.tePrecioAlquiler.Name = "tePrecioAlquiler";
             this.tePrecioAlquiler.Properties.Mask.EditMask = "f";
             this.tePrecioAlquiler.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tePrecioAlquiler.Size = new System.Drawing.Size(72, 24);
+            this.tePrecioAlquiler.Size = new System.Drawing.Size(72, 20);
             this.tePrecioAlquiler.StyleController = this.layoutControl1;
             this.tePrecioAlquiler.TabIndex = 7;
             // 
@@ -204,7 +250,7 @@
             this.tePrecioPublico.Name = "tePrecioPublico";
             this.tePrecioPublico.Properties.Mask.EditMask = "f";
             this.tePrecioPublico.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tePrecioPublico.Size = new System.Drawing.Size(72, 24);
+            this.tePrecioPublico.Size = new System.Drawing.Size(72, 20);
             this.tePrecioPublico.StyleController = this.layoutControl1;
             this.tePrecioPublico.TabIndex = 6;
             // 
@@ -215,7 +261,7 @@
             this.tePrecioCosto.Name = "tePrecioCosto";
             this.tePrecioCosto.Properties.Mask.EditMask = "f";
             this.tePrecioCosto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.tePrecioCosto.Size = new System.Drawing.Size(50, 24);
+            this.tePrecioCosto.Size = new System.Drawing.Size(50, 20);
             this.tePrecioCosto.StyleController = this.layoutControl1;
             this.tePrecioCosto.TabIndex = 5;
             // 
@@ -455,7 +501,7 @@
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.gridControl1;
+            this.layoutControlItem11.Control = this.grdArticulos;
             this.layoutControlItem11.CustomizationFormText = "layoutControlItem11";
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 265);
             this.layoutControlItem11.Name = "layoutControlItem11";
@@ -464,17 +510,6 @@
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextToControlDistance = 0;
             this.layoutControlItem11.TextVisible = false;
-            // 
-            // tileControl1
-            // 
-            this.tileControl1.DragSize = new System.Drawing.Size(0, 0);
-            this.tileControl1.Groups.Add(this.tileGroup1);
-            this.tileControl1.Location = new System.Drawing.Point(12, 203);
-            this.tileControl1.MaxId = 3;
-            this.tileControl1.Name = "tileControl1";
-            this.tileControl1.Size = new System.Drawing.Size(651, 70);
-            this.tileControl1.TabIndex = 21;
-            this.tileControl1.Text = "tileControl1";
             // 
             // layoutControlItem13
             // 
@@ -488,38 +523,6 @@
             this.layoutControlItem13.TextToControlDistance = 0;
             this.layoutControlItem13.TextVisible = false;
             // 
-            // tileGroup1
-            // 
-            this.tileGroup1.Items.Add(this.tileItem1);
-            this.tileGroup1.Items.Add(this.tileItem2);
-            this.tileGroup1.Items.Add(this.tileItem3);
-            this.tileGroup1.Name = "tileGroup1";
-            this.tileGroup1.Text = "tileGroup1";
-            // 
-            // tileItem1
-            // 
-            tileItemElement1.Text = "tileItem1";
-            this.tileItem1.Elements.Add(tileItemElement1);
-            this.tileItem1.Id = 0;
-            this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem1.Name = "tileItem1";
-            // 
-            // tileItem2
-            // 
-            tileItemElement2.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement2);
-            this.tileItem2.Id = 1;
-            this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem2.Name = "tileItem2";
-            // 
-            // tileItem3
-            // 
-            tileItemElement3.Text = "tileItem3";
-            this.tileItem3.Elements.Add(tileItemElement3);
-            this.tileItem3.Id = 2;
-            this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem3.Name = "tileItem3";
-            // 
             // StockInsumosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,8 +532,8 @@
             this.Size = new System.Drawing.Size(675, 461);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdViewArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbIdRecurso.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgArticulo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teCodigoBarra.Properties)).EndInit();
@@ -558,6 +561,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bds)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -591,8 +595,8 @@
     private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
     private DevExpress.XtraEditors.ComboBoxEdit cbIdRecurso;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-    private DevExpress.XtraGrid.GridControl gridControl1;
-    private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+    private DevExpress.XtraGrid.GridControl grdArticulos;
+    private DevExpress.XtraGrid.Views.Grid.GridView grdViewArticulos;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
     private DevExpress.XtraEditors.TileControl tileControl1;
     private DevExpress.XtraEditors.TileGroup tileGroup1;
@@ -600,6 +604,7 @@
     private DevExpress.XtraEditors.TileItem tileItem2;
     private DevExpress.XtraEditors.TileItem tileItem3;
     private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+    private System.Windows.Forms.BindingSource bds;
 
 
   }

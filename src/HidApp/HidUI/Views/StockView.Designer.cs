@@ -49,14 +49,14 @@
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown();
             this.ribStock = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiNuevoInsumo = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiListarInsumos = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribStock)).BeginInit();
             this.SuspendLayout();
@@ -176,7 +176,7 @@
             this.ribStock.ExpandCollapseItem.Id = 0;
             this.ribStock.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribStock.ExpandCollapseItem,
-            this.barButtonItem1,
+            this.bbiNuevoInsumo,
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem4,
@@ -186,9 +186,9 @@
             this.ribbonGalleryBarItem1,
             this.barButtonItem8,
             this.barButtonItem9,
-            this.barButtonItem10});
+            this.bbiListarInsumos});
             this.ribStock.Location = new System.Drawing.Point(0, 0);
-            this.ribStock.MaxItemId = 13;
+            this.ribStock.MaxItemId = 14;
             this.ribStock.Name = "ribStock";
             this.ribStock.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -196,13 +196,13 @@
             this.ribbonPage4});
             this.ribStock.Size = new System.Drawing.Size(765, 142);
             // 
-            // barButtonItem1
+            // bbiNuevoInsumo
             // 
-            this.barButtonItem1.Caption = "Nuevo";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.bbiNuevoInsumo.Caption = "Nuevo";
+            this.bbiNuevoInsumo.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiNuevoInsumo.Glyph")));
+            this.bbiNuevoInsumo.Id = 1;
+            this.bbiNuevoInsumo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiNuevoInsumo.LargeGlyph")));
+            this.bbiNuevoInsumo.Name = "bbiNuevoInsumo";
             // 
             // barButtonItem7
             // 
@@ -224,6 +224,14 @@
             this.barButtonItem9.LargeGlyph = global::HidUI.Properties.Resources.realvista_accounting_barcode_48;
             this.barButtonItem9.Name = "barButtonItem9";
             // 
+            // bbiListarInsumos
+            // 
+            this.bbiListarInsumos.Caption = "Listar";
+            this.bbiListarInsumos.Glyph = ((System.Drawing.Image)(resources.GetObject("bbiListarInsumos.Glyph")));
+            this.bbiListarInsumos.Id = 12;
+            this.bbiListarInsumos.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbiListarInsumos.LargeGlyph")));
+            this.bbiListarInsumos.Name = "bbiListarInsumos";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -233,9 +241,10 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiNuevoInsumo);
+            this.ribbonPageGroup1.ItemLinks.Add(this.bbiListarInsumos);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Acciones";
             // 
             // ribbonPageGroup5
             // 
@@ -244,12 +253,6 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Operaciones Batch";
-            // 
-            // barButtonItem10
-            // 
-            this.barButtonItem10.Caption = "barButtonItem10";
-            this.barButtonItem10.Id = 12;
-            this.barButtonItem10.Name = "barButtonItem10";
             // 
             // StockView
             // 
@@ -274,7 +277,7 @@
     private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-    private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+    private DevExpress.XtraBars.BarButtonItem bbiNuevoInsumo;
     private DevExpress.XtraBars.Ribbon.RibbonControl ribStock;
     private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     private DevExpress.XtraBars.BarButtonItem barButtonItem4;
@@ -287,7 +290,7 @@
     private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     private DevExpress.XtraBars.Ribbon.GalleryDropDown galleryDropDown1;
     private DevExpress.XtraBars.BarButtonItem barButtonItem9;
-    private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+    private DevExpress.XtraBars.BarButtonItem bbiListarInsumos;
 
   }
 }
