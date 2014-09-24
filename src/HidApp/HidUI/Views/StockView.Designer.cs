@@ -53,13 +53,13 @@
       this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
       this.ribStock = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
       this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            //this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
       this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-      this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
+      
       ((System.ComponentModel.ISupportInitialize)(this.ribStock)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
+      //((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribStock)).BeginInit();
       this.SuspendLayout();
       // 
@@ -165,7 +165,7 @@
       this.ribbonGalleryBarItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
             galleryItemGroup1});
       this.ribbonGalleryBarItem1.Gallery.ImageSize = new System.Drawing.Size(32, 32);
-      this.ribbonGalleryBarItem1.GalleryDropDown = this.galleryDropDown1;
+      //this.ribbonGalleryBarItem1.GalleryDropDown = this.galleryDropDown1;
       this.ribbonGalleryBarItem1.Id = 8;
       this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
       // 
@@ -229,38 +229,18 @@
             this.ribbonPage4});
       this.ribStock.Size = new System.Drawing.Size(765, 142);
       // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Nuevo";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
       // barButtonItem7
       // 
       this.barButtonItem7.Caption = "barButtonItem7";
       this.barButtonItem7.Id = 7;
       this.barButtonItem7.Name = "barButtonItem7";
       // 
-            // barButtonItem8
-            // 
-            this.barButtonItem8.Caption = "Comprar";
-            this.barButtonItem8.Id = 9;
-            this.barButtonItem8.LargeGlyph = global::HidUI.Properties.Resources.realvista_accounting_sign_dollar_32;
-            this.barButtonItem8.Name = "barButtonItem8";
-            // 
       // barButtonItem9
       // 
       this.barButtonItem9.Caption = "Etiquetas";
       this.barButtonItem9.Id = 10;
       this.barButtonItem9.LargeGlyph = global::HidUI.Properties.Resources.realvista_accounting_barcode_48;
       this.barButtonItem9.Name = "barButtonItem9";
-      // 
-      // galleryDropDown1
-      // 
-      this.galleryDropDown1.Name = "galleryDropDown1";
-      this.galleryDropDown1.Ribbon = this.ribStock;
       // 
       // StockView
       // 
@@ -269,7 +249,7 @@
       this.Controls.Add(this.ribStock);
       this.Name = "StockView";
       this.Size = new System.Drawing.Size(765, 593);
-            ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.ribStock)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
@@ -278,25 +258,28 @@
 
     #endregion
 
-    private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-    private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-    private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-    private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-    private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     private DevExpress.XtraBars.Ribbon.RibbonControl ribStock;
+
+    private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+    private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+    private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+
+    private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
+
+    private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+    private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     private DevExpress.XtraBars.BarButtonItem barButtonItem5;
     private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-    private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
-    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-    private DevExpress.XtraBars.BarButtonItem barButtonItem8;
     private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-    private DevExpress.XtraBars.Ribbon.GalleryDropDown galleryDropDown1;
+    private DevExpress.XtraBars.BarButtonItem barButtonItem8;
     private DevExpress.XtraBars.BarButtonItem barButtonItem9;
     private DevExpress.XtraBars.BarButtonItem barButtonItem10;
 

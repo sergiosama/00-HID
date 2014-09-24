@@ -113,12 +113,19 @@
     <Compile Include="Views\ETPopupControlContainer.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Views\PacientesView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\PacientesView.Designer.cs">
+      <DependentUpon>PacientesView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserInfoView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\UserInfoView.Designer.cs">
       <DependentUpon>UserInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewManager.cs" />
     <Compile Include="Views\ViewServices.cs" />
     <Compile Include="winMain.cs">
       <SubType>Form</SubType>
@@ -191,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginRecuperarContraseña.resx">
       <DependentUpon>LoginRecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PacientesView.resx">
+      <DependentUpon>PacientesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserInfoView.resx">
       <DependentUpon>UserInfoView.cs</DependentUpon>
