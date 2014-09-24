@@ -180,8 +180,8 @@ namespace HidUI.ViewModel
     /// <summary>
     /// [[PSEUDO COMMAND]]
     /// 
-    ///  Aca iria el comando que prueva pasar a una vista en base a una busqueda
-    /// Como la vista necesita otra primero (parente) carga la parent y a continuacion la final
+    /// Aca iria el comando que prueba pasar a una vista en base a una busqueda
+    /// Como la vista necesita otra primero (parent) carga la parent y a continuacion la final
     /// 
     /// </summary>
     public void DummyNavigate()

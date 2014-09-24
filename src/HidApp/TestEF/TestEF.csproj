@@ -62,13 +62,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Entidades\Entidades.csproj">
-      <Project>{5fbedfd9-0064-4558-b821-ccde6bfec870}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{947eb898-5c1a-4a8d-a9b9-3e0cdfdb9722}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{5fbedfd9-0064-4558-b821-ccde6bfec870}</Project>
+      <Name>Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\Servicios\Servicios.csproj">
       <Project>{67b3698a-c074-472d-ba3e-b71160f0fa69}</Project>
