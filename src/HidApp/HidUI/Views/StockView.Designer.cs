@@ -48,17 +48,17 @@
       this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
       this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
       this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
-      this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
+      this.ribStock = new DevExpress.XtraBars.Ribbon.RibbonControl();
+      this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+      this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
       this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+      this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
       this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-      this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-      this.ribStock = new DevExpress.XtraBars.Ribbon.RibbonControl();
-      this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-      this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-      this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
-      ((System.ComponentModel.ISupportInitialize)(this.ribStock)).BeginInit();
+      this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ribStock)).BeginInit();
       this.SuspendLayout();
       // 
       // ribbonPage4
@@ -80,6 +80,7 @@
             this.ribbonPageGroup3,
             this.ribbonPageGroup5});
       this.ribbonPage2.Name = "ribbonPage2";
+      this.ribbonPage2.Tag = "View";
       this.ribbonPage2.Text = "ALQUILABLES";
       // 
       // ribbonPageGroup2
@@ -166,40 +167,10 @@
       this.ribbonGalleryBarItem1.Id = 8;
       this.ribbonGalleryBarItem1.Name = "ribbonGalleryBarItem1";
       // 
-      // ribbonPageGroup5
+      // galleryDropDown1
       // 
-      this.ribbonPageGroup5.AllowTextClipping = false;
-      this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem8);
-      this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem9);
-      this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-      this.ribbonPageGroup5.Text = "Operaciones Batch";
-      // 
-      // barButtonItem8
-      // 
-      this.barButtonItem8.Caption = "Comprar";
-      this.barButtonItem8.Id = 9;
-      this.barButtonItem8.LargeGlyph = global::HidUI.Properties.Resources.realvista_accounting_sign_dollar_32;
-      this.barButtonItem8.Name = "barButtonItem8";
-      // 
-      // ribbonPage1
-      // 
-      this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-      this.ribbonPage1.Name = "ribbonPage1";
-      this.ribbonPage1.Text = "INSUMOS";
-      // 
-      // ribbonPageGroup1
-      // 
-      this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-      this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-      // 
-      // barButtonItem1
-      // 
-      this.barButtonItem1.Caption = "Nuevo";
-      this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-      this.barButtonItem1.Id = 1;
-      this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
-      this.barButtonItem1.Name = "barButtonItem1";
+      this.galleryDropDown1.Name = "galleryDropDown1";
+      this.galleryDropDown1.Ribbon = this.ribStock;
       // 
       // ribStock
       // 
@@ -217,7 +188,7 @@
             this.barButtonItem8,
             this.barButtonItem9});
       this.ribStock.Location = new System.Drawing.Point(0, 0);
-      this.ribStock.MaxItemId = 11;
+      this.ribStock.MaxItemId = 12;
       this.ribStock.Name = "ribStock";
       this.ribStock.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -225,11 +196,26 @@
             this.ribbonPage4});
       this.ribStock.Size = new System.Drawing.Size(765, 142);
       // 
+      // barButtonItem1
+      // 
+      this.barButtonItem1.Caption = "Nuevo";
+      this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
+      this.barButtonItem1.Id = 1;
+      this.barButtonItem1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.LargeGlyph")));
+      this.barButtonItem1.Name = "barButtonItem1";
+      // 
       // barButtonItem7
       // 
       this.barButtonItem7.Caption = "barButtonItem7";
       this.barButtonItem7.Id = 7;
       this.barButtonItem7.Name = "barButtonItem7";
+      // 
+      // barButtonItem8
+      // 
+      this.barButtonItem8.Caption = "Comprar";
+      this.barButtonItem8.Id = 9;
+      this.barButtonItem8.LargeGlyph = global::HidUI.Properties.Resources.realvista_accounting_sign_dollar_32;
+      this.barButtonItem8.Name = "barButtonItem8";
       // 
       // barButtonItem9
       // 
@@ -238,10 +224,25 @@
       this.barButtonItem9.LargeGlyph = global::HidUI.Properties.Resources.realvista_accounting_barcode_48;
       this.barButtonItem9.Name = "barButtonItem9";
       // 
-      // galleryDropDown1
+      // ribbonPage1
       // 
-      this.galleryDropDown1.Name = "galleryDropDown1";
-      this.galleryDropDown1.Ribbon = this.ribStock;
+      this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+      this.ribbonPage1.Name = "ribbonPage1";
+      this.ribbonPage1.Text = "INSUMOS";
+      // 
+      // ribbonPageGroup1
+      // 
+      this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+      this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+      // 
+      // ribbonPageGroup5
+      // 
+      this.ribbonPageGroup5.AllowTextClipping = false;
+      this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem8);
+      this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem9);
+      this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+      this.ribbonPageGroup5.Text = "Operaciones Batch";
       // 
       // StockView
       // 
@@ -250,8 +251,8 @@
       this.Controls.Add(this.ribStock);
       this.Name = "StockView";
       this.Size = new System.Drawing.Size(765, 593);
-      ((System.ComponentModel.ISupportInitialize)(this.ribStock)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.ribStock)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

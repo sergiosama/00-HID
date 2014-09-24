@@ -2,49 +2,44 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\ViewModel\MainViewModel.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\viewmodel\mainviewmodel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\infraestructura\contexto.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\servicios\securityservices.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\data\hidcontext.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\entidades\entrecurso.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\infraestructura\sesion.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockInsumosView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockInsumosView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockInsumosView.Designer.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockAlquilablesView.cs</string>
       <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockAlquilablesView.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\ViewModel\StockViewModel.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\viewmodel\stockviewmodel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockView.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockView.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\stockview.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\stockview.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\ViewManager.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\localizador.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\Localizador.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\winmain.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\winmain.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\winMain.Designer.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\winMain.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\winMain.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Common\Helpers.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\ViewServices.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StartView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StartView.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Common\Comunes.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\ViewModel\StartViewModel.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Program.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

@@ -72,7 +72,7 @@
       this.gridAlquilables.MainView = this.gviewAlquilables;
       this.gridAlquilables.Margin = new System.Windows.Forms.Padding(25);
       this.gridAlquilables.Name = "gridAlquilables";
-      this.gridAlquilables.Size = new System.Drawing.Size(550, 358);
+      this.gridAlquilables.Size = new System.Drawing.Size(644, 358);
       this.gridAlquilables.TabIndex = 6;
       this.gridAlquilables.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gviewAlquilables});
@@ -94,7 +94,7 @@
       this.Controls.Add(this.simpleButton1);
       this.Controls.Add(this.labelControl1);
       this.Name = "StockAlquilablesView";
-      this.Size = new System.Drawing.Size(743, 457);
+      this.Size = new System.Drawing.Size(865, 457);
       ((System.ComponentModel.ISupportInitialize)(this.gridAlquilables)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.gviewAlquilables)).EndInit();
       this.ResumeLayout(false);

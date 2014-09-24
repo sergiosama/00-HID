@@ -34,6 +34,7 @@ namespace HidUI.Views
       base.OnLoad(e);
 
       //  TODO cambiar o arregar porque cuando reingreso con otro user no llama de nuevo a OnLoad!!
+      //  TODO y eso no seria nada, el problema es que tambien puede pasar con el mismo user
       _viewModel.SetDefaultWorkView();
     }
 
@@ -44,7 +45,7 @@ namespace HidUI.Views
 
     //  Eventos de cambio de pagina: asociarlos al view model para que cambie tambien
 
-#endregion
+    #endregion
 
 
 
@@ -59,6 +60,22 @@ namespace HidUI.Views
       //
       //  ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
       ribbon.SelectedPage = ribStock.Pages["ALQUILABLES"];
+    }
+
+    /// <summary>
+    /// Antes de abandonar la vista navegable, tengo que guardar el estado de donde estaba
+    /// </summary>
+    public void SaveState()
+    {
+      
+    }
+
+    /// <summary>
+    /// Cuando la vista navegable vuelve a estar activa
+    /// </summary>
+    public void RestoreState()
+    {
+      
     }
   }
 }
