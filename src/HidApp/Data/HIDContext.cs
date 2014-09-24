@@ -27,6 +27,11 @@ namespace Data
     public DbSet<enTOrden> Orden { get; set; }
 
 
+    public DbSet<enTPaciente> Pacientes { get; set; }
+
+    public DbSet<enTCtaCtePaciente> CtaCtePaciente { get; set; }
+
+
     public HIDContext()
       : base("Server=localhost;Database=HID;Trusted_Connection=true;")
     {
@@ -47,11 +52,32 @@ namespace Data
       modelBuilder.Configurations.Add(new ConfiguracionCategoriaRecurso());
       modelBuilder.Configurations.Add(new ConfiguracionTipoIVA());
       modelBuilder.Configurations.Add(new ConfiguracionArticulos());
+      modelBuilder.Configurations.Add(new ConfiguracionPacientes());
+      modelBuilder.Configurations.Add(new ConfiguracionCtaCtePaciente());
+
     }
   }
 
   #region Clases para configurar mapeo de E-F
 
+  public class ConfiguracionCtaCtePaciente : EntityTypeConfiguration<enTCtaCtePaciente>
+  {
+      public ConfiguracionCtaCtePaciente()
+      {
+          ToTable("TCtaCtePaciente");
+          HasKey(et => et.NroCuenta);
+
+      }
+  }
+  public class ConfiguracionPacientes : EntityTypeConfiguration<enTPaciente>
+  {
+      public ConfiguracionPacientes()
+      {
+          ToTable("TPacientes");
+          HasKey(et => et.IdPacientes);
+      }
+  
+  }
   public class ConfiguracionArticulos : EntityTypeConfiguration<enTArticulo>
   {
       public ConfiguracionArticulos()
