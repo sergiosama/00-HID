@@ -39,9 +39,11 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v14.1" />
     <Reference Include="DevExpress.Data.v14.1" />
+    <Reference Include="DevExpress.Mvvm.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v14.1" />
     <Reference Include="DevExpress.Sparkline.v14.1.Core" />
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v14.1" />
     <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -67,16 +69,70 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commons.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNavegacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNavegacion.Designer.cs">
+      <DependentUpon>frmNavegacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AboutViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\Vista1ViewModel.cs" />
+    <Compile Include="ViewModel\NavegableViewModel.cs" />
+    <Compile Include="ViewModel\Pagina1WorkViewModel.cs" />
+    <Compile Include="ViewModel\Pagina2WorkViewModel.cs" />
+    <Compile Include="ViewModel\StartViewModel.cs" />
+    <Compile Include="View\AboutView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\AboutView.Designer.cs">
+      <DependentUpon>AboutView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Localizador.cs" />
+    <Compile Include="View\Vista1View.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Vista1View.designer.cs">
+      <DependentUpon>Vista1View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NavegableView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\NavegableView.designer.cs">
+      <DependentUpon>NavegableView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pagina1WorkView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Pagina1WorkView.Designer.cs">
+      <DependentUpon>Pagina1WorkView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pagina2WorkView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Pagina2WorkView.Designer.cs">
+      <DependentUpon>Pagina2WorkView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StartView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\StartView.Designer.cs">
+      <DependentUpon>StartView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNavegacion.resx">
+      <DependentUpon>frmNavegacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -89,6 +145,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\AboutView.resx">
+      <DependentUpon>AboutView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Vista1View.resx">
+      <DependentUpon>Vista1View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NavegableView.resx">
+      <DependentUpon>NavegableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pagina1WorkView.resx">
+      <DependentUpon>Pagina1WorkView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Pagina2WorkView.resx">
+      <DependentUpon>Pagina2WorkView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StartView.resx">
+      <DependentUpon>StartView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -125,6 +199,7 @@
   <ItemGroup>
     <None Include="Resources\file_broken.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
