@@ -9,34 +9,34 @@
       <string>c:\desarrollo\00-hid\src\hidapp\wintestef\frmnavegacion.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\commons.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\Commons.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>c:\desarrollo\00-hid\src\hidapp\wintestef\view\localizador.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\ViewModel\NavegableViewModel.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\viewmodel\navegableviewmodel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Common\Comunes.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\hidui\common\comunes.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Pagina1WorkView.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Pagina1WorkView.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\view\pagina1workview.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\view\pagina1workview.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Pagina2WorkView.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Pagina2WorkView.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\view\pagina2workview.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\view\pagina2workview.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\ViewModel\Pagina1WorkViewModel.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\viewmodel\pagina1workviewmodel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\ViewModel\Pagina2WorkViewModel.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\viewmodel\pagina2workviewmodel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Vista1View.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Vista1View.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\view\vista1view.cs</string>
+      <string>c:\desarrollo\00-hid\src\hidapp\wintestef\view\vista1view.cs</string>
       <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Vista1View.designer.cs</string>
     </ArrayOfString>
     <ArrayOfString>
