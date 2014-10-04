@@ -98,6 +98,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ArticulosViewModel.cs" />
+    <Compile Include="ViewModel\NavegableViewModel.cs" />
     <Compile Include="Views\LoginIngresoNormal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +119,12 @@
     </Compile>
     <Compile Include="Views\PacientesView.Designer.cs">
       <DependentUpon>PacientesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavegableView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\NavegableView.Designer.cs">
+      <DependentUpon>NavegableView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\UserInfoView.cs">
       <SubType>UserControl</SubType>
@@ -201,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PacientesView.resx">
       <DependentUpon>PacientesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\NavegableView.resx">
+      <DependentUpon>NavegableView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserInfoView.resx">
       <DependentUpon>UserInfoView.cs</DependentUpon>

@@ -60,6 +60,12 @@ namespace HidUI.Common
     object GetView(ViewType viewType);
   }
 
+  /// <summary>
+  /// Las vistas que implementen esta interface podran direccionarse hacia otra en el momento 
+  /// de cerrarse o con alguna ayuda visual
+  /// El metodo CloseView() de MainViewModel es quien finalmente cierra la vista y la reemplaza
+  /// por la vista previa
+  /// </summary>
   public interface ISupportPreviousView
   {
     ViewType PreviousView { get; set; }

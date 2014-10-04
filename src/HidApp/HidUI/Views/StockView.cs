@@ -35,7 +35,7 @@ namespace HidUI.Views
 
       //  TODO cambiar o arregar porque cuando reingreso con otro user no llama de nuevo a OnLoad!!
       //  TODO y eso no seria nada, el problema es que tambien puede pasar con el mismo user
-      _viewModel.SetDefaultWorkView();
+      _viewModel.SetDefaultView();
     }
 
 
@@ -65,7 +65,7 @@ namespace HidUI.Views
     /// <summary>
     /// Antes de abandonar la vista navegable, tengo que guardar el estado de donde estaba
     /// </summary>
-    public void SaveState()
+    public void SaveVisualState()
     {
       
     }
@@ -73,7 +73,7 @@ namespace HidUI.Views
     /// <summary>
     /// Cuando la vista navegable vuelve a estar activa
     /// </summary>
-    public void RestoreState()
+    public void RestoreVisualState()
     {
       
     }
