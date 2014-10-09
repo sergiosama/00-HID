@@ -90,12 +90,20 @@ namespace WinTestEF
       if (nuevaVista != null)
       {
         nuevaVista.Dock = DockStyle.Fill;
-        nuevaVista.Parent = mainContent;
+
+        if (nuevaVista is INavigableView)
+        { 
+          ((INavigableView)nuevaVista).SetContainer(mainContent);
+        }
+        else
+          nuevaVista.Parent = mainContent;  //  con esto evito el BringToFront()
+
         if (nuevaVista is ISupportRibbon)
         {
           ISupportRibbon rib = nuevaVista as ISupportRibbon;
 
           ribMain.MergeRibbon(rib.Ribbon);
+          rib.BindEvents(ribMain);
           rib.FocusOnPage(ribMain);
         }
         //  cambiar titulo de barra segun la vista!!

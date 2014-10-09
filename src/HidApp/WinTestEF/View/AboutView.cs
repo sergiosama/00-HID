@@ -30,6 +30,11 @@ namespace WinTestEF.View
       get { return ribAbout; }
     }
 
+    public void BindEvents(RibbonControl ribbon)
+    {
+      Debug.WriteLine("No necesita binding de eventos");
+    }
+
     /// <summary>
     /// Si la vista implementa este método, setea la pagina visible de la ribbon "principal" en una página por defecto de la ribbon 
     /// fusionada

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using DevExpress.XtraBars.Ribbon;
 
 namespace WinTestEF
@@ -22,11 +24,17 @@ namespace WinTestEF
   public interface IWorkView
   {
     void BindCommands(ISupportRibbon parent);
+    IWorkViewModel ViewModel { get; set; }
+  }
+
+  public interface IWorkViewModel
+  {
+    Expression<Action> GetActionFromName(string name);
   }
 
   public interface INavigableView
   {
-    
+    void SetContainer(Control ctrl);
   }
 
   /// <summary>
@@ -91,6 +99,12 @@ namespace WinTestEF
   public interface ISupportRibbon
   {
     RibbonControl Ribbon { get; }
+
+    /// <summary>
+    /// Permite asociar nuevos eventos de cambio de pagina a la ribbon merged
+    /// </summary>
+    void BindEvents(RibbonControl ribbon);
+
     void FocusOnPage(RibbonControl ribbon);
   }
 

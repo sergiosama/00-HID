@@ -41,6 +41,7 @@
       this.ribView = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
       this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+      this.bbnToggle = new DevExpress.XtraBars.BarButtonItem();
       ((System.ComponentModel.ISupportInitialize)(this.ribView)).BeginInit();
       this.SuspendLayout();
       // 
@@ -61,7 +62,7 @@
       this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
       this.ribbonPage2.Name = "ribbonPage2";
-      this.ribbonPage2.Tag = "View";
+      this.ribbonPage2.Tag = "Pagina_2";
       this.ribbonPage2.Text = "PAGINA 2";
       // 
       // ribbonPageGroup2
@@ -91,11 +92,13 @@
       this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
       this.ribbonPage1.Name = "ribbonPage1";
+      this.ribbonPage1.Tag = "Pagina_1";
       this.ribbonPage1.Text = "PAGINA 1";
       // 
       // ribbonPageGroup1
       // 
       this.ribbonPageGroup1.ItemLinks.Add(this.bbnPagina1);
+      this.ribbonPageGroup1.ItemLinks.Add(this.bbnToggle);
       this.ribbonPageGroup1.Name = "ribbonPageGroup1";
       // 
       // bbnPagina1
@@ -115,16 +118,16 @@
             this.bbnPagina2,
             this.barButtonItem3,
             this.barButtonItem7,
-            this.barButtonItem10});
+            this.barButtonItem10,
+            this.bbnToggle});
       this.ribView.Location = new System.Drawing.Point(0, 0);
-      this.ribView.MaxItemId = 12;
+      this.ribView.MaxItemId = 13;
       this.ribView.Name = "ribView";
       this.ribView.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage4});
       this.ribView.Size = new System.Drawing.Size(765, 142);
-      this.ribView.SelectedPageChanged += new System.EventHandler(this.Cambio_Pagina);
       // 
       // barButtonItem7
       // 
@@ -136,6 +139,14 @@
       // 
       this.barButtonItem10.Id = 11;
       this.barButtonItem10.Name = "barButtonItem10";
+      // 
+      // bbnToggle
+      // 
+      this.bbnToggle.Caption = "Toggle";
+      this.bbnToggle.Glyph = ((System.Drawing.Image)(resources.GetObject("bbnToggle.Glyph")));
+      this.bbnToggle.Id = 12;
+      this.bbnToggle.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbnToggle.LargeGlyph")));
+      this.bbnToggle.Name = "bbnToggle";
       // 
       // Vista1View
       // 
@@ -167,6 +178,7 @@
     private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     private DevExpress.XtraBars.BarButtonItem barButtonItem7;
     private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+    private DevExpress.XtraBars.BarButtonItem bbnToggle;
 
   }
 }

@@ -72,7 +72,7 @@
       // 
       // bbnPagina2
       // 
-      this.bbnPagina2.Caption = "Nuevo";
+      this.bbnPagina2.Caption = "Procesar 2";
       this.bbnPagina2.Glyph = ((System.Drawing.Image)(resources.GetObject("bbnPagina2.Glyph")));
       this.bbnPagina2.Id = 2;
       this.bbnPagina2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbnPagina2.LargeGlyph")));
@@ -100,7 +100,7 @@
       // 
       // bbnPagina1
       // 
-      this.bbnPagina1.Caption = "Nuevo";
+      this.bbnPagina1.Caption = "Procesar 1";
       this.bbnPagina1.Glyph = ((System.Drawing.Image)(resources.GetObject("bbnPagina1.Glyph")));
       this.bbnPagina1.Id = 1;
       this.bbnPagina1.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbnPagina1.LargeGlyph")));

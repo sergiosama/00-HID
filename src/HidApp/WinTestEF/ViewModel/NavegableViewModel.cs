@@ -1,4 +1,6 @@
-﻿using DevExpress.Mvvm;
+﻿using DevExpress.Mvvm.DataAnnotations;
+using DevExpress.Data.Async;
+using DevExpress.Mvvm;
 
 namespace WinTestEF.ViewModel
 {

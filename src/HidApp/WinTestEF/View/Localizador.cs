@@ -47,7 +47,14 @@ namespace WinTestEF.View
           case ViewType.Vista_1:
             result = new Vista1View(this);
             break;
-                
+
+          case ViewType.Pagina_1:
+            result = new Pagina1WorkView();
+            break;
+
+          case ViewType.Pagina_2:
+            result = new Pagina2WorkView();
+            break;
         }
         _viewsCache.Add(viewType, result);
       }

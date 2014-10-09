@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Windows.Forms;
 using DevExpress.Mvvm.POCO;
 using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using WinTestEF.ViewModel;
 
@@ -19,6 +22,8 @@ namespace WinTestEF.View
 
     private Dictionary<ViewType, IWorkView> _workViews;
 
+    private Control _parent;
+
     public static void RegisterViews()
     {
 //      ViewManager.Current.AddView(ViewType.StockInsumos, ViewType.Stock, null);
@@ -35,6 +40,13 @@ namespace WinTestEF.View
       //  _viewModel = ViewModelSource.Create(() => new StockViewModel(new Localizador()));
       _viewModel = ViewModelSource.Create(() => new Vista1ViewModel(_locator));
 
+      //  bind eventos del VM
+      _viewModel.WorkViewAdded += ViewModelOnWorkViewAdded;
+      _viewModel.WorkViewRemoved += ViewModelOnWorkViewRemoved;
+
+      //  Esto era para probar algo...
+      //  object x = ribView.Items["bbnPagina1"];
+
       CreateWorkViews();
 
       BindCommands();
@@ -45,6 +57,7 @@ namespace WinTestEF.View
       _workViews = new Dictionary<ViewType, IWorkView>();
 
       _workViews.Add(ViewType.Pagina_1, _locator.GetView(ViewType.Pagina_1) as IWorkView);
+      _workViews.Add(ViewType.Pagina_2, _locator.GetView(ViewType.Pagina_2) as IWorkView);
     }
 
     protected override void OnLoad(EventArgs e)
@@ -63,7 +76,17 @@ namespace WinTestEF.View
 
     private void BindCommands()
     {
-      //  bbnPagina1.BindCommand();
+      //  tengo que tomar cada work view y asociarles los comandos a sus respectivos viewmodels...
+      IWorkView workView;
+
+      workView = _workViews[ViewType.Pagina_1];
+
+      bbnPagina1.BindCommand(workView.ViewModel.GetActionFromName("Procesar1"), workView.ViewModel);
+      bbnToggle.BindCommand(workView.ViewModel.GetActionFromName("Toggle"), workView.ViewModel);
+
+      workView = _workViews[ViewType.Pagina_2];
+
+      bbnPagina2.BindCommand(workView.ViewModel.GetActionFromName("Procesar2"), workView.ViewModel);
     }
 
     //  Eventos de cambio de pagina: asociarlos al view model para que cambie tambien
@@ -77,12 +100,19 @@ namespace WinTestEF.View
       get { return this.ribView; }
     }
 
+
+    public void BindEvents(RibbonControl ribbon)
+    {
+      ribbon.SelectedPageChanged += Cambio_Pagina;
+    }
+
     public void FocusOnPage(DevExpress.XtraBars.Ribbon.RibbonControl ribbon)
     {
       //  ojo: guardar donde estaba posicionado...
       //
       //  ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
       ribbon.SelectedPage = ribView.Pages["PAGINA 2"];
+      //_viewModel.SetDefaultView();
     }
 
     /// <summary>
@@ -101,12 +131,51 @@ namespace WinTestEF.View
       
     }
 
+    private void ViewModelOnWorkViewRemoved(object sender, EventArgs eventArgs)
+    {
+      var oldVista = sender as Control;
+
+      oldVista.Parent = null;
+    }
+
+    /// <summary>
+    /// El ViewModel informa a la vista principal que OTRA vista fue elegida
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="eventArgs"></param>
+    private void ViewModelOnWorkViewAdded(object sender, EventArgs eventArgs)
+    {
+      var nuevaVista = sender as Control;
+
+      if (nuevaVista != null)
+      {
+        nuevaVista.Dock = DockStyle.Fill;
+        nuevaVista.Parent = _parent;
+        //  Si en la principal seteo la navegable en el control parent, tengo que hacer
+        //  si o si el BringToFront()
+        //nuevaVista.BringToFront();
+        //  cambiar titulo de barra segun la vista!!
+        //  CONECTAR A SEARCH CONTROL!!
+      }
+    }
+
     ViewType ISupportPreviousView.PreviousViewType { get; set; }
 
     private void Cambio_Pagina(object sender, EventArgs e)
     {
+      //  OJO!! Que pasa si v va a una vista que no esta dentro del navegador???
+      RibbonControl rib = sender as RibbonControl;
+
+      Debug.Write("");
       //  se produce cuando cambio de pagina en ribbon => hay que cambiar de vista de trabajo
+      string nombreVista = rib.SelectedPage.Tag as string;
+      //  chequear si el tag no corresponde, tendriamos que avisar a la vista principal
+      _viewModel.SetCurrentWorkViewType((ViewType)Enum.Parse(typeof(ViewType), nombreVista));
     }
 
+    public void SetContainer(Control ctrl)
+    {
+      _parent = ctrl;
+    }
   }
 }

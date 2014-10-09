@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Windows.Forms;
 using DevExpress.Mvvm.POCO;
+using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using WinTestEF.ViewModel;
 
@@ -41,6 +44,7 @@ namespace WinTestEF.View
 
     #region Command Binding
 
+
     //  Tener en cuenta que por ahora tenemos todos los view models accesibles, luego deberiamos bindear solo los necesarios!!
 
     //  Eventos de cambio de pagina: asociarlos al view model para que cambie tambien
@@ -52,6 +56,11 @@ namespace WinTestEF.View
     public DevExpress.XtraBars.Ribbon.RibbonControl Ribbon
     {
       get { return this.ribView; }
+    }
+
+    public void BindEvents(RibbonControl ribbon)
+    {
+      Debug.WriteLine("Bindear eventos ACA");
     }
 
     public void FocusOnPage(DevExpress.XtraBars.Ribbon.RibbonControl ribbon)
@@ -76,6 +85,11 @@ namespace WinTestEF.View
     public void RestoreVisualState()
     {
       
+    }
+
+    public void SetContainer(Control ctrl)
+    {
+      throw new NotImplementedException();
     }
   }
 }
