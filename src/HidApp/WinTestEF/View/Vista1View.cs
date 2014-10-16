@@ -163,19 +163,32 @@ namespace WinTestEF.View
 
     private void Cambio_Pagina(object sender, EventArgs e)
     {
-      //  OJO!! Que pasa si v va a una vista que no esta dentro del navegador???
+      //  OJO!! Que pasa si va a una vista que no esta dentro del navegador???
       RibbonControl rib = sender as RibbonControl;
+      ViewType vtTag;
 
-      Debug.Write("");
+      Debug.Write("Cambio de pagina merged");
       //  se produce cuando cambio de pagina en ribbon => hay que cambiar de vista de trabajo
       string nombreVista = rib.SelectedPage.Tag as string;
-      //  chequear si el tag no corresponde, tendriamos que avisar a la vista principal
-      _viewModel.SetCurrentWorkViewType((ViewType)Enum.Parse(typeof(ViewType), nombreVista));
+
+      //  chequear si el tag no corresponde, tendriamos que avisar a la vista principal (no es necesario porque el evento tambien lo recibe 
+      //  la vista principal)
+      if (Enum.TryParse(nombreVista, out vtTag))
+        _viewModel.SetCurrentWorkViewType(vtTag);
+
+      //  _viewModel.SetCurrentWorkViewType((ViewType)Enum.Parse(typeof(ViewType), nombreVista));
     }
 
     public void SetContainer(Control ctrl)
     {
       _parent = ctrl;
+    }
+
+    public void UnsetContainer()
+    {
+      _parent = null;
+      _viewModel.SelectedWorkViewType = ViewType.Ninguno;
+      ;
     }
   }
 }

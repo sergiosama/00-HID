@@ -34,7 +34,16 @@ namespace WinTestEF
 
   public interface INavigableView
   {
+    /// <summary>
+    /// Permite asociar un control de la vista principal para que sirva de content control en todas las work-views de la vista navegable
+    /// </summary>
+    /// <param name="ctrl"></param>
     void SetContainer(Control ctrl);
+
+    /// <summary>
+    /// Avisa que el control que se esta usando de content ya no estara mas disponible para la vista navegable
+    /// </summary>
+    void UnsetContainer();
   }
 
   /// <summary>

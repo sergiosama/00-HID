@@ -63,6 +63,7 @@
       this.ribMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
       this.ribMain.Size = new System.Drawing.Size(1028, 144);
       this.ribMain.StatusBar = this.ribbonStatusBar;
+      this.ribMain.SelectedPageChanged += new System.EventHandler(this.CambioPagina_Principal);
       // 
       // bbnVista1
       // 
@@ -85,6 +86,7 @@
       this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
       this.ribbonPage1.Name = "ribbonPage1";
+      this.ribbonPage1.Tag = "START";
       this.ribbonPage1.Text = "INICIO";
       // 
       // ribbonPageGroup1
@@ -98,6 +100,7 @@
       this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
       this.ribbonPage2.Name = "ribbonPage2";
+      this.ribbonPage2.Tag = "START";
       this.ribbonPage2.Text = "SEGUNDA";
       // 
       // ribbonPageGroup2

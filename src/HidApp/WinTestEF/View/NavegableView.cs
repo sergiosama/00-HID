@@ -91,5 +91,10 @@ namespace WinTestEF.View
     {
       throw new NotImplementedException();
     }
+
+    public void UnsetContainer()
+    {
+      throw new NotImplementedException();
+    }
   }
 }

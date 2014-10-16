@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Windows.Forms;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.POCO;
 using DevExpress.XtraBars;
+using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using WinTestEF.View;
 using WinTestEF.ViewModel;
@@ -70,6 +72,14 @@ namespace WinTestEF
     {
       var oldVista = sender as Control;
 
+      if (oldVista is INavigableView)
+      {
+        //  avisar para que
+        //  - GUARDE LA VISTA ACTUAL (y la pueda recuperar cuando se active nuevamente)
+        //  - desconecte la workview del espacio reservado para contenido
+        ((INavigableView)oldVista).UnsetContainer();
+      }
+
       oldVista.Parent = null;
 
       if (oldVista is ISupportRibbon)
@@ -109,6 +119,29 @@ namespace WinTestEF
         //  cambiar titulo de barra segun la vista!!
         //  CONECTAR A SEARCH CONTROL!!
       }
+    }
+
+    private void CambioPagina_Principal(object sender, EventArgs e)
+    {
+      //  aca deberia haber un chequeo si la vista que esta activa DEJA que esto ocurra
+      //  de no ser asi puede forzarse mediante reingreso de credenciales?
+      //
+      Debug.WriteLine("Cambio de pagina principal...");
+      
+      RibbonControl rib = sender as RibbonControl;
+      ViewType vtTag;
+
+      Debug.Write("Cambio de pagina merged");
+      //  se produce cuando cambio de pagina en ribbon => hay que cambiar de vista de trabajo
+      string nombreVista = rib.SelectedPage.Tag as string;
+
+      //  chequear si el tag no corresponde, tendriamos que avisar a la vista principal (no es necesario porque el evento tambien lo recibe 
+      //  la vista principal)
+      //  TODO Validar que si ya es START, no se cambia de nuevo la vista...
+      if (nombreVista == "START")
+        _vm.SelectedViewType = ViewType.StartMenu;
+
+      //  _viewModel.SetCurrentWorkViewType((ViewType)Enum.Parse(typeof(ViewType), nombreVista));
     }
   
   }
