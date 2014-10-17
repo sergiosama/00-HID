@@ -23,6 +23,9 @@ namespace WinTestEF.View
     private Dictionary<ViewType, IWorkView> _workViews;
 
     private Control _parent;
+    private RibbonControl _ribbon;
+
+    private string _lastPage;
 
     public static void RegisterViews()
     {
@@ -35,6 +38,8 @@ namespace WinTestEF.View
     public Vista1View(IViewLocator locator)
     {
       InitializeComponent();
+
+      _lastPage = null;   //  ya se... redundante...
 
       _locator = locator;
       //  _viewModel = ViewModelSource.Create(() => new StockViewModel(new Localizador()));
@@ -94,24 +99,34 @@ namespace WinTestEF.View
     #endregion
 
 
-
+    /// <summary>
+    /// Este Ribbon es local y solamente sirve para hacer merge con el MAIN
+    /// Luego no se puede utilizar para NADA
+    /// </summary>
     public DevExpress.XtraBars.Ribbon.RibbonControl Ribbon
     {
       get { return this.ribView; }
     }
 
-
-    public void BindEvents(RibbonControl ribbon)
+    public void SetMainRibbon(RibbonControl ribbon)
     {
-      ribbon.SelectedPageChanged += Cambio_Pagina;
+      _ribbon = ribbon;
     }
 
-    public void FocusOnPage(DevExpress.XtraBars.Ribbon.RibbonControl ribbon)
+    public void BindEvents()
+    {
+      _ribbon.SelectedPageChanged += Cambio_Pagina;
+    }
+
+    public void FocusOnPage()
     {
       //  ojo: guardar donde estaba posicionado...
       //
       //  ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
-      ribbon.SelectedPage = ribView.Pages["PAGINA 2"];
+      if (_lastPage != null)
+        _ribbon.SelectedPage = ribView.Pages[_lastPage];
+      else
+        _ribbon.SelectedPage = _ribbon.MergedPages[0];
       //_viewModel.SetDefaultView();
     }
 
@@ -120,7 +135,7 @@ namespace WinTestEF.View
     /// </summary>
     public void SaveVisualState()
     {
-      
+      _lastPage = _ribbon.SelectedPage.Text;
     }
 
     /// <summary>
@@ -167,15 +182,18 @@ namespace WinTestEF.View
       RibbonControl rib = sender as RibbonControl;
       ViewType vtTag;
 
-      Debug.Write("Cambio de pagina merged");
+      Debug.WriteLine(string.Format("Cambio de pagina MERGED destino --> {0}", rib.SelectedPage.Text));
+
       //  se produce cuando cambio de pagina en ribbon => hay que cambiar de vista de trabajo
       string nombreVista = rib.SelectedPage.Tag as string;
 
       //  chequear si el tag no corresponde, tendriamos que avisar a la vista principal (no es necesario porque el evento tambien lo recibe 
       //  la vista principal)
       if (Enum.TryParse(nombreVista, out vtTag))
+      {
         _viewModel.SetCurrentWorkViewType(vtTag);
-
+        SaveVisualState();
+      }
       //  _viewModel.SetCurrentWorkViewType((ViewType)Enum.Parse(typeof(ViewType), nombreVista));
     }
 
@@ -188,7 +206,6 @@ namespace WinTestEF.View
     {
       _parent = null;
       _viewModel.SelectedWorkViewType = ViewType.Ninguno;
-      ;
     }
   }
 }

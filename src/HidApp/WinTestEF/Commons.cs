@@ -24,6 +24,7 @@ namespace WinTestEF
   public interface IWorkView
   {
     void BindCommands(ISupportRibbon parent);
+
     IWorkViewModel ViewModel { get; set; }
   }
 
@@ -104,17 +105,27 @@ namespace WinTestEF
 
   /// <summary>
   /// Esta interface sirve para decidir si una vista necesita o no merge y por supuesto para obtener el ribbon que posee
+  /// Tambien permite setear el ribbon principal con el cual se esta haciendo el merge
   /// </summary>
   public interface ISupportRibbon
   {
     RibbonControl Ribbon { get; }
 
     /// <summary>
-    /// Permite asociar nuevos eventos de cambio de pagina a la ribbon merged
+    /// Informa a la vista cual es la instancia de la ribbon merged (MAIN) que de hecho es la unica que tiene sentido utilizar
     /// </summary>
-    void BindEvents(RibbonControl ribbon);
+    /// <param name="ribbon"></param>
+    void SetMainRibbon(RibbonControl ribbon);
 
-    void FocusOnPage(RibbonControl ribbon);
+    /// <summary>
+    /// Le da oportunidad a la vista de asociar nuevos eventos de cambio de pagina a la ribbon merged
+    /// </summary>
+    void BindEvents();
+
+    /// <summary>
+    /// Le da oportunidad a la vista de hacer foco en una pagina determinada de la ribbon compuesta
+    /// </summary>
+    void FocusOnPage();
   }
 
   public interface IViewLocator

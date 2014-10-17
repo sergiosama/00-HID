@@ -113,8 +113,9 @@ namespace WinTestEF
           ISupportRibbon rib = nuevaVista as ISupportRibbon;
 
           ribMain.MergeRibbon(rib.Ribbon);
-          rib.BindEvents(ribMain);
-          rib.FocusOnPage(ribMain);
+          rib.SetMainRibbon(ribMain);
+          rib.BindEvents();
+          rib.FocusOnPage();
         }
         //  cambiar titulo de barra segun la vista!!
         //  CONECTAR A SEARCH CONTROL!!
@@ -126,18 +127,17 @@ namespace WinTestEF
       //  aca deberia haber un chequeo si la vista que esta activa DEJA que esto ocurra
       //  de no ser asi puede forzarse mediante reingreso de credenciales?
       //
-      Debug.WriteLine("Cambio de pagina principal...");
-      
       RibbonControl rib = sender as RibbonControl;
       ViewType vtTag;
 
-      Debug.Write("Cambio de pagina merged");
       //  se produce cuando cambio de pagina en ribbon => hay que cambiar de vista de trabajo
       string nombreVista = rib.SelectedPage.Tag as string;
+      
+      Debug.WriteLine(string.Format("Cambio de pagina MAIN destino --> {0}", rib.SelectedPage.Text));
 
       //  chequear si el tag no corresponde, tendriamos que avisar a la vista principal (no es necesario porque el evento tambien lo recibe 
       //  la vista principal)
-      //  TODO Validar que si ya es START, no se cambia de nuevo la vista...
+      //  TODO Validar que si ya es START, no se cambia de nuevo la vista...normalmente solamente una ribbon page estaria asociada a START pero quien dice
       if (nombreVista == "START")
         _vm.SelectedViewType = ViewType.StartMenu;
 

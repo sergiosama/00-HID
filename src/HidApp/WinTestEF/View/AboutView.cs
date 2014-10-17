@@ -10,6 +10,7 @@ namespace WinTestEF.View
   public partial class AboutView : XtraUserControl, ISupportRibbon, ISupportPreviousView
   {
     private readonly AboutViewModel _viewModel;
+    private RibbonControl _ribbon;
 
     public AboutView()
     {
@@ -30,7 +31,12 @@ namespace WinTestEF.View
       get { return ribAbout; }
     }
 
-    public void BindEvents(RibbonControl ribbon)
+    public void SetMainRibbon(RibbonControl ribbon)
+    {
+      _ribbon = ribbon;
+    }
+
+    public void BindEvents()
     {
       Debug.WriteLine("No necesita binding de eventos");
     }
@@ -40,9 +46,9 @@ namespace WinTestEF.View
     /// fusionada
     /// </summary>
     /// <param name="ribbon">La Ribbon owner o donde se fusiono la ribbon asociada de la vista actual</param>
-    public void FocusOnPage(RibbonControl ribbon)
+    public void FocusOnPage()
     {
-      ribbon.SelectedPage = ribAbout.Pages["ACERCA DE"];
+      _ribbon.SelectedPage = ribAbout.Pages["ACERCA DE"];
     }
 
     private void AboutView_OnLoad(object sender, EventArgs e)

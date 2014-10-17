@@ -58,17 +58,22 @@ namespace WinTestEF.View
       get { return this.ribView; }
     }
 
-    public void BindEvents(RibbonControl ribbon)
+    public void SetMainRibbon(RibbonControl ribbon)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void BindEvents()
     {
       Debug.WriteLine("Bindear eventos ACA");
     }
 
-    public void FocusOnPage(DevExpress.XtraBars.Ribbon.RibbonControl ribbon)
+    public void FocusOnPage()
     {
       //  ojo: guardar donde estaba posicionado...
       //
       //  ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
-      ribbon.SelectedPage = ribView.Pages["PAGINA 1"];
+      //ribbon.SelectedPage = ribView.Pages["PAGINA 1"];
     }
 
     /// <summary>
