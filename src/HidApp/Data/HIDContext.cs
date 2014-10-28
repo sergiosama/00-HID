@@ -26,14 +26,25 @@ namespace Data
         
     public DbSet<enTOrden> Orden { get; set; }
 
-
     public DbSet<enTPaciente> Pacientes { get; set; }
 
     public DbSet<enTCtaCtePaciente> CtaCtePaciente { get; set; }
 
+    public  DbSet<enTObraSocial> TObraSocial { get; set; }
 
+    public  DbSet<enTRent> TRent { get; set; }
+
+    public DbSet<enTTipoArticulo> TTipoArticulo { get; set; }
+
+    public DbSet<enTTipoDocumento> TipoDocumento { get; set; }
+
+    public DbSet<enTPlanObraSocial> PlanObraSocial { get; set; }
+
+    public DbSet<enTipoFactura> TipoFactura { get; set; }
+
+    public DbSet<enTLocalidad> Tlocalidad { get; set; }
     public HIDContext()
-      : base("Server=localhost;Database=HID;Trusted_Connection=true;")
+      : base("Server=(local)\\SQLExpress;Database=HID;Trusted_Connection=true;")
     {
       
     }
@@ -43,22 +54,86 @@ namespace Data
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
       //base.OnModelCreating(modelBuilder);
+      modelBuilder.Configurations.Add(new ConfiguracionTipoFactura());
+      modelBuilder.Configurations.Add(new ConfiguracionTObraSocial());
       modelBuilder.Configurations.Add(new ConfiguracionUsuarios());
       modelBuilder.Configurations.Add(new ConfiguracionRecursos());
       modelBuilder.Configurations.Add(new ConfiguracionAuditoria());
       modelBuilder.Configurations.Add(new ConfiguracionOrdenes());
       modelBuilder.Configurations.Add(new ConfiguracionDetalleOrdenes());
-      //
+      
       modelBuilder.Configurations.Add(new ConfiguracionCategoriaRecurso());
       modelBuilder.Configurations.Add(new ConfiguracionTipoIVA());
       modelBuilder.Configurations.Add(new ConfiguracionArticulos());
+
+      modelBuilder.Configurations.Add(new ConfiguracionTipoArticulo());
       modelBuilder.Configurations.Add(new ConfiguracionPacientes());
-      modelBuilder.Configurations.Add(new ConfiguracionCtaCtePaciente());
+      modelBuilder.Configurations.Add(new ConfiguracionCtaCtePaciente()); 
+
+      modelBuilder.Configurations.Add(new ConfiguracionTipoDocumento());
+      modelBuilder.Configurations.Add(new ConfiguracioPlanObraSocial());
+
+      modelBuilder.Configurations.Add(new ConfiguracionTLocalidad());
+
 
     }
   }
 
   #region Clases para configurar mapeo de E-F
+
+  public class ConfiguracionTLocalidad : EntityTypeConfiguration<enTLocalidad>
+  {
+      public ConfiguracionTLocalidad()
+      {
+          ToTable("TLocalidad");
+          HasKey(et => et.Idcodloc);
+      }
+  
+  }
+
+  public class ConfiguracionTipoFactura : EntityTypeConfiguration<enTipoFactura>
+  { 
+     public ConfiguracionTipoFactura()
+      {
+          ToTable("TipoFactura");
+          HasKey(et => et.IdTipoFactura);
+
+      }
+   
+  }
+
+
+  public class ConfiguracionTObraSocial : EntityTypeConfiguration<enTObraSocial>
+  {
+      public ConfiguracionTObraSocial()
+      {
+          ToTable("TObraSocial");
+          HasKey(et => et.IdObraSocial);
+          
+
+      }
+  
+  }
+
+  public class ConfiguracioPlanObraSocial : EntityTypeConfiguration<enTPlanObraSocial>
+  {
+      public ConfiguracioPlanObraSocial()
+      {
+          ToTable("TPlanObraSocial");
+          HasKey(et => et.IdPlanObraSocial);
+         HasRequired(et => et.TObraSocial).WithOptional().Map(x => x.MapKey("IdObraSocial"));
+        
+      }
+  
+  }
+  public class ConfiguracionTipoDocumento : EntityTypeConfiguration<enTTipoDocumento>
+  {
+      public ConfiguracionTipoDocumento()
+      {
+          ToTable("TTipoDocumento");
+          HasKey(et => et.IdTipoDocumento);
+      }
+  }
 
   public class ConfiguracionCtaCtePaciente : EntityTypeConfiguration<enTCtaCtePaciente>
   {
@@ -74,9 +149,13 @@ namespace Data
       public ConfiguracionPacientes()
       {
           ToTable("TPacientes");
-          HasKey(et => et.IdPacientes);
+          HasKey(et => et.IdPaciente);
+
+          
+
+         
       }
-  
+
   }
   public class ConfiguracionArticulos : EntityTypeConfiguration<enTArticulo>
   {
@@ -84,6 +163,14 @@ namespace Data
       {
         ToTable("TArticulos");
         HasKey(et => et.IdArticulo);
+
+        //Mapeo 
+        HasRequired(et => et.TRecurso).WithOptional().Map(x => x.MapKey("IdRecurso"));
+        HasRequired(et => et.TTipoArticulos).WithOptional().Map(x => x.MapKey("IdTipoArticulo"));
+      
+
+
+
       }
   }
 
@@ -125,6 +212,8 @@ namespace Data
     }
   }
 
+
+    
   public class ConfiguracionRecursos : EntityTypeConfiguration<enTRecurso>
   {
     public ConfiguracionRecursos()
@@ -142,7 +231,7 @@ namespace Data
       
       //  Mapeos de relaciones (FK)
       //  HasOptional<enTCategoriaRecurso>(et => et.Categoria).WithOptionalDependent();
-      HasOptional(et => et.Categoria)
+      HasOptional(et => et.TCategoriaRecurso)
         .WithMany()
         .Map(x => x.MapKey("IdCategoria"));
 
@@ -200,6 +289,17 @@ namespace Data
     }
 
   }
+
+  public class ConfiguracionTipoArticulo : EntityTypeConfiguration<enTTipoArticulo>
+  {
+      public ConfiguracionTipoArticulo()
+      {
+          ToTable("TTipoArticulos");
+          HasKey(et => et.IdTipoArticulo);
+      
+      }
+  
+  } 
 
   #endregion
 

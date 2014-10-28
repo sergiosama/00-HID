@@ -97,7 +97,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ArticulosViewModel.cs" />
+    <Compile Include="ViewModel\NavegableViewModel.cs" />
+    <Compile Include="ViewModel\PacientesViewModel.cs" />
     <Compile Include="Views\LoginIngresoNormal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +126,7 @@
     <Compile Include="Views\UserInfoView.Designer.cs">
       <DependentUpon>UserInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewManager.cs" />
     <Compile Include="Views\ViewServices.cs" />
     <Compile Include="winMain.cs">
       <SubType>Form</SubType>
@@ -238,7 +240,9 @@
       <DependentUpon>winLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -250,13 +254,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{5fbedfd9-0064-4558-b821-ccde6bfec870}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{947eb898-5c1a-4a8d-a9b9-3e0cdfdb9722}</Project>
       <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{5fbedfd9-0064-4558-b821-ccde6bfec870}</Project>
+      <Name>Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infraestructura\Infraestructura.csproj">
       <Project>{2bc801f1-26c1-4d46-a402-8fcd15b92d36}</Project>

@@ -47,6 +47,7 @@
     <Compile Include="enTCtaCtePaciente.cs" />
     <Compile Include="enTCtaCteRecurso.cs" />
     <Compile Include="enTDetalleOrden.cs" />
+    <Compile Include="enTipoFactura.cs" />
     <Compile Include="enTLocalidad.cs" />
     <Compile Include="enTObraSocial.cs" />
     <Compile Include="enTOrden.cs" />

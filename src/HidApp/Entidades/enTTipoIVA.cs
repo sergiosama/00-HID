@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Entidades
 {
@@ -12,61 +13,16 @@ namespace Entidades
   /// </summary>
 	public class enTTipoIVA
 	{
-		#region Fields
-
-		private int _idTipoIVA;
-		private string _descripcionIVA;
-
-		#endregion
-
-		#region Constructors
-
-		/// <summary>
-		/// Initializes a new instance of the enTTipoIVA class.
-		/// </summary>
-		public enTTipoIVA()
-		{
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the enTTipoIVA class.
-		/// </summary>
-		public enTTipoIVA(string descripcionIVA)
-		{
-			this._descripcionIVA = descripcionIVA;
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the enTTipoIVA class.
-		/// </summary>
-		public enTTipoIVA(int idTipoIVA, string descripcionIVA)
-		{
-			this._idTipoIVA = idTipoIVA;
-			this._descripcionIVA = descripcionIVA;
-		}
-
-		#endregion
-
-		#region Properties
-
-		/// <summary>
-		/// Gets or sets the IdTipoIVA value.
-		/// </summary>
-		public int IdTipoIVA
-		{
-			get { return _idTipoIVA; }
-			set { _idTipoIVA = value; }
-		}
-
-		/// <summary>
-		/// Descripción de la condicion segun la AFIP
-		/// </summary>
-		public string DescripcionIVA
-		{
-			get { return _descripcionIVA; }
-			set { _descripcionIVA = value; }
-		}
-
-		#endregion
+        public enTTipoIVA()
+        {
+            this.TObraSocial = new HashSet<enTObraSocial>();
+            this.TRecurso = new HashSet<enTRecurso>();
+        }
+    
+        public int IdTipoIVA { get; set; }
+        public string DescripcionIVA { get; set; }
+    
+        public virtual ICollection<enTObraSocial> TObraSocial { get; set; }
+        public virtual ICollection<enTRecurso> TRecurso { get; set; }
 	}
 }

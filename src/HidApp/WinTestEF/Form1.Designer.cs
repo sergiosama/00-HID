@@ -55,6 +55,7 @@
             this.lstRecursos = new DevExpress.XtraEditors.LookUpEdit();
             this.dlgOpenImage = new System.Windows.Forms.OpenFileDialog();
             this.bsrc = new System.Windows.Forms.BindingSource();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -71,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bedtSelectImage.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstRecursos.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsrc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -100,6 +102,7 @@
             // 
             this.xtraTabPage1.Appearance.Header.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.xtraTabPage1.Appearance.Header.Options.UseFont = true;
+            this.xtraTabPage1.Controls.Add(this.pictureEdit1);
             this.xtraTabPage1.Controls.Add(this.comboBoxEdit1);
             this.xtraTabPage1.Controls.Add(this.textEdit4);
             this.xtraTabPage1.Controls.Add(this.textEdit3);
@@ -356,6 +359,14 @@
             this.dlgOpenImage.FileName = "openFileDialog1";
             this.dlgOpenImage.Title = "Seleccionar un archivo de imagen";
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(70, 286);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Size = new System.Drawing.Size(100, 96);
+            this.pictureEdit1.TabIndex = 23;
+            this.pictureEdit1.PopupMenuShowing += new DevExpress.XtraEditors.Events.PopupMenuShowingEventHandler(this.pictureEdit1_PopupMenuShowing);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +400,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bedtSelectImage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lstRecursos.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsrc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
     }
@@ -420,6 +432,7 @@
     private DevExpress.XtraEditors.LabelControl labelControl7;
     private DevExpress.XtraEditors.LabelControl labelControl6;
     private DevExpress.XtraEditors.LabelControl labelControl5;
+    private DevExpress.XtraEditors.PictureEdit pictureEdit1;
 
   }
 }

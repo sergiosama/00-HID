@@ -1,188 +1,39 @@
-using System;
 
 namespace Entidades
 {
+    using System;
+    using System.Collections.Generic;
 	public class enTArticulo
 	{
-		#region Fields
+		
+          
+        public enTArticulo()
+        {
+            this.TDetalleOrden = new HashSet<enTDetalleOrden>();
+            this.TOrden = new HashSet<enTOrden>();
+            this.TRent = new HashSet<enTRent>();
+        }
+    
+        public int IdArticulo { get; set; }
+        public string CodeBar { get; set; }
+        public Nullable<int> IdRecurso { get; set; }
+        public Nullable<int> IdTipoArticulo { get; set; }
+        public string DetalleArticulo { get; set; }
+        public string AvisoStockMinimo { get; set; }
+        public Nullable<decimal> PrecioCompra { get; set; }
+        public Nullable<decimal> PrecioVenta { get; set; }
+        public Nullable<decimal> PrecioAlquiler { get; set; }
+        public Nullable<int> Stock { get; set; }
+        public Nullable<int> Stockminimo { get; set; }
+        public byte[] Imagen { get; set; }
+    
+        public virtual enTRecurso TRecurso { get; set; }
+        public virtual enTTipoArticulo TTipoArticulos { get; set; }
+        public virtual ICollection<enTDetalleOrden> TDetalleOrden { get; set; }
+        public virtual ICollection<enTOrden> TOrden { get; set; }
+        public virtual ICollection<enTRent> TRent { get; set; }
 
-		private int _idArticulo;
-		private string _codeBar;
-        private int _idRecurso;
-		private int _idCategoria;
-		private int _idTipoArticulo;
-		private string _detalleArticulo;
-		private string _avisoStockMinimo;
-		private float _precioCompra;
-		private float _precioVenta;
-		private float _precioAlquiler;
-		private float _stock;
-		private float _stockMinimo;
 
-		#endregion
 
-		#region Constructors
-
-		/// <summary>
-		/// Initializes a new instance of the enTArticulo class.
-		/// </summary>
-		public enTArticulo()
-		{
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the enTArticulo class.
-		/// </summary>
-        public enTArticulo(string codeBar, int idRecurso, int idCategoria, int idTipoArticulo, string detalleArticulo, string avisoStockMinimo, float precioCompra, float precioVenta, float precioAlquiler, float stock, float stockminimo)
-		{
-			this._codeBar = codeBar;
-            this._idRecurso = idRecurso;
-			this._idCategoria = idCategoria;
-			this._idTipoArticulo = idTipoArticulo;
-			this._detalleArticulo = detalleArticulo;
-			this._avisoStockMinimo = avisoStockMinimo;
-			this._precioCompra = precioCompra;
-			this._precioVenta = precioVenta;
-			this._precioAlquiler = precioAlquiler;
-			this._stock = stock;
-		  this._stockMinimo = stockminimo;
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the enTArticulo class.
-		/// </summary>
-        public enTArticulo(int idArticulo, string codeBar, int idRecurso, int idCategoria, int idTipoArticulo, string detalleArticulo, string avisoStockMinimo, float precioCompra, float precioVenta, float precioAlquiler, float stock, float stockminimo)
-		{
-			this._idArticulo = idArticulo;
-			this._codeBar = codeBar;
-            this._idRecurso = idRecurso;
-			this._idCategoria = idCategoria;
-			this._idTipoArticulo = idTipoArticulo;
-			this._detalleArticulo = detalleArticulo;
-			this._avisoStockMinimo = avisoStockMinimo;
-			this._precioCompra = precioCompra;
-			this._precioVenta = precioVenta;
-			this._precioAlquiler = precioAlquiler;
-			this._stock = stock;
-      this._stockMinimo = stockminimo;
-		}
-
-		#endregion
-
-		#region Properties
-		/// <summary>
-		/// Gets or sets the IdArticulo value.
-		/// </summary>
-		public virtual int IdArticulo
-		{
-			get { return _idArticulo; }
-			set { _idArticulo = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the CodeBar value.
-		/// </summary>
-		public virtual string CodeBar
-		{
-			get { return _codeBar; }
-			set { _codeBar = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the IdProveedor value.
-		/// </summary>
-        public virtual int IdRecurso
-		{
-            get { return _idRecurso; }
-            set { _idRecurso = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the IdCategoria value.
-		/// </summary>
-		public virtual int IdCategoria
-		{
-			get { return _idCategoria; }
-			set { _idCategoria = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the IdTipoArticulo value.
-		/// </summary>
-		public virtual int IdTipoArticulo
-		{
-			get { return _idTipoArticulo; }
-			set { _idTipoArticulo = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the DetalleArticulo value.
-		/// </summary>
-		public virtual string DetalleArticulo
-		{
-			get { return _detalleArticulo; }
-			set { _detalleArticulo = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the AvisoStockMinimo value.
-		/// </summary>
-		public virtual string AvisoStockMinimo
-		{
-			get { return _avisoStockMinimo; }
-			set { _avisoStockMinimo = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the PrecioCompra value.
-		/// </summary>
-		public virtual float PrecioCompra
-		{
-			get { return _precioCompra; }
-			set { _precioCompra = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the PrecioVenta value.
-		/// </summary>
-		public virtual float PrecioVenta
-		{
-			get { return _precioVenta; }
-			set { _precioVenta = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the PrecioAlquiler value.
-		/// </summary>
-		public virtual float PrecioAlquiler
-		{
-			get { return _precioAlquiler; }
-			set { _precioAlquiler = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the Stock value.
-		/// </summary>
-		public virtual float Stock
-		{
-			get { return _stock; }
-			set { _stock = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the Stockminimo value.
-		/// </summary>
-		public virtual float StockMinimo
-		{
-			get { return _stockMinimo; }
-			set { _stockMinimo = value; }
-		}
-
-    /// <summary>
-    /// La imagen del articulo, almacenada en la base de datos
-    /// </summary>
-    public byte[] Imagen { get; set; }
-
-		#endregion
 	}
 }

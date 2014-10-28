@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel;
+using System.Collections.Generic;
+
 
 namespace Entidades
 {
@@ -8,295 +10,62 @@ namespace Entidades
   /// </summary>
 	public class enTRecurso : INotifyPropertyChanged
 	{
-		#region Fields
 
-		private int _idRecurso;
-		private string _apellido;
-		private string _nombre;
-		private string _matricula;
-		private DateTime? _fechaTituloMedico;
-		private DateTime? _fechaNacimiento;
-		private string _direccion;
-		private string _telefono;
-		private string _celular;
-		//  private int _idCategoria;
-		private string _numCUIT;
-		//  private int _idTipoIVA;
-		private string _email;
-		private string _nroSeguroMap;
-		private string _sssalud;
-		private byte[] _adjuntos;
-		private byte[] _foto;
-    //  La password no deberia formar parte de la entidad
-		//  private byte[] _clave;
-		private string _observaciones;
 
-		#endregion
+        private string _apellido;
+        private string _nombre;
+        private byte[] _foto;
 
-		#region Constructors
-
-		/// <summary>
-		/// Initializes a new instance of the enTRecurso class.
-		/// </summary>
-		public enTRecurso()
-		{
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the enTRecurso class.
-		/// </summary>
-		public enTRecurso(string apellido, string nombre, string matricula, DateTime? fechaTituloMedico, DateTime? fechaNacimiento, 
-      string direccion, string telefono, string celular, enTCategoriaRecurso categoria, string cUIT, enTTipoIVA tipoIVA, string email, 
-      string nroSeguroMAP, string sssalud, byte[] adjuntos, byte[] foto, string observaciones)
-		{
-			this._apellido = apellido;
-			this._nombre = nombre;
-			this._matricula = matricula;
-			this._fechaTituloMedico = fechaTituloMedico;
-			this._fechaNacimiento = fechaNacimiento;
-			this._direccion = direccion;
-			this._telefono = telefono;
-			this._celular = celular;
-			//this._idCategoria = idCategoria;
-		  this.Categoria = categoria;
-			this._numCUIT = cUIT;
-			//this._idTipoIVA = idTipoIVA;
-		  this.SituacionAFIP = tipoIVA;
-			this._email = email;
-			this._nroSeguroMap = nroSeguroMAP;
-			this._sssalud = sssalud;
-			this._adjuntos = adjuntos;
-			this._foto = foto;
-			//  this._clave = clave;
-			this._observaciones = observaciones;
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the enTRecurso class.
-		/// </summary>
-		public enTRecurso(int idRecursos, string apellido, string nombre, string matricula, DateTime? fechaTituloMedico, DateTime? fechaNacimiento, 
-      string direccion, string telefono, string celular, enTCategoriaRecurso categoria, string cUIT, enTTipoIVA tipoIVA, string email, string nroSeguroMAP, 
-      string sssalud, byte[] adjuntos, byte[] foto, string observaciones)
-		{
-			this._idRecurso = idRecursos;
-			this._apellido = apellido;
-			this._nombre = nombre;
-			this._matricula = matricula;
-			this._fechaTituloMedico = fechaTituloMedico;
-			this._fechaNacimiento = fechaNacimiento;
-			this._direccion = direccion;
-			this._telefono = telefono;
-			this._celular = celular;
-			//this._idCategoria = idCategoria;
-		  this.Categoria = categoria;
-			this._numCUIT = cUIT;
-			//this._idTipoIVA = idTipoIVA;
-		  this.SituacionAFIP = tipoIVA;
-			this._email = email;
-			this._nroSeguroMap = nroSeguroMAP;
-			this._sssalud = sssalud;
-			this._adjuntos = adjuntos;
-			this._foto = foto;
-			//  this._clave = clave;
-			this._observaciones = observaciones;
-		}
-
-		#endregion
-
-		#region Properties
-
-		/// <summary>
-		/// ID del Recurso --> clave primaria usada por EF
-		/// </summary>
-		public virtual int IdRecurso
-		{
-			get { return _idRecurso; }
-			set { _idRecurso = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the Apellido value.
-		/// </summary>
-		public virtual string Apellido
-		{
-			get { return _apellido; }
-			set { _apellido = value; OnPropertyChanged("Apellido"); }
-		}
-
-		/// <summary>
-		/// Gets or sets the Nombre value.
-		/// </summary>
-		public virtual string Nombre
-		{
-			get { return _nombre; }
-      set { _nombre = value; OnPropertyChanged("Nombre"); }
-		}
-
-		/// <summary>
-		/// Gets or sets the Matricula value.
-		/// </summary>
-		public virtual string Matricula
-		{
-			get { return _matricula; }
-			set { _matricula = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the FechaTituloMedico value.
-		/// </summary>
-		public virtual DateTime? FechaTituloMedico
-		{
-			get { return _fechaTituloMedico; }
-			set { _fechaTituloMedico = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the FechaNacimiento value.
-		/// </summary>
-		public virtual DateTime? FechaNacimiento
-		{
-			get { return _fechaNacimiento; }
-			set { _fechaNacimiento = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the Direccion value.
-		/// </summary>
-		public virtual string Direccion
-		{
-			get { return _direccion; }
-			set { _direccion = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the Telefono value.
-		/// </summary>
-		public virtual string Telefono
-		{
-			get { return _telefono; }
-			set { _telefono = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the Celular value.
-		/// </summary>
-		public virtual string Celular
-		{
-			get { return _celular; }
-			set { _celular = value; }
-		}
-
-/*
-		/// <summary>
-		/// Gets or sets the IdCategoria value.
-		/// </summary>
-		public virtual int IdCategoria
-		{
-			get { return _idCategoria; }
-			set { _idCategoria = value; }
-		}
-*/
-    /// <summary>
-    /// Representa el Tipo del Recurso (Administrativo, Profesional...Kinesiologo...)
-    /// </summary>
+        public enTRecurso()
+        {
+            this.TArticulo = new HashSet<enTArticulo>();
+            this.TCtaCteRecurso = new HashSet<enTCtaCteRecurso>();
+            this.TOrden = new HashSet<enTOrden>();
+            this.TUsuario = new HashSet<Usuario>();
+        }
     
-    public virtual enTCategoriaRecurso Categoria { get; set; }
+        public int IdRecurso { get; set; }
+        
+        public virtual string Apellido
+        {
+            get { return _apellido; }
+            set { _apellido = value; OnPropertyChanged("Apellido"); }
+        }
 
-		/// <summary>
-		/// Gets or sets the CUIT value.
-		/// </summary>
-		public virtual string CUIT
-		{
-			get { return _numCUIT; }
-			set { _numCUIT = value; }
-		}
-
-/*
-		/// <summary>
-		/// Gets or sets the IdTipoIVA value.
-		/// </summary>
-		public virtual int IdTipoIVA
-		{
-			get { return _idTipoIVA; }
-			set { _idTipoIVA = value; }
-		}
-*/
-    /// <summary>
-    /// Como esta inscripto el Recurso en la AFIP
-    /// </summary>
+        public virtual string Nombre
+        {
+            get { return _nombre; }
+            set { _nombre = value; OnPropertyChanged("Nombre"); }
+        }
+        public string Matricula { get; set; }
+        public DateTime? FechaTituloMedico { get; set; }
+        public DateTime? FechaNacimiento { get; set; }
+        public string Direccion { get; set; }
+        public string Telefono { get; set; }
+        public string Celular { get; set; }
+        public Nullable<int> IdCategoria { get; set; }
+        public string CUIT { get; set; }
+        public Nullable<int> IdTipoIVA { get; set; }
+        public string email { get; set; }
+        public string NroSeguroMAP { get; set; }
+        public string Sssalud { get; set; }
+        public byte[] Adjuntos { get; set; }
+        public virtual byte[] Foto
+        {
+            get { return _foto; }
+            set { _foto = value; OnPropertyChanged("Foto"); }
+        }
+        public string Observaciones { get; set; }
+        public string Sexo { get; set; }
     
-    public virtual enTTipoIVA SituacionAFIP { get; set; }
-
-		/// <summary>
-		/// Gets or sets the Email value.
-		/// </summary>
-		public virtual string Email
-		{
-			get { return _email; }
-			set { _email = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the NroSeguroMAP value.
-		/// </summary>
-		public virtual string NroSeguroMAP
-		{
-			get { return _nroSeguroMap; }
-			set { _nroSeguroMap = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the Sssalud value.
-		/// </summary>
-		public virtual string Sssalud
-		{
-			get { return _sssalud; }
-			set { _sssalud = value; }
-		}
-
-		/// <summary>
-		/// Gets or sets the Adjuntos value.
-		/// </summary>
-		public virtual byte[] Adjuntos
-		{
-			get { return _adjuntos; }
-			set { _adjuntos = value; }
-		}
-
-		/// <summary>
-		/// Permite almacenar en la base de datos una imagen de la persona asociada al recurso...
-		/// Deberá seguir as??
-		/// </summary>
-		public virtual byte[] Foto
-		{
-			get { return _foto; }
-			set { _foto = value; OnPropertyChanged("Foto"); }
-		}
-
-/*
-		/// <summary>
-		/// Gets or sets the Clave value.
-		/// </summary>
-		public virtual byte[] Clave
-		{
-			get { return _clave; }
-			set { _clave = value; }
-		}
-*/
-
-		/// <summary>
-		/// Gets or sets the Observaciones value.
-		/// </summary>
-		public virtual string Observaciones
-		{
-			get { return _observaciones; }
-			set { _observaciones = value; }
-		}
-
-    public string Sexo { get; set; }
-
-		#endregion
-
+        public virtual ICollection<enTArticulo> TArticulo { get; set; }
+        public virtual enTCategoriaRecurso TCategoriaRecurso { get; set; }
+        public virtual ICollection<enTCtaCteRecurso> TCtaCteRecurso { get; set; }
+        public virtual ICollection<enTOrden> TOrden { get; set; }
+        public virtual enTTipoIVA SituacionAFIP { get; set; }
+        public virtual ICollection<Usuario> TUsuario { get; set; }
+        
+    
     private void OnPropertyChanged(string prop)
     {
       if (PropertyChanged != null)

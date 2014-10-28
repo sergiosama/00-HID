@@ -262,5 +262,10 @@ namespace WinTestEF
     {
       _db.Dispose();
     }
+
+    private void pictureEdit1_PopupMenuShowing(object sender, DevExpress.XtraEditors.Events.PopupMenuShowingEventArgs e)
+    {
+        int f = 0;
+    }
   }
 }

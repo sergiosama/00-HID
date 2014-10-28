@@ -16,9 +16,9 @@ namespace HidUI.Views
 
     public static void RegisterViews()
     {
-      /*ViewManager.Current.AddView(ViewType.StockInsumos, ViewType.Stock, null);
+      ViewManager.Current.AddView(ViewType.StockInsumos, ViewType.Stock, null);
       ViewManager.Current.AddView(ViewType.StockAlquilables, ViewType.Stock, null);
-      ViewManager.Current.AddView(ViewType.StockReportes, ViewType.Stock, null);*/
+      ViewManager.Current.AddView(ViewType.StockReportes, ViewType.Stock, null);
     }
 
     //  public static 
@@ -58,8 +58,8 @@ namespace HidUI.Views
     {
       //  ojo: guardar donde estaba posicionado...
       //
-       ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
-      //ribbon.SelectedPage = ribStock.Pages["ALQUILABLES"];
+      //  ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
+      ribbon.SelectedPage = ribStock.Pages["ALQUILABLES"];
     }
 
     /// <summary>

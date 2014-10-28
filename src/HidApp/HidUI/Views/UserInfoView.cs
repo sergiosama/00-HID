@@ -92,13 +92,15 @@ namespace HidUI.Views
     {
       lblUserName.Text = string.Format("{0} {1}", _recurso.Nombre, _recurso.Apellido);
 
-      lblUserMail.Text = _recurso.Email ?? "<sin email>";
+      lblUserMail.Text = _recurso.email ?? "<sin email>";
 
       lblUserMail.SuperTip = new SuperToolTip();
       lblUserMail.SuperTip.Items.AddTitle("Direccion de correo del usuario");
       lblUserMail.SuperTip.Items.Add(lblUserMail.Text);
-
-      lblFuncionUsuario.Text = _recurso.Categoria.Detalle;
+      //ethedy
+      //lblFuncionUsuario.Text = _recurso.Categoria.Detalle;
+      
+        lblFuncionUsuario.Text = _recurso.TCategoriaRecurso.Detalle;
       if (_recurso.Foto == null)
       {
         if (_recurso.Sexo[0] == 'F')
