@@ -2,44 +2,29 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\viewmodel\mainviewmodel.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\ViewModel\MainViewModel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockInsumosView.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockInsumosView.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockInsumosView.Designer.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\frmNavegacion.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\frmNavegacion.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockAlquilablesView.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StockAlquilablesView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Vista1View.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Vista1View.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\viewmodel\stockviewmodel.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\ViewModel\Vista1ViewModel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\stockview.cs</string>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\stockview.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Pagina1WorkView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Pagina1WorkView.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\views\localizador.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Pagina2WorkView.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\View\Pagina2WorkView.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\winmain.cs</string>
-      <string>c:\desarrollo\00-hid\src\hidapp\hidui\winmain.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\winMain.Designer.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Common\Helpers.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StartView.cs</string>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\StartView.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\ViewModel\StartViewModel.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>C:\DESARROLLO\00-HID\src\HidApp\HidUI\Program.cs</string>
+      <string>C:\DESARROLLO\00-HID\src\HidApp\WinTestEF\Commons.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>
