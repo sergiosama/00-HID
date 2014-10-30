@@ -12,37 +12,38 @@ namespace Data
 {
   public class HIDContext : DbContext
   {
+
+
+/* 
+One or more validation errors were detected during model generation:
+
+Data.enTOrden: : EntityType 'enTOrden' has no key defined. Define the key for this EntityType.
+enTOrdens: EntityType: EntitySet 'enTOrdens' is based on type 'enTOrden' that has no keys defined.
+
+*/
+
+
+    public DbSet<enTCtaCteRecurso> CtaCteRecurso { get; set; }
     public DbSet<enTRecurso> Recursos { get; set; }
-
     public DbSet<Usuario> Usuarios { get; set; }
-
     public DbSet<AuditInfo> Auditoria { get; set; }
-
     public DbSet<enTArticulo> Articulos { get; set; }
-
     public DbSet<enTCategoriaRecurso> CategoriaRecurso { get; set; }
+    
+    
+    public DbSet<enTPaciente> Pacientes { get; set; }
+    public DbSet<enTCtaCtePaciente> CtaCtePaciente { get; set; }
+    public DbSet<enTObraSocial> TObraSocial { get; set; }
+    public DbSet<enTRent> Rent { get; set; }
+    public DbSet<enTTipoArticulo> TTipoArticulo { get; set; }
+    public DbSet<enTTipoDocumento> TipoDocumento { get; set; }
+    public DbSet<enTPlanObraSocial> PlanObraSocial { get; set; }
+    public DbSet<enTipoFactura> TipoFactura { get; set; }
+    public DbSet<enTLocalidad> Tlocalidad { get; set; }
+    public DbSet<enTProvincia> Provincia { get; set; }
 
     public DbSet<enTDetalleOrden> DetalleOrden { get; set; }
-        
     public DbSet<enTOrden> Orden { get; set; }
-
-    public DbSet<enTPaciente> Pacientes { get; set; }
-
-    public DbSet<enTCtaCtePaciente> CtaCtePaciente { get; set; }
-
-    public  DbSet<enTObraSocial> TObraSocial { get; set; }
-
-    public  DbSet<enTRent> TRent { get; set; }
-
-    public DbSet<enTTipoArticulo> TTipoArticulo { get; set; }
-
-    public DbSet<enTTipoDocumento> TipoDocumento { get; set; }
-
-    public DbSet<enTPlanObraSocial> PlanObraSocial { get; set; }
-
-    public DbSet<enTipoFactura> TipoFactura { get; set; }
-
-    public DbSet<enTLocalidad> Tlocalidad { get; set; }
     public HIDContext()
       : base("Server=(local)\\SQLExpress;Database=HID;Trusted_Connection=true;")
     {
@@ -54,18 +55,19 @@ namespace Data
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
       //base.OnModelCreating(modelBuilder);
+      modelBuilder.Configurations.Add(new ConfiguracionProvincia());
       modelBuilder.Configurations.Add(new ConfiguracionTipoFactura());
       modelBuilder.Configurations.Add(new ConfiguracionTObraSocial());
       modelBuilder.Configurations.Add(new ConfiguracionUsuarios());
       modelBuilder.Configurations.Add(new ConfiguracionRecursos());
       modelBuilder.Configurations.Add(new ConfiguracionAuditoria());
-      modelBuilder.Configurations.Add(new ConfiguracionOrdenes());
-      modelBuilder.Configurations.Add(new ConfiguracionDetalleOrdenes());
-      
+     
+   
+      modelBuilder.Configurations.Add( new ConfiguracionCtaCteRecurso());      
       modelBuilder.Configurations.Add(new ConfiguracionCategoriaRecurso());
       modelBuilder.Configurations.Add(new ConfiguracionTipoIVA());
       modelBuilder.Configurations.Add(new ConfiguracionArticulos());
-
+      modelBuilder.Configurations.Add( new ConfiguracionRent());
       modelBuilder.Configurations.Add(new ConfiguracionTipoArticulo());
       modelBuilder.Configurations.Add(new ConfiguracionPacientes());
       modelBuilder.Configurations.Add(new ConfiguracionCtaCtePaciente()); 
@@ -74,13 +76,43 @@ namespace Data
       modelBuilder.Configurations.Add(new ConfiguracioPlanObraSocial());
 
       modelBuilder.Configurations.Add(new ConfiguracionTLocalidad());
-
+      modelBuilder.Configurations.Add(new ConfiguracionDetalleOrdenes());
+      modelBuilder.Configurations.Add(new ConfiguracionOrden());
 
     }
   }
 
   #region Clases para configurar mapeo de E-F
 
+    public class ConfiguracionProvincia : EntityTypeConfiguration<enTProvincia>
+    {
+
+        public ConfiguracionProvincia()
+        {
+            ToTable("TProvincias");
+            HasKey(et => et.Idcodprov);
+        }
+    }
+    public class ConfiguracionRent: EntityTypeConfiguration<enTRent>
+    {
+
+        public  ConfiguracionRent()
+        {
+            ToTable("TRent");
+            HasKey(et => et.IdRent);
+        }
+    }
+
+
+  public class ConfiguracionCtaCteRecurso:EntityTypeConfiguration<enTCtaCteRecurso>
+  {
+      public ConfiguracionCtaCteRecurso()
+      {
+          ToTable("TCtaCteRecurso");
+          HasKey(et => et.IdCtaCteRecursos);
+
+      }
+  }
   public class ConfiguracionTLocalidad : EntityTypeConfiguration<enTLocalidad>
   {
       public ConfiguracionTLocalidad()
@@ -174,14 +206,6 @@ namespace Data
       }
   }
 
-  public class ConfiguracionOrdenes : EntityTypeConfiguration<enTOrden>
-  {
-    public ConfiguracionOrdenes()
-    {
-      ToTable("TOrdenes");
-      HasKey(et => et.IdOrder);
-    }
-  }
 
   //  OJO!!! Tiene que tener PK compuesta
   //  Ademas es una tabla de paso para una relacion m x n
@@ -192,8 +216,21 @@ namespace Data
     {
       ToTable("TDetalleOrden");
       HasKey(et => et.IdOrder);
+      HasRequired(et => et.TOrden).WithOptional().Map(m => m.MapKey("IdOrder"));
     }
   }
+
+    public class ConfiguracionOrden : EntityTypeConfiguration<enTOrden>
+    {
+        public ConfiguracionOrden()
+        {
+            ToTable("TOrdenes");
+            HasKey(et => et.IdOrder);
+            HasRequired(et => et.TDetalleOrden).WithOptional().Map(m => m.MapKey("IdOrder"));
+            
+        }
+
+    }
 
   public class ConfiguracionUsuarios : EntityTypeConfiguration<Usuario>
   {
