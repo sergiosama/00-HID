@@ -1,12 +1,16 @@
 using System;
+using System.Collections.Generic;
 
 namespace Entidades
 {
 	public class enTDetalleOrden
 	{
+
+      
+
         public int IdOrder { get; set; }
         public int IdArticulo { get; set; }
-        public Nullable<double> Precio { get; set; }
+        public Nullable<decimal> Precio { get; set; }
         public Nullable<double> Cantidad { get; set; }
         public Nullable<bool> Discontinuo { get; set; }
 

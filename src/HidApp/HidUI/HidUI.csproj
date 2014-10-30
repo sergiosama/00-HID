@@ -97,7 +97,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ArticulosViewModel.cs" />
     <Compile Include="ViewModel\NavegableViewModel.cs" />
     <Compile Include="ViewModel\PacientesViewModel.cs" />
     <Compile Include="Views\LoginIngresoNormal.cs">
