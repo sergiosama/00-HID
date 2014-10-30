@@ -25,7 +25,7 @@ namespace HidUI.Views
     {
 
         private PacientesViewModel _viewModel;
-        public HIDContext _ctx;
+       
         public BindingSource bs;
 
         public PacientesView()
@@ -36,11 +36,11 @@ namespace HidUI.Views
             
             bs = new BindingSource();
 
-            _ctx = new HIDContext();
+          
 
-            _ctx.Pacientes.Load();
+            DB.Context.Pacientes.Load();
 
-            var Pac = _ctx.Pacientes.Local.ToBindingList();
+            var Pac = DB.Context.Pacientes.Local.ToBindingList();
 
             bs.DataSource = Pac;
 
@@ -80,22 +80,20 @@ namespace HidUI.Views
         /// </summary>
         private void CargaLookUp()
         {
-            using (HIDContext _ctx = new HIDContext())
-            {
-                IQueryable<enTTipoDocumento> TipoDoc = from q in _ctx.TipoDocumento
+               IQueryable<enTTipoDocumento> TipoDoc = from q in DB.Context.TipoDocumento
                                                        select q;
                 List<enTTipoDocumento> td = TipoDoc.ToList();
                 lueTipoDocumento.Properties.DataSource = td;
 
     
-                IQueryable<enTObraSocial> iqOS = from q in _ctx.TObraSocial
+                IQueryable<enTObraSocial> iqOS = from q in DB.Context.TObraSocial
                                                  select q;
 
                 List<enTObraSocial> lOs = iqOS.ToList();
 
                 lueObraSocial.Properties.DataSource = lOs;
 
-                IQueryable<enTPlanObraSocial> iqPlan = from q in _ctx.PlanObraSocial
+                IQueryable<enTPlanObraSocial> iqPlan = from q in DB.Context.PlanObraSocial
                                                        select q;
 
                 List<enTPlanObraSocial> lPlan = iqPlan.ToList();
@@ -104,7 +102,7 @@ namespace HidUI.Views
          
 
                
-            }
+            
         }
 
 

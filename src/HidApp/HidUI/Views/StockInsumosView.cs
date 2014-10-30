@@ -24,11 +24,11 @@ namespace HidUI.Views
   {
     private StockInsumosViewModel _viewModel;
 
-    public HIDContext _ctx;
+  
 
     public BindingSource bs;
 
-    public delegate void EventHandler(object sender, System.EventArgs e);
+    /*public delegate void EventHandler(object sender, System.EventArgs e);
 
 
     EventHandler EventHandlerDelegate;
@@ -45,18 +45,19 @@ namespace HidUI.Views
         this.EventHandlerDelegate -= value;
       }
     }
-
+      */
     public StockInsumosView()
     {
       InitializeComponent();
 
       _viewModel = ViewModelSource.Create<StockInsumosViewModel>();
 
-      _ctx = new HIDContext();
+        
+    
 
-      _ctx.Articulos.Load();
+      DB.Context.Articulos.Load();
 
-      var Art = _ctx.Articulos.Local.ToBindingList();
+      var Art = DB.Context.Articulos.Local.ToBindingList();
 
       bs = new BindingSource();
 
@@ -211,7 +212,7 @@ namespace HidUI.Views
     private void LoadData( int iId )
     {
        
-            IQueryable<enTArticulo> Articulos = from q in _ctx.Articulos 
+            IQueryable<enTArticulo> Articulos = from q in DB.Context.Articulos 
                                                 where q.IdArticulo == iId
                                                 select q;
             List<enTArticulo> lArt = Articulos.ToList();
@@ -234,13 +235,13 @@ namespace HidUI.Views
 
     private void CargaCombos()
     {
-           IQueryable<enTTipoArticulo> TipoArticulo = from q in _ctx.TTipoArticulo
+           IQueryable<enTTipoArticulo> TipoArticulo = from q in DB.Context.TTipoArticulo
                                                        select q;
             List<enTTipoArticulo> lTipo = TipoArticulo.ToList();
             leTipoArticulo.Properties.DataSource = lTipo;
             leTipoArticulo.Refresh();
 
-            IQueryable<enTRecurso> Rec = from q in _ctx.Recursos
+            IQueryable<enTRecurso> Rec = from q in DB.Context.Recursos
                                               select q;
             List<enTRecurso> lRec = Rec.ToList();
             leIdRecurso.Properties.DataSource = lRec;
@@ -259,7 +260,7 @@ namespace HidUI.Views
        
             try
             {
-                enTArticulo oArt = _ctx.Articulos.SingleOrDefault<enTArticulo>(p => p.IdArticulo == iId);
+                enTArticulo oArt = DB.Context.Articulos.SingleOrDefault<enTArticulo>(p => p.IdArticulo == iId);
                 
                 oArt.CodeBar = teCodigoBarra.Text;
                 oArt.DetalleArticulo = teDetalleArticulo.Text;
@@ -269,7 +270,7 @@ namespace HidUI.Views
                 oArt.Stock = Convert.ToInt32(teStock.Text);
                 oArt.Stockminimo = Convert.ToInt32(teStockMinimo.Text);
 
-                _ctx.SaveChanges();
+                DB.Context.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -308,7 +309,7 @@ namespace HidUI.Views
 
                 };
 
-                _ctx.Articulos.Add(et);
+                DB.Context.Articulos.Add(et);
 
             
         }
@@ -329,8 +330,8 @@ namespace HidUI.Views
      
             try
             {
-                _ctx.Articulos.Remove(_ctx.Articulos.FirstOrDefault(a => a.IdArticulo == _idArticulo));
-                _ctx.SaveChanges();
+                DB.Context.Articulos.Remove(DB.Context.Articulos.FirstOrDefault(a => a.IdArticulo == _idArticulo));
+                DB.Context.SaveChanges();
             }
             catch (Exception)
             {
