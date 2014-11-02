@@ -10,7 +10,7 @@ namespace Entidades
         {
             this.TPaciente = new HashSet<enTPaciente>();
             this.TPlanObraSocial = new HashSet<enTPlanObraSocial>();
-            //this.TipoFactura = new HashSet<enTipoFactura>();
+            this.TipoFactura = new HashSet<enTipoFactura>();
 
         }
     
@@ -26,7 +26,7 @@ namespace Entidades
         public Nullable<int> IdTipoFactura { get; set; }
     
         public virtual enTLocalidad TLocalidad { get; set; }
-        public virtual enTipoFactura TipoFactura { get; set; }
+        public virtual ICollection<enTipoFactura> TipoFactura { get; set; }
         public virtual enTTipoIVA TTipoIVA { get; set; }
         public virtual ICollection<enTPaciente> TPaciente { get; set; }
         public virtual ICollection<enTPlanObraSocial> TPlanObraSocial { get; set; }

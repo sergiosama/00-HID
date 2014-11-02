@@ -14,13 +14,13 @@ namespace Data
   {
 
 
-/* 
-One or more validation errors were detected during model generation:
+      /* 
 
-Data.enTOrden: : EntityType 'enTOrden' has no key defined. Define the key for this EntityType.
-enTOrdens: EntityType: EntitySet 'enTOrdens' is based on type 'enTOrden' that has no keys defined.
+       Unable to determine the principal end of an association between the types 'Entidades.enTOrden' and 'Entidades.enTDetalleOrden'. 
+      The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.
+       * 
 
-*/
+      */
 
 
     public DbSet<enTCtaCteRecurso> CtaCteRecurso { get; set; }
@@ -44,6 +44,10 @@ enTOrdens: EntityType: EntitySet 'enTOrdens' is based on type 'enTOrden' that ha
 
     public DbSet<enTDetalleOrden> DetalleOrden { get; set; }
     public DbSet<enTOrden> Orden { get; set; }
+
+    public DbSet<enTTipoIVA> TipoIva { get; set; }
+
+   
     public HIDContext()
       : base("Server=(local)\\SQLExpress;Database=HID;Trusted_Connection=true;")
     {
@@ -61,20 +65,16 @@ enTOrdens: EntityType: EntitySet 'enTOrdens' is based on type 'enTOrden' that ha
       modelBuilder.Configurations.Add(new ConfiguracionUsuarios());
       modelBuilder.Configurations.Add(new ConfiguracionRecursos());
       modelBuilder.Configurations.Add(new ConfiguracionAuditoria());
-     
-   
-      modelBuilder.Configurations.Add( new ConfiguracionCtaCteRecurso());      
+      modelBuilder.Configurations.Add(new ConfiguracionCtaCteRecurso());      
       modelBuilder.Configurations.Add(new ConfiguracionCategoriaRecurso());
       modelBuilder.Configurations.Add(new ConfiguracionTipoIVA());
       modelBuilder.Configurations.Add(new ConfiguracionArticulos());
-      modelBuilder.Configurations.Add( new ConfiguracionRent());
+      modelBuilder.Configurations.Add(new ConfiguracionRent());
       modelBuilder.Configurations.Add(new ConfiguracionTipoArticulo());
       modelBuilder.Configurations.Add(new ConfiguracionPacientes());
       modelBuilder.Configurations.Add(new ConfiguracionCtaCtePaciente()); 
-
       modelBuilder.Configurations.Add(new ConfiguracionTipoDocumento());
       modelBuilder.Configurations.Add(new ConfiguracioPlanObraSocial());
-
       modelBuilder.Configurations.Add(new ConfiguracionTLocalidad());
       modelBuilder.Configurations.Add(new ConfiguracionDetalleOrdenes());
       modelBuilder.Configurations.Add(new ConfiguracionOrden());
@@ -153,7 +153,7 @@ enTOrdens: EntityType: EntitySet 'enTOrdens' is based on type 'enTOrden' that ha
       {
           ToTable("TPlanObraSocial");
           HasKey(et => et.IdPlanObraSocial);
-         HasRequired(et => et.TObraSocial).WithOptional().Map(x => x.MapKey("IdObraSocial"));
+         //HasRequired(et => et.TObraSocial).WithOptional().Map(x => x.MapKey("IdObraSocial"));
         
       }
   
@@ -182,10 +182,7 @@ enTOrdens: EntityType: EntitySet 'enTOrdens' is based on type 'enTOrden' that ha
       {
           ToTable("TPacientes");
           HasKey(et => et.IdPaciente);
-
-          
-
-         
+           
       }
 
   }
@@ -197,9 +194,16 @@ enTOrdens: EntityType: EntitySet 'enTOrdens' is based on type 'enTOrden' that ha
         HasKey(et => et.IdArticulo);
 
         //Mapeo 
-        HasRequired(et => et.TRecurso).WithOptional().Map(x => x.MapKey("IdRecurso"));
-        HasRequired(et => et.TTipoArticulos).WithOptional().Map(x => x.MapKey("IdTipoArticulo"));
-      
+        //HasRequired(et => et.TRecurso).WithOptional().Map(x => x.MapKey("IdRecurso"));
+        //HasRequired(et => et.TTipoArticulos).WithOptional().Map(x => x.MapKey("IdTipoArticulo"));
+       /*
+        HasRequired(p => p.TOrden)
+          .WithMany()
+          .HasForeignKey(a => a.IdArticulo);
+        /*
+        HasRequired(p => p.TRent)
+            .WithMany()
+            .HasForeignKey(a => a.IdArticulo);  */
 
 
 
@@ -215,8 +219,18 @@ enTOrdens: EntityType: EntitySet 'enTOrdens' is based on type 'enTOrden' that ha
     public ConfiguracionDetalleOrdenes()
     {
       ToTable("TDetalleOrden");
-      HasKey(et => et.IdOrder);
+      HasKey(et => et.IdDetalleOrden);
+
       HasRequired(et => et.TOrden).WithOptional().Map(m => m.MapKey("IdOrder"));
+   
+      /*
+         
+        
+      HasRequired(p => p.TArticulo)
+          .WithMany()
+          .HasForeignKey(u => u.IdArticulo);
+          
+      //*/
     }
   }
 
@@ -226,7 +240,7 @@ enTOrdens: EntityType: EntitySet 'enTOrdens' is based on type 'enTOrden' that ha
         {
             ToTable("TOrdenes");
             HasKey(et => et.IdOrder);
-            HasRequired(et => et.TDetalleOrden).WithOptional().Map(m => m.MapKey("IdOrder"));
+            //HasRequired(et => et.TDetalleOrden).WithOptional().Map(m => m.MapKey("IdOrder"));
             
         }
 

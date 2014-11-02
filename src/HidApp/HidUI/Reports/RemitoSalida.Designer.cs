@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RemitoSalida));
+            DevExpress.DataAccess.EntityFramework.EFConnectionParameters efConnectionParameters1 = new DevExpress.DataAccess.EntityFramework.EFConnectionParameters();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -40,7 +41,9 @@
             this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+          
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
+          
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -127,6 +130,8 @@
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(100F, 23F);
             this.xrLabel1.Text = "xrLabel1";
+            efConnectionParameters1.ConnectionStringName = "HIDContext";
+            efConnectionParameters1.Source = typeof(Data.HIDContext);
             // 
             // RemitoSalida
             // 
@@ -138,6 +143,7 @@
             this.Margins = new System.Drawing.Printing.Margins(100, 100, 61, 100);
             this.Version = "14.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
+          
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -155,5 +161,6 @@
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+    
     }
 }
