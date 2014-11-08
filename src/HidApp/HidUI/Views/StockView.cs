@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 using DevExpress.Mvvm.POCO;
+using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using HidUI.Common;
 using HidUI.ViewModel;
@@ -14,19 +17,40 @@ namespace HidUI.Views
   {
     private readonly StockViewModel _viewModel;
 
+    private IViewLocator _locator;
+
+    private Dictionary<ViewType, IWorkView> _workViews;
+
+    private Control _parent;
+    private RibbonControl _ribbon;
+
+    private string _lastPage;
+
     public static void RegisterViews()
     {
-      ViewManager.Current.AddView(ViewType.StockInsumos, ViewType.Stock, null);
-      ViewManager.Current.AddView(ViewType.StockAlquilables, ViewType.Stock, null);
-      ViewManager.Current.AddView(ViewType.StockReportes, ViewType.Stock, null);
+      //ViewManager.Current.AddView(ViewType.StockInsumos, ViewType.Stock, null);
+      //ViewManager.Current.AddView(ViewType.StockAlquilables, ViewType.Stock, null);
+      //ViewManager.Current.AddView(ViewType.StockReportes, ViewType.Stock, null);
     }
 
     //  public static 
     public StockView(IViewLocator locator)
     {
       InitializeComponent();
+
+      _lastPage = null;   //  ya se... redundante...
+
+      _locator = locator;
       //  _viewModel = ViewModelSource.Create(() => new StockViewModel(new Localizador()));
-      _viewModel = ViewModelSource.Create(() => new StockViewModel(locator));
+      _viewModel = ViewModelSource.Create(() => new StockViewModel(_locator));
+
+      //  bind eventos del VM
+      _viewModel.WorkViewAdded += ViewModelOnWorkViewAdded;
+      _viewModel.WorkViewRemoved += ViewModelOnWorkViewRemoved;
+
+      CreateWorkViews();
+
+      BindCommands();
     }
 
     protected override void OnLoad(EventArgs e)
@@ -38,20 +62,84 @@ namespace HidUI.Views
       _viewModel.SetDefaultView();
     }
 
+    private void CreateWorkViews()
+    {
+      _workViews = new Dictionary<ViewType, IWorkView>();
+
+      _workViews.Add(ViewType.StockInsumos, _locator.GetView(ViewType.StockInsumos) as IWorkView);
+      _workViews.Add(ViewType.StockAlquilables, _locator.GetView(ViewType.StockAlquilables) as IWorkView);
+    }
+
 
     #region Command Binding
 
     //  Tener en cuenta que por ahora tenemos todos los view models accesibles, luego deberiamos bindear solo los necesarios!!
 
     //  Eventos de cambio de pagina: asociarlos al view model para que cambie tambien
+    private void BindCommands()
+    {
+      //  tengo que tomar cada work view y asociarles los comandos a sus respectivos viewmodels...
+      IWorkView workView;
+
+      workView = _workViews[ViewType.StockInsumos];
+
+      bbnAlqNuevo.BindCommand(workView.ViewModel.GetActionFromName("Procesar1"), workView.ViewModel);
+      bbnAlqIngreso.BindCommand(workView.ViewModel.GetActionFromName("Toggle"), workView.ViewModel);
+
+      workView = _workViews[ViewType.StockAlquilables];
+
+      bbnAlqNuevo.BindCommand(workView.ViewModel.GetActionFromName("Procesar2"), workView.ViewModel);
+    }
 
     #endregion
 
+    private void ViewModelOnWorkViewRemoved(object sender, EventArgs eventArgs)
+    {
+      var oldVista = sender as Control;
+
+      oldVista.Parent = null;
+    }
+
+    /// <summary>
+    /// El ViewModel informa a la vista principal que OTRA vista fue elegida
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="eventArgs"></param>
+    private void ViewModelOnWorkViewAdded(object sender, EventArgs eventArgs)
+    {
+      var nuevaVista = sender as Control;
+
+      if (nuevaVista != null)
+      {
+        nuevaVista.Dock = DockStyle.Fill;
+        nuevaVista.Parent = _parent;
+        //  Si en la principal seteo la navegable en el control parent, tengo que hacer
+        //  si o si el BringToFront()
+        //nuevaVista.BringToFront();
+        //  cambiar titulo de barra segun la vista!!
+        //  CONECTAR A SEARCH CONTROL!!
+      }
+    }
 
 
     public DevExpress.XtraBars.Ribbon.RibbonControl Ribbon
     {
       get { return this.ribStock; }
+    }
+
+    public void SetMainRibbon(RibbonControl ribbon)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void BindEvents()
+    {
+      throw new NotImplementedException();
+    }
+
+    public void FocusOnPage()
+    {
+      throw new NotImplementedException();
     }
 
     public void FocusOnPage(DevExpress.XtraBars.Ribbon.RibbonControl ribbon)
@@ -76,6 +164,16 @@ namespace HidUI.Views
     public void RestoreVisualState()
     {
       
+    }
+
+    public void SetContainer(Control ctrl)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void UnsetContainer()
+    {
+      throw new NotImplementedException();
     }
   }
 }

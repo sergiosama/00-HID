@@ -133,6 +133,18 @@
     </Compile>
     <Compile Include="Views\ViewManager.cs" />
     <Compile Include="Views\ViewServices.cs" />
+    <Compile Include="Views\winAlquilables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\winAlquilables.designer.cs">
+      <DependentUpon>winAlquilables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\winProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\winProveedores.designer.cs">
+      <DependentUpon>winProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="winMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +208,12 @@
     <Compile Include="Views\winLogin.designer.cs">
       <DependentUpon>winLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="winTestUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="winTestUI.designer.cs">
+      <DependentUpon>winTestUI.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Reports\RemitoSalida.resx">
       <DependentUpon>RemitoSalida.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +231,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserInfoView.resx">
       <DependentUpon>UserInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\winAlquilables.resx">
+      <DependentUpon>winAlquilables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\winProveedores.resx">
+      <DependentUpon>winProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="winMain.resx">
       <DependentUpon>winMain.cs</DependentUpon>
@@ -246,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\winLogin.resx">
       <DependentUpon>winLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="winTestUI.resx">
+      <DependentUpon>winTestUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

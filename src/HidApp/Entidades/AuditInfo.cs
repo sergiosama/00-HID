@@ -51,12 +51,40 @@ namespace Entidades
     /// Por ejemplo cuando tengo intentos fallidos o si algun usuario quisiera hacer cosas no permitidas
     /// </summary>
     Seguridad,
+
+    /// <summary>
+    /// Intento de leer informacion que se considera critica o confidencial (raro)
+    /// </summary>
     Lectura,
-    Escritura,
+
+    /// <summary>
+    /// Intento de incorporar un nuevo registro (o mas de uno) de una entidad en el sistema
+    /// </summary>
+    Agregado,
+
+    /// <summary>
+    /// Intento de cambiar alguno de los datos de una entidad del sistema
+    /// </summary>
     Modificacion,
+
+    /// <summary>
+    /// 
+    /// </summary>
     Borrado,
+
+    /// <summary>
+    /// 
+    /// </summary>
     Acceso,
+
+    /// <summary>
+    /// 
+    /// </summary>
     Ingreso,
+
+    /// <summary>
+    /// 
+    /// </summary>
     Otros
   }
 }

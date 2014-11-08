@@ -13,7 +13,7 @@ namespace Infraestructura
   /// </summary>
   public class Contexto
   {
-    private static Contexto _contexto;
+    private static readonly Contexto _contexto;
 
     /// <summary>
     /// Retorna una referencia al Contexto actual y UNICO de la aplicacion

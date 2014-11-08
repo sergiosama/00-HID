@@ -12,41 +12,50 @@ namespace Data
 {
   public class HIDContext : DbContext
   {
-
-
-      /* 
-
+    /* 
        Unable to determine the principal end of an association between the types 'Entidades.enTOrden' and 'Entidades.enTDetalleOrden'. 
       The principal end of this association must be explicitly configured using either the relationship fluent API or data annotations.
-       * 
-
-      */
-
+    */
 
     public DbSet<enTCtaCteRecurso> CtaCteRecurso { get; set; }
+
     public DbSet<enTRecurso> Recursos { get; set; }
+
     public DbSet<Usuario> Usuarios { get; set; }
+    
     public DbSet<AuditInfo> Auditoria { get; set; }
+    
     public DbSet<enTArticulo> Articulos { get; set; }
+    
     public DbSet<enTCategoriaRecurso> CategoriaRecurso { get; set; }
     
-    
     public DbSet<enTPaciente> Pacientes { get; set; }
+
     public DbSet<enTCtaCtePaciente> CtaCtePaciente { get; set; }
+    
     public DbSet<enTObraSocial> TObraSocial { get; set; }
+    
     public DbSet<enTRent> Rent { get; set; }
+    
     public DbSet<enTTipoArticulo> TTipoArticulo { get; set; }
+    
     public DbSet<enTTipoDocumento> TipoDocumento { get; set; }
+    
     public DbSet<enTPlanObraSocial> PlanObraSocial { get; set; }
+    
     public DbSet<enTipoFactura> TipoFactura { get; set; }
+    
     public DbSet<enTLocalidad> Tlocalidad { get; set; }
+    
     public DbSet<enTProvincia> Provincia { get; set; }
 
     public DbSet<enTDetalleOrden> DetalleOrden { get; set; }
+    
     public DbSet<enTOrden> Orden { get; set; }
 
     public DbSet<enTTipoIVA> TipoIva { get; set; }
 
+    public DbSet<Proveedor> Proveedores { get; set; }
    
     public HIDContext()
       : base("Server=(local)\\SQLExpress;Database=HID;Trusted_Connection=true;")
@@ -78,138 +87,123 @@ namespace Data
       modelBuilder.Configurations.Add(new ConfiguracionTLocalidad());
       modelBuilder.Configurations.Add(new ConfiguracionDetalleOrdenes());
       modelBuilder.Configurations.Add(new ConfiguracionOrden());
-
+      modelBuilder.Configurations.Add(new ConfiguracionProveedores());
     }
   }
 
   #region Clases para configurar mapeo de E-F
 
-    public class ConfiguracionProvincia : EntityTypeConfiguration<enTProvincia>
+  public class ConfiguracionProvincia : EntityTypeConfiguration<enTProvincia>
+  {
+    public ConfiguracionProvincia()
     {
-
-        public ConfiguracionProvincia()
-        {
-            ToTable("TProvincias");
-            HasKey(et => et.Idcodprov);
-        }
+      ToTable("TProvincias");
+      HasKey(et => et.Idcodprov);
     }
-    public class ConfiguracionRent: EntityTypeConfiguration<enTRent>
+  }
+
+  public class ConfiguracionRent: EntityTypeConfiguration<enTRent>
+  {
+    public  ConfiguracionRent()
     {
-
-        public  ConfiguracionRent()
-        {
-            ToTable("TRent");
-            HasKey(et => et.IdRent);
-        }
+      ToTable("TRent");
+      HasKey(et => et.IdRent);
     }
-
+  }
 
   public class ConfiguracionCtaCteRecurso:EntityTypeConfiguration<enTCtaCteRecurso>
   {
-      public ConfiguracionCtaCteRecurso()
-      {
-          ToTable("TCtaCteRecurso");
-          HasKey(et => et.IdCtaCteRecursos);
-
-      }
+    public ConfiguracionCtaCteRecurso()
+    {
+      ToTable("TCtaCteRecurso");
+      HasKey(et => et.IdCtaCteRecursos);
+    }
   }
+
   public class ConfiguracionTLocalidad : EntityTypeConfiguration<enTLocalidad>
   {
-      public ConfiguracionTLocalidad()
-      {
-          ToTable("TLocalidad");
-          HasKey(et => et.Idcodloc);
-      }
-  
+    public ConfiguracionTLocalidad()
+    {
+      ToTable("TLocalidad");
+      HasKey(et => et.Idcodloc);
+    }
   }
 
   public class ConfiguracionTipoFactura : EntityTypeConfiguration<enTipoFactura>
   { 
      public ConfiguracionTipoFactura()
-      {
-          ToTable("TipoFactura");
-          HasKey(et => et.IdTipoFactura);
-
-      }
-   
+     {
+        ToTable("TipoFactura");
+        HasKey(et => et.IdTipoFactura);
+     }
   }
-
 
   public class ConfiguracionTObraSocial : EntityTypeConfiguration<enTObraSocial>
   {
-      public ConfiguracionTObraSocial()
-      {
-          ToTable("TObraSocial");
-          HasKey(et => et.IdObraSocial);
-          
-
-      }
-  
+    public ConfiguracionTObraSocial()
+    {
+      ToTable("TObraSocial");
+      HasKey(et => et.IdObraSocial);
+    }
   }
 
   public class ConfiguracioPlanObraSocial : EntityTypeConfiguration<enTPlanObraSocial>
   {
-      public ConfiguracioPlanObraSocial()
-      {
-          ToTable("TPlanObraSocial");
-          HasKey(et => et.IdPlanObraSocial);
-         //HasRequired(et => et.TObraSocial).WithOptional().Map(x => x.MapKey("IdObraSocial"));
-        
-      }
-  
+    public ConfiguracioPlanObraSocial()
+    {
+      ToTable("TPlanObraSocial");
+      HasKey(et => et.IdPlanObraSocial);
+      //HasRequired(et => et.TObraSocial).WithOptional().Map(x => x.MapKey("IdObraSocial"));
+    }
   }
+
   public class ConfiguracionTipoDocumento : EntityTypeConfiguration<enTTipoDocumento>
   {
-      public ConfiguracionTipoDocumento()
-      {
-          ToTable("TTipoDocumento");
-          HasKey(et => et.IdTipoDocumento);
-      }
+    public ConfiguracionTipoDocumento()
+    {
+      ToTable("TTipoDocumento");
+      HasKey(et => et.IdTipoDocumento);
+    }
   }
 
   public class ConfiguracionCtaCtePaciente : EntityTypeConfiguration<enTCtaCtePaciente>
   {
-      public ConfiguracionCtaCtePaciente()
-      {
-          ToTable("TCtaCtePaciente");
-          HasKey(et => et.NroCuenta);
-
-      }
+    public ConfiguracionCtaCtePaciente()
+    {
+      ToTable("TCtaCtePaciente");
+      HasKey(et => et.NroCuenta);
+    }
   }
+
   public class ConfiguracionPacientes : EntityTypeConfiguration<enTPaciente>
   {
-      public ConfiguracionPacientes()
-      {
-          ToTable("TPacientes");
-          HasKey(et => et.IdPaciente);
-           
-      }
-
+    public ConfiguracionPacientes()
+    {
+      ToTable("TPacientes");
+      HasKey(et => et.IdPaciente);
+    }
   }
+
   public class ConfiguracionArticulos : EntityTypeConfiguration<enTArticulo>
   {
-      public ConfiguracionArticulos()
-      {
-        ToTable("TArticulos");
-        HasKey(et => et.IdArticulo);
+    public ConfiguracionArticulos()
+    {
+      ToTable("TArticulos");
+      HasKey(et => et.IdArticulo);
 
-        //Mapeo 
-        //HasRequired(et => et.TRecurso).WithOptional().Map(x => x.MapKey("IdRecurso"));
-        //HasRequired(et => et.TTipoArticulos).WithOptional().Map(x => x.MapKey("IdTipoArticulo"));
-       /*
-        HasRequired(p => p.TOrden)
+      //Mapeo 
+      //HasRequired(et => et.TRecurso).WithOptional().Map(x => x.MapKey("IdRecurso"));
+      //HasRequired(et => et.TTipoArticulos).WithOptional().Map(x => x.MapKey("IdTipoArticulo"));
+      /*
+      HasRequired(p => p.TOrden)
+        .WithMany()
+        .HasForeignKey(a => a.IdArticulo);
+      /*
+      HasRequired(p => p.TRent)
           .WithMany()
-          .HasForeignKey(a => a.IdArticulo);
-        /*
-        HasRequired(p => p.TRent)
-            .WithMany()
-            .HasForeignKey(a => a.IdArticulo);  */
-
-
-
-      }
+          .HasForeignKey(a => a.IdArticulo);  */
+    }
   }
-
 
   //  OJO!!! Tiene que tener PK compuesta
   //  Ademas es una tabla de paso para una relacion m x n
@@ -224,27 +218,22 @@ namespace Data
       HasRequired(et => et.TOrden).WithOptional().Map(m => m.MapKey("IdOrder"));
    
       /*
-         
-        
       HasRequired(p => p.TArticulo)
           .WithMany()
           .HasForeignKey(u => u.IdArticulo);
-          
       //*/
     }
   }
 
-    public class ConfiguracionOrden : EntityTypeConfiguration<enTOrden>
+  public class ConfiguracionOrden : EntityTypeConfiguration<enTOrden>
+  {
+    public ConfiguracionOrden()
     {
-        public ConfiguracionOrden()
-        {
-            ToTable("TOrdenes");
-            HasKey(et => et.IdOrder);
-            //HasRequired(et => et.TDetalleOrden).WithOptional().Map(m => m.MapKey("IdOrder"));
-            
-        }
-
+      ToTable("TOrdenes");
+      HasKey(et => et.IdOrder);
+      //HasRequired(et => et.TDetalleOrden).WithOptional().Map(m => m.MapKey("IdOrder"));
     }
+  }
 
   public class ConfiguracionUsuarios : EntityTypeConfiguration<Usuario>
   {
@@ -262,8 +251,6 @@ namespace Data
       //HasRequired<enTRecurso>(x => x.Recurso);
     }
   }
-
-
     
   public class ConfiguracionRecursos : EntityTypeConfiguration<enTRecurso>
   {
@@ -338,23 +325,26 @@ namespace Data
       ToTable("TCategoriaRecurso");
       HasKey(et => et.IdCategoria);
     }
-
   }
 
   public class ConfiguracionTipoArticulo : EntityTypeConfiguration<enTTipoArticulo>
   {
-      public ConfiguracionTipoArticulo()
-      {
-          ToTable("TTipoArticulos");
-          HasKey(et => et.IdTipoArticulo);
-      
-      }
-  
-  } 
+    public ConfiguracionTipoArticulo()
+    {
+      ToTable("TTipoArticulos");
+      HasKey(et => et.IdTipoArticulo);
+    }
+  }
+
+  public class ConfiguracionProveedores : EntityTypeConfiguration<Proveedor>
+  {
+    public ConfiguracionProveedores()
+    {
+      ToTable("TProveedores");
+      Property(et => et.ID).HasColumnName("IdProveedor");
+    }
+  }
 
   #endregion
-
-
-
 
 }
