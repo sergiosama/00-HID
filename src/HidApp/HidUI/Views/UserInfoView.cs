@@ -100,7 +100,7 @@ namespace HidUI.Views
       //ethedy
       //lblFuncionUsuario.Text = _recurso.Categoria.Detalle;
       
-        lblFuncionUsuario.Text = _recurso.TCategoriaRecurso.Detalle;
+        lblFuncionUsuario.Text = _recurso.Categoria.Detalle;
       if (_recurso.Foto == null)
       {
         if (_recurso.Sexo[0] == 'F')

@@ -98,6 +98,9 @@
     </Compile>
     <Compile Include="ViewModel\NavegableViewModel.cs" />
     <Compile Include="ViewModel\PacientesViewModel.cs" />
+    <Compile Include="ViewModel\ProveedoresViewModel.cs" />
+    <Compile Include="ViewModel\StockAlquilablesViewModel.cs" />
+    <Compile Include="ViewModel\TestUIViewModel.cs" />
     <Compile Include="Views\LoginIngresoNormal.cs">
       <SubType>UserControl</SubType>
     </Compile>

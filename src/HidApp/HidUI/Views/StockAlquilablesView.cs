@@ -6,6 +6,8 @@ namespace HidUI.Views
 {
   public partial class StockAlquilablesView : XtraUserControl, IWorkView
   {
+    private IWorkViewModel _viewModel;
+
     public StockAlquilablesView()
     {
       InitializeComponent();
@@ -15,5 +17,12 @@ namespace HidUI.Views
     {
 
     }
+
+    public void BindCommands(ISupportRibbon parent)
+    {
+      throw new NotImplementedException();
+    }
+
+    public IWorkViewModel ViewModel { get; set; }
   }
 }

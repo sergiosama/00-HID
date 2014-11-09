@@ -68,10 +68,10 @@ namespace HidUI.Views
           }
         }
         else
-          errLogin.SetError(txtPassword, "Debe indicarse la contraseña de ingreso para este usuario", ErrorType.Critical);
+          errLogin.SetError(txtPassword, "Debe indicarse la contraseña de ingreso para este usuario", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical);
       }
       else
-        errLogin.SetError(txtUser, "El nombre de usuario no puede estar vacio para efectuar el ingreso", ErrorType.Critical);
+        errLogin.SetError(txtUser, "El nombre de usuario no puede estar vacio para efectuar el ingreso", DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical);
     }
 
     private void LoginCancelado(object sender, EventArgs e)

@@ -1,15 +1,20 @@
-﻿using DevExpress.Mvvm;
-
+﻿using System;
+using System.Linq.Expressions;
+using DevExpress.Mvvm;
 using HidUI.Common;
-
 
 namespace HidUI.ViewModel
 {
-  public class StockInsumosViewModel : ViewModelBase
+  public class StockInsumosViewModel : ViewModelBase, IWorkViewModel
   {
     public StockInsumosViewModel()
     {
-        Helpers.MainForm.MainViewModel.NavigateTo(ViewType.StockInsumos);
+      
+    }
+
+    public Expression<Action> GetActionFromName(string name)
+    {
+      throw new NotImplementedException();
     }
   }
 }

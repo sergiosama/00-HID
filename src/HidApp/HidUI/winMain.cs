@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.POCO;
 using DevExpress.Utils;
+using DevExpress.XtraEditors;
 using HidUI.Common;
 using HidUI.ViewModel;
 using HidUI.Views;
@@ -14,7 +15,7 @@ namespace HidUI
   public partial class winMain : DevExpress.XtraBars.Ribbon.RibbonForm
   {
     private readonly MainViewModel _viewModel;
-    private IViewLocator _localizador;
+    //  private IViewLocator _localizador;
 
     public winMain()
     {
@@ -40,6 +41,31 @@ namespace HidUI
       txtHidden.DataBindings.Add(new Binding("Text", _viewModel, "FullName"));
     }
 
+    #region Propiedades
+
+    public MainViewModel MainViewModel { get { return _viewModel; } }
+
+    /// <summary>
+    /// El area principal de contenido que dispone la ventana de la aplicacion para ubicar cualquier vista
+    /// </summary>
+    public Control Content
+    {
+      get { return mainContent; }
+    }
+
+    /// <summary>
+    /// Referencia al control de busqueda
+    /// </summary>
+    public SearchControl Search
+    {
+      get
+      {
+        return mainSearch;
+      }
+    }
+
+#endregion
+
 
     /// <summary>
     /// Usamos por ahora para "simular" un login exitoso
@@ -52,15 +78,37 @@ namespace HidUI
       _viewModel.TryLogin();
     }
 
+    private void BindCommands()
+    {
+      bbiLogin.BindCommand(() => _viewModel.Login(), _viewModel);
+      bbiLogout.BindCommand(() => _viewModel.Logout(), _viewModel);
+      bbiAbout.BindCommand(() => _viewModel.About(), _viewModel);
+      bbUserConnected.BindCommand(() => _viewModel.UserInfo(), _viewModel);
+
+      //  textEdit1.DataBindings.Add(new Binding("Text", _viewModel, "Texto"));
+    }
+
+
+    #region ViewModel Event Handlers
+
     private void ViewModelOnViewRemoved(object sender, EventArgs eventArgs)
     {
       var oldVista = sender as Control;
+
+      if (oldVista is INavigableView)
+      {
+        //  avisar para que
+        //  - GUARDE LA VISTA ACTUAL (y la pueda recuperar cuando se active nuevamente)
+        //  - desconecte la workview del espacio reservado para contenido
+        ((INavigableView)oldVista).UnsetContainer();
+      }
+
+      oldVista.Parent = null;
 
       if (oldVista is ISupportRibbon || oldVista is IWorkView)
       {
         ribMain.UnMergeRibbon();
       }
-      oldVista.Parent = null;
     }
 
     /// <summary>
@@ -75,28 +123,32 @@ namespace HidUI
       if (nuevaVista != null)
       {
         nuevaVista.Dock = DockStyle.Fill;
-        nuevaVista.Parent = pnlContainer;
+
+        if (nuevaVista is INavigableView)
+        {
+          ((INavigableView)nuevaVista).SetContainer(mainContent);
+        }
+        else
+          nuevaVista.Parent = mainContent;  //  con esto evito el BringToFront()
+
         if (nuevaVista is ISupportRibbon)
         {
           ISupportRibbon rib = nuevaVista as ISupportRibbon;
 
           ribMain.MergeRibbon(rib.Ribbon);
-          rib.FocusOnPage(ribMain);
+          rib.SetMainRibbon(ribMain);
+          rib.BindEvents();
+          rib.FocusOnPage();
         }
         //  cambiar titulo de barra segun la vista!!
         //  CONECTAR A SEARCH CONTROL!!
       }
+
     }
 
-    private void BindCommands()
-    {
-      bbiLogin.BindCommand(() => _viewModel.Login(), _viewModel);
-      bbiLogout.BindCommand(() => _viewModel.Logout(), _viewModel);
-      bbiAbout.BindCommand(() => _viewModel.About(), _viewModel);
-      bbUserConnected.BindCommand(() => _viewModel.UserInfo(), _viewModel);
+    #endregion
 
-      //  textEdit1.DataBindings.Add(new Binding("Text", _viewModel, "Texto"));
-    }
+    #region Event Handlers
 
     private void Ribbon_CambiarPagina(object sender, EventArgs e)
     {
@@ -113,8 +165,6 @@ namespace HidUI
     {
       Debug.WriteLine("frmMain: Click en Grupo");
     }
-
-    public MainViewModel MainViewModel { get { return _viewModel;  } }
 
     //  Manejo del evento VerPerfil del control de usuario UserInfoView
     private void ViewPerfilUsuario(object sender, EventArgs e)
@@ -149,5 +199,8 @@ namespace HidUI
         bbUserConnected.SuperTip.Items.Add("Presione para ver informacion del usuario actual y tiempos de conexion");
       }
     }
+
+    #endregion
+
   }
 }

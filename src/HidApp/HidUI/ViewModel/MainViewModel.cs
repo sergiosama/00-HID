@@ -80,7 +80,6 @@ namespace HidUI.ViewModel
 
     #endregion
 
-
     #region Comandos
 
     [Command(UseCommandManager = false)]
@@ -161,7 +160,7 @@ namespace HidUI.ViewModel
         {
           ViewType previousViewType;
 
-          previousViewType = ((ISupportPreviousView)SelectedView).PreviousView;
+          previousViewType = ((ISupportPreviousView)SelectedView).PreviousViewType;
           SelectedViewType = previousViewType;
         }
       }
@@ -241,7 +240,7 @@ namespace HidUI.ViewModel
 
       //  esto es mio... si soporta vista anterior, coloco oldView para que quede registrado donde tiene que volver
       if (SelectedView is ISupportPreviousView)
-        ((ISupportPreviousView)SelectedView).PreviousView = oldType;
+        ((ISupportPreviousView)SelectedView).PreviousViewType = oldType;
 
       //  esto tambien es mio... si la vista es tipo navegador, los eventos de navegación deberian replicarse ....
     }
@@ -249,6 +248,7 @@ namespace HidUI.ViewModel
     protected void OnSelectedViewChanged(object oldView)
     {
       //  doy aviso a la vista que elimine o haga lo que quiera con la vista previa
+      //  OJO: es solamente un remove VISUAL, si quisiera hacer algo para guardar el estado deberia hacerlo en el logout
       //
       if (oldView != null)
       {
@@ -263,6 +263,11 @@ namespace HidUI.ViewModel
       //  esto es lo que realmente la muestra!!
       if (ViewAdded != null)
         ViewAdded(SelectedView, EventArgs.Empty);
+    }
+
+    public void SetDefaultView()
+    {
+      SelectedViewType = ViewType.StartMenu;
     }
   }
 }

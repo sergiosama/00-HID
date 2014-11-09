@@ -11,6 +11,7 @@ namespace HidUI.Views
   public partial class AboutView : XtraUserControl, ISupportRibbon, ISupportPreviousView
   {
     private readonly AboutViewModel _viewModel;
+    private ViewType _previousViewType;
 
     public AboutView()
     {
@@ -29,6 +30,21 @@ namespace HidUI.Views
     public RibbonControl Ribbon
     {
       get { return ribAbout; }
+    }
+
+    public void SetMainRibbon(RibbonControl ribbon)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void BindEvents()
+    {
+      throw new NotImplementedException();
+    }
+
+    public void FocusOnPage()
+    {
+      throw new NotImplementedException();
     }
 
     /// <summary>
@@ -56,11 +72,17 @@ namespace HidUI.Views
       Debug.WriteLine("AboutView: Cambio de Pagina!!");
     }
 
-    ViewType ISupportPreviousView.PreviousView { get; set; }
+    ViewType ISupportPreviousView.PreviousViewType { get; set; }
 
     public ViewType ViewType
     {
       get { return Common.ViewType.About; }
+    }
+
+    public ViewType PreviousViewType
+    {
+      get { return _previousViewType; }
+      set { _previousViewType = value; }
     }
   }
 }

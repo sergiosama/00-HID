@@ -58,7 +58,7 @@ namespace Data
     public DbSet<Proveedor> Proveedores { get; set; }
    
     public HIDContext()
-      : base("Server=(local)\\SQLExpress;Database=HID;Trusted_Connection=true;")
+      : base("Server=(local);Database=HID;Trusted_Connection=true;")
     {
       
     }
@@ -269,7 +269,7 @@ namespace Data
       
       //  Mapeos de relaciones (FK)
       //  HasOptional<enTCategoriaRecurso>(et => et.Categoria).WithOptionalDependent();
-      HasOptional(et => et.TCategoriaRecurso)
+      HasOptional(et => et.Categoria)
         .WithMany()
         .Map(x => x.MapKey("IdCategoria"));
 

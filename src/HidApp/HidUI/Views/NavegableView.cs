@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Windows.Forms;
 using DevExpress.Mvvm.POCO;
+using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using HidUI.Common;
 using HidUI.ViewModel;
@@ -54,6 +56,21 @@ namespace HidUI.Views
       get { return this.ribView; }
     }
 
+    public void SetMainRibbon(RibbonControl ribbon)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void BindEvents()
+    {
+      throw new NotImplementedException();
+    }
+
+    public void FocusOnPage()
+    {
+      throw new NotImplementedException();
+    }
+
     public void FocusOnPage(DevExpress.XtraBars.Ribbon.RibbonControl ribbon)
     {
       //  ojo: guardar donde estaba posicionado...
@@ -76,6 +93,16 @@ namespace HidUI.Views
     public void RestoreVisualState()
     {
       
+    }
+
+    public void SetContainer(Control ctrl)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void UnsetContainer()
+    {
+      throw new NotImplementedException();
     }
   }
 }

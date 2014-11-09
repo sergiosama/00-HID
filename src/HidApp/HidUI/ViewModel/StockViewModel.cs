@@ -1,4 +1,5 @@
-﻿using DevExpress.Mvvm;
+﻿using System;
+using DevExpress.Mvvm;
 using HidUI.Common;
 
 namespace HidUI.ViewModel
@@ -16,6 +17,21 @@ namespace HidUI.ViewModel
     {
       //  ojo el IViewLocator deberia ser unico para toda la app!!!
     }
+
+    #region Eventos para avisar a la View
+
+    public event EventHandler WorkViewAdded;
+    public event EventHandler WorkViewRemoved;
+    public event EventHandler SelectedWorkViewChanged;
+    public event EventHandler SelectedWorkViewTypeChanged;
+
+    #endregion
+
+    public virtual ViewType SelectedWorkViewType { get; set; }
+
+    public virtual object SelectedWorkView { get; set; }
+
+
 
     public void SetDefaultView()
     {

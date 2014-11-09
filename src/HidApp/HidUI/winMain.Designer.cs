@@ -42,17 +42,17 @@ namespace HidUI
       this.rbpgInicio = new DevExpress.XtraBars.Ribbon.RibbonPage();
       this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.sbar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-      this.pnlContainer = new DevExpress.XtraEditors.XtraUserControl();
+      this.mainContent = new DevExpress.XtraEditors.XtraUserControl();
       this.txtHidden = new DevExpress.XtraEditors.TextEdit();
       this.pnlSplit = new DevExpress.XtraEditors.SplitContainerControl();
-      this.srchMain = new DevExpress.XtraEditors.SearchControl();
+      this.mainSearch = new DevExpress.XtraEditors.SearchControl();
       ((System.ComponentModel.ISupportInitialize)(this.ribMain)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.ppUserInfo)).BeginInit();
       this.ppUserInfo.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.txtHidden.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pnlSplit)).BeginInit();
       this.pnlSplit.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.srchMain.Properties)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.mainSearch.Properties)).BeginInit();
       this.SuspendLayout();
       // 
       // ribMain
@@ -154,15 +154,15 @@ namespace HidUI
       this.sbar.Ribbon = this.ribMain;
       this.sbar.Size = new System.Drawing.Size(1193, 31);
       // 
-      // pnlContainer
+      // mainContent
       // 
-      this.pnlContainer.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-      this.pnlContainer.Appearance.Options.UseBackColor = true;
-      this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.pnlContainer.Location = new System.Drawing.Point(0, 0);
-      this.pnlContainer.Name = "pnlContainer";
-      this.pnlContainer.Size = new System.Drawing.Size(1193, 639);
-      this.pnlContainer.TabIndex = 3;
+      this.mainContent.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+      this.mainContent.Appearance.Options.UseBackColor = true;
+      this.mainContent.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.mainContent.Location = new System.Drawing.Point(0, 0);
+      this.mainContent.Name = "mainContent";
+      this.mainContent.Size = new System.Drawing.Size(1193, 639);
+      this.mainContent.TabIndex = 3;
       // 
       // txtHidden
       // 
@@ -180,34 +180,34 @@ namespace HidUI
       this.pnlSplit.IsSplitterFixed = true;
       this.pnlSplit.Location = new System.Drawing.Point(0, 144);
       this.pnlSplit.Name = "pnlSplit";
-      this.pnlSplit.Panel1.Controls.Add(this.srchMain);
+      this.pnlSplit.Panel1.Controls.Add(this.mainSearch);
       this.pnlSplit.Panel1.Text = "Search";
-      this.pnlSplit.Panel2.Controls.Add(this.pnlContainer);
+      this.pnlSplit.Panel2.Controls.Add(this.mainContent);
       this.pnlSplit.Panel2.Text = "Content";
       this.pnlSplit.Size = new System.Drawing.Size(1193, 678);
       this.pnlSplit.SplitterPosition = 34;
       this.pnlSplit.TabIndex = 17;
       this.pnlSplit.Text = "splitContainerControl1";
       // 
-      // srchMain
+      // mainSearch
       // 
-      this.srchMain.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.srchMain.EditValue = "";
-      this.srchMain.Location = new System.Drawing.Point(0, 0);
-      this.srchMain.MenuManager = this.ribMain;
-      this.srchMain.Name = "srchMain";
-      this.srchMain.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-      this.srchMain.Properties.Appearance.Options.UseFont = true;
-      this.srchMain.Properties.AutoHeight = false;
-      this.srchMain.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+      this.mainSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.mainSearch.EditValue = "";
+      this.mainSearch.Location = new System.Drawing.Point(0, 0);
+      this.mainSearch.MenuManager = this.ribMain;
+      this.mainSearch.Name = "mainSearch";
+      this.mainSearch.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+      this.mainSearch.Properties.Appearance.Options.UseFont = true;
+      this.mainSearch.Properties.AutoHeight = false;
+      this.mainSearch.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton(),
             new DevExpress.XtraEditors.Repository.MRUButton()});
-      this.srchMain.Properties.NullValuePrompt = "Ingrese un texto para buscar....";
-      this.srchMain.Properties.ShowMRUButton = true;
-      this.srchMain.Properties.ShowNullValuePromptWhenFocused = true;
-      this.srchMain.Size = new System.Drawing.Size(1193, 34);
-      this.srchMain.TabIndex = 0;
+      this.mainSearch.Properties.NullValuePrompt = "Ingrese un texto para buscar....";
+      this.mainSearch.Properties.ShowMRUButton = true;
+      this.mainSearch.Properties.ShowNullValuePromptWhenFocused = true;
+      this.mainSearch.Size = new System.Drawing.Size(1193, 34);
+      this.mainSearch.TabIndex = 0;
       // 
       // winMain
       // 
@@ -231,7 +231,7 @@ namespace HidUI
       ((System.ComponentModel.ISupportInitialize)(this.txtHidden.Properties)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pnlSplit)).EndInit();
       this.pnlSplit.ResumeLayout(false);
-      ((System.ComponentModel.ISupportInitialize)(this.srchMain.Properties)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.mainSearch.Properties)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -245,7 +245,7 @@ namespace HidUI
     private DevExpress.XtraBars.BarButtonItem bbiLogin;
     private DevExpress.XtraBars.BarButtonItem bbiAbout;
     private DevExpress.XtraBars.Ribbon.RibbonStatusBar sbar;
-    private DevExpress.XtraEditors.XtraUserControl pnlContainer;
+    private DevExpress.XtraEditors.XtraUserControl mainContent;
     private DevExpress.XtraBars.BarButtonItem bbiLogout;
     private DevExpress.XtraBars.BarButtonItem bbUserConnected;
     //
@@ -254,7 +254,7 @@ namespace HidUI
     private UserInfoView usrInfo;
     private DevExpress.XtraEditors.TextEdit txtHidden;
     private DevExpress.XtraEditors.SplitContainerControl pnlSplit;
-    private DevExpress.XtraEditors.SearchControl srchMain;
+    private DevExpress.XtraEditors.SearchControl mainSearch;
   }
 }
 

@@ -16,14 +16,16 @@ namespace TestEF
   {
     static void Main(string[] args)
     {
-      //db.Configuration.LazyLoadingEnabled = false;
-      //foreach (var usuario in db.Usuarios)
-      //{
-      //  Console.WriteLine(usuario.Login);
-      //  Console.WriteLine(usuario.Recurso.Email);
-      //}
+      HIDContext db = new HIDContext();
 
-      //var usr = db.Usuarios.Where(x => x.Login == "ethedy").FirstOrDefault();
+      //db.Configuration.LazyLoadingEnabled = false;
+      foreach (var usuario in db.Usuarios)
+      {
+        Console.WriteLine(usuario.Login);
+        //  Console.WriteLine(usuario.Recurso.Email);
+      }
+
+      //  var usr = db.Usuarios.Where(x => x.Login == "ethedy").FirstOrDefault();
 
       //Console.WriteLine(usr.Recurso.Apellido);
       //Console.ReadLine();
