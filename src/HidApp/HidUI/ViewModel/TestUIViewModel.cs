@@ -49,8 +49,8 @@ namespace HidUI.ViewModel
       var editService = GetService<IFormEditService>();
 
       editService.ViewModel = _viewModel;
-      //  obtener un proveedor
-      //  setear el proveedor en el view model
+      //  obtener un proveedor --> LISTO
+      //  setear el proveedor en el view model --> LISTO
       editService.Run(FormEditAction.EditarExitente);
     }
 
@@ -61,12 +61,15 @@ namespace HidUI.ViewModel
 
     public void BuscarProveedor()
     {
-      //
+      var searchService = GetService<IFormSearchService<Proveedor>>();
+
+      Proveedor prov = searchService.Show();
+      _viewModel.SetProveedor(prov);
     }
 
     public bool CanBuscarProveedor()
     {
-      return false;
+      return true;
     }
 
     #endregion

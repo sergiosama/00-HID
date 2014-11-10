@@ -66,6 +66,39 @@ namespace Servicios
       return result;
     }
 
+    public bool UpdateProveedor(Proveedor modificado)
+    {
+      HIDContext ctx = DB.Context;
+      bool result = false;
+
+      try
+      {
+        Errores.Clear();
+
+        //  ctx.Proveedores.Add(nuevo);
+        //  var errorList = ctx.GetValidationErrors();  //  una para cada instancia...ojo...
+        var validation = ctx.Entry(modificado).GetValidationResult();
+
+        if (!validation.IsValid)
+        {
+          Errores.AddRange(HidErrorInfo.FromEFCollectionError(validation.ValidationErrors));
+        }
+        else
+        {
+          ctx.SaveChanges();
+          Audit(InfoType.Modificacion, "UpdateProveedor", 
+            string.Format("[M] Proveedor: Nombre --> {0} CUIT --> {1}", modificado.Nombre, modificado.CUIT));
+
+          result = true;
+        }
+      }
+      catch (Exception ex)
+      {
+        Errores.Add(HidErrorInfo.FromException(ex));
+      }
+      return result;
+    }
+
     public List<HidErrorInfo> Errores { get; set; }
 
     private void Audit(InfoType tipo, string subPath, string detalle)

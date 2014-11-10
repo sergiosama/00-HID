@@ -194,4 +194,18 @@ namespace HidUI.Common
     //  podria haber metodos de callback?
     //  podria haber una propiedad que retorne una lista de los elementos agregados? (solo para ADD)
   }
+
+  /// <summary>
+  /// 
+  /// </summary>
+  /// <typeparam name="T"></typeparam>
+  public interface IFormSearchService<out T>  where T: class 
+  {
+    /// <summary>
+    /// Metodo que permite mostrar una ventana de busqueda simple, que retorna un elemento del tipo T o bien el 
+    /// default si no se encuentra
+    /// </summary>
+    /// <returns></returns>
+    T Show();
+  }
 }

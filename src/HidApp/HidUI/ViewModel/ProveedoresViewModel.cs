@@ -34,6 +34,11 @@ namespace HidUI.ViewModel
     /// </summary>
     public virtual Proveedor Current { get; set; }
 
+    /// <summary>
+    /// Ajusta una instancia de Proveedor en el VM para permitir la edicion
+    /// La opcion de "Guardar y Seguir" se deshabilita
+    /// </summary>
+    /// <param name="proveedor"></param>
     public void SetProveedor(Proveedor proveedor)
     {
       Current = proveedor;
@@ -100,7 +105,16 @@ namespace HidUI.ViewModel
     [Command(UseCommandManager = false)]
     public void Save_Exit()
     {
-      
+      if (_svc.UpdateProveedor(Current))
+      {
+        if (ViewMustClose != null)
+          ViewMustClose(null, null);
+      }
+      else
+      {
+        if (ViewHasErrors != null)
+          ViewHasErrors(this, _svc.Errores);
+      }
     }
 
     public bool CanSave_Exit()

@@ -100,6 +100,7 @@
     <Compile Include="ViewModel\PacientesViewModel.cs" />
     <Compile Include="ViewModel\ProveedoresViewModel.cs" />
     <Compile Include="ViewModel\StockAlquilablesViewModel.cs" />
+    <Compile Include="ViewModel\SimpleSearchViewModel.cs" />
     <Compile Include="ViewModel\TestUIViewModel.cs" />
     <Compile Include="Views\LoginIngresoNormal.cs">
       <SubType>UserControl</SubType>
@@ -147,6 +148,12 @@
     </Compile>
     <Compile Include="Views\winProveedores.designer.cs">
       <DependentUpon>winProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\winSimpleSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\winSimpleSearch.Designer.cs">
+      <DependentUpon>winSimpleSearch.cs</DependentUpon>
     </Compile>
     <Compile Include="winMain.cs">
       <SubType>Form</SubType>
@@ -240,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\winProveedores.resx">
       <DependentUpon>winProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\winSimpleSearch.resx">
+      <DependentUpon>winSimpleSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="winMain.resx">
       <DependentUpon>winMain.cs</DependentUpon>

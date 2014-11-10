@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.POCO;
 using DevExpress.XtraBars;
+using Entidades;
 using HidUI.ViewModel;
 using HidUI.Views;
 using Infraestructura;
@@ -27,6 +28,7 @@ namespace HidUI
 
       //  Acá es donde digo que servicios CONCRETOS va a utilizar esta vista...
       ServiceContainer.Default.RegisterService(new EditProveedoresService());
+      ServiceContainer.Default.RegisterService(new SearchEntityService<Proveedor>());
 
       BindCommands();
     }

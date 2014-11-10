@@ -47,4 +47,15 @@ namespace HidUI.Views
 
     public ViewModelBase ViewModel { get; set; }
   }
+
+  public class SearchEntityService<T> : IFormSearchService<T> where T: class 
+  {
+    public T Show()
+    {
+      winSimpleSearch<T> search = new winSimpleSearch<T>();
+
+      search.ShowDialog();
+      return search.Resultado;
+    }
+  }
 }
