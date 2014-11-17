@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.POCO;
 using DevExpress.Utils;
+using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using HidUI.Common;
 using HidUI.ViewModel;
@@ -101,6 +102,7 @@ namespace HidUI
         //  - GUARDE LA VISTA ACTUAL (y la pueda recuperar cuando se active nuevamente)
         //  - desconecte la workview del espacio reservado para contenido
         ((INavigableView)oldVista).UnsetContainer();
+        //  TODO llamar a SaveVisualState()
       }
 
       oldVista.Parent = null;
@@ -126,13 +128,24 @@ namespace HidUI
 
         if (nuevaVista is INavigableView)
         {
-          ((INavigableView)nuevaVista).SetContainer(mainContent);
+          //  Si la vista que se agrega es navegable, le informo cual es el contenedor que puede utilizar para las vistas de trabajo
+          //
+          ((INavigableView) nuevaVista).SetContainer(mainContent);
+          //  TODO pensar si no hay que llamar a RestoreVisualState() Que pasaria si la vista no tiene ribbon??
         }
         else
+        {
+          //  Si es una vista comun, seteo el Parent para que aparezca en el area de contenidos
+          //
           nuevaVista.Parent = mainContent;  //  con esto evito el BringToFront()
+        }
 
         if (nuevaVista is ISupportRibbon)
         {
+          //  Si soporta ribbon, hago el merge del ribbon de la vista con el principal
+          //  BindEvents() --> le da lugar a nuevaVista de enlazar los eventos que necesite para manejar los cambios de pagina del ribbon
+          //  FocusOnPage() --> le permite a nuevaVista mostrar una determinada pagina del ribbon
+          //
           ISupportRibbon rib = nuevaVista as ISupportRibbon;
 
           ribMain.MergeRibbon(rib.Ribbon);
@@ -143,7 +156,6 @@ namespace HidUI
         //  cambiar titulo de barra segun la vista!!
         //  CONECTAR A SEARCH CONTROL!!
       }
-
     }
 
     #endregion
@@ -159,6 +171,37 @@ namespace HidUI
       //  - si el cambio de pagina implica una nueva vista que reemplaza a la actual
       //  
       Debug.WriteLine("frmMain: Cambio de Pagina");
+
+      //  aca deberia haber un chequeo si la vista que esta activa DEJA que esto ocurra
+      //  de no ser asi puede forzarse mediante reingreso de credenciales?
+      //
+      //  TODO Chequear que la vista activa permite ser removida
+      //
+      RibbonControl rib = sender as RibbonControl;
+      ViewType vtTag;
+
+      //  se produce cuando cambio de pagina en ribbon => hay que cambiar de vista de trabajo
+      string nombreVista = rib.SelectedPage.Tag as string;
+
+      Debug.WriteLine(string.Format("Cambio de pagina MAIN destino --> {0}", rib.SelectedPage.Text));
+
+      //  chequear si el tag no corresponde, tendriamos que avisar a la vista principal (no es necesario porque el evento tambien lo recibe 
+      //  la vista principal)
+      //  TODO Validar que si ya es START, no se cambia de nuevo la vista...normalmente solamente una ribbon page estaria asociada a START pero quien dice
+
+      if (nombreVista == null)
+      {
+        //  significa que el usuario no esta logueado...
+        //
+        _viewModel.SelectedViewType = ViewType.Ninguno;
+      }
+      else
+      {
+        if (nombreVista == "START")
+          _viewModel.SelectedViewType = ViewType.StartMenu;
+      }
+
+      //  _viewModel.SetCurrentWorkViewType((ViewType)Enum.Parse(typeof(ViewType), nombreVista));
     }
 
     private void GrupoClick(object sender, DevExpress.XtraBars.Ribbon.RibbonPageGroupEventArgs e)
@@ -182,6 +225,8 @@ namespace HidUI
 
     //  Cuando cambia el texto del textbox hidden, ocurre esto...
     //  Admito que es una chanchada
+    //  Maneja evento TextChanged de txtHidden
+    //  Ocurre cuando el usuario se loguea/desloguea
     private void CambiarBinding(object sender, EventArgs e)
     {
       if (string.IsNullOrWhiteSpace(txtHidden.Text))
@@ -189,6 +234,7 @@ namespace HidUI
         bbUserConnected.Caption = "<Desconectado>";
         bbUserConnected.Glyph = null;
         bbUserConnected.SuperTip = null;
+        rbpgInicio.Tag = null;
       }
       else
       {
@@ -197,10 +243,10 @@ namespace HidUI
         bbUserConnected.SuperTip = new SuperToolTip();
         bbUserConnected.SuperTip.Items.AddTitle("Usuario actualmente conectado");
         bbUserConnected.SuperTip.Items.Add("Presione para ver informacion del usuario actual y tiempos de conexion");
+        rbpgInicio.Tag = "START";
       }
     }
 
     #endregion
-
   }
 }

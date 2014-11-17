@@ -13,6 +13,8 @@ namespace HidUI.Views
     private readonly AboutViewModel _viewModel;
     private ViewType _previousViewType;
 
+    private RibbonControl _ribbon;
+
     public AboutView()
     {
       InitializeComponent();
@@ -34,17 +36,16 @@ namespace HidUI.Views
 
     public void SetMainRibbon(RibbonControl ribbon)
     {
-      throw new NotImplementedException();
+      _ribbon = ribbon;
     }
 
     public void BindEvents()
     {
-      throw new NotImplementedException();
     }
 
     public void FocusOnPage()
     {
-      throw new NotImplementedException();
+      _ribbon.SelectedPage = ribAbout.Pages["ACERCA DE"];
     }
 
     /// <summary>
@@ -54,7 +55,6 @@ namespace HidUI.Views
     /// <param name="ribbon">La Ribbon owner o donde se fusiono la ribbon asociada de la vista actual</param>
     public void FocusOnPage(RibbonControl ribbon)
     {
-      ribbon.SelectedPage = ribAbout.Pages["ACERCA DE"];
     }
 
     private void AboutView_OnLoad(object sender, EventArgs e)
@@ -73,16 +73,5 @@ namespace HidUI.Views
     }
 
     ViewType ISupportPreviousView.PreviousViewType { get; set; }
-
-    public ViewType ViewType
-    {
-      get { return Common.ViewType.About; }
-    }
-
-    public ViewType PreviousViewType
-    {
-      get { return _previousViewType; }
-      set { _previousViewType = value; }
-    }
   }
 }

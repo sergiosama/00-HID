@@ -16,8 +16,8 @@ namespace HidUI
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      //  Application.Run(new winMain());
-      Application.Run(new winTestUI());
+      Application.Run(new winMain());
+      //  Application.Run(new winTestUI());
     }
   }
 }

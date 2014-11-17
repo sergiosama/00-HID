@@ -17,6 +17,12 @@ namespace Infraestructura
     Otros
   }
 
+  /// <summary>
+  /// Las instancias de esta clase contienen descripciones de errores que han ocurrido a distintos niveles de la aplicacion
+  /// Permite conversion desde excepciones, errores de EF, etc...
+  /// Normalmente usados desde la UI para mostrar informacion relevante al usuario
+  /// TODO incorporar logging??
+  /// </summary>
   public class HidErrorInfo
   {
     public ErrorType Tipo { get; set; }

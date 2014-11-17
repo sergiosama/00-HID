@@ -7,16 +7,19 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Data.Finders;
 using DevExpress.Mvvm.POCO;
 using DevExpress.XtraEditors;
 using Entidades;
 using HidUI.ViewModel;
 using Infraestructura;
+using Servicios.Finders;
 
 namespace HidUI.Views
 {
-  public partial class winSimpleSearch<T> : DevExpress.XtraEditors.XtraForm
+  //
+  //  No voy a usar VM en esta vista porque creo que no va a aparecer nunca en la UI final (solo es de prueba)
+  //
+  public partial class winSimpleSearch<T> : DevExpress.XtraEditors.XtraForm where T: class 
   {
     //  private SimpleSearchViewModel _vm;
 
@@ -30,15 +33,38 @@ namespace HidUI.Views
       //  _vm.ViewMustClose += CloseEvent;
 
       //  BindCommands();
+      Resultado = null;
     }
 
     public T Resultado { get; private set; }
 
-    //  public Proveedor Resultado { get; private set; }
-
     //  TODO considerar que puede ser una LISTA de resultados
 
     #region Event Handlers
+
+    protected override void OnLoad(EventArgs e)
+    {
+      base.OnLoad(e);
+      txtSearch.Focus();
+    }
+
+    private void Buscar_OnClick(object sender, EventArgs e)
+    {
+      IFinder<T> search = FinderFactory.CreateFinder<T>();
+
+      T result = search.FindByText(txtSearch.Text);
+
+      if (result != null)
+      {
+        Resultado = result;
+        this.Close();
+      }
+    }
+
+    private void Cancelar_OnClick(object sender, EventArgs e)
+    {
+      this.Close();
+    }
 
     private void CloseEvent(object sender, EventArgs args)
     {
@@ -60,24 +86,6 @@ namespace HidUI.Views
     private void BindCommands()
     {
       //  btnSearch.BindCommand(() => _vm.Search(), _vm);
-    }
-
-    private void Buscar_OnClick(object sender, EventArgs e)
-    {
-      IFinder<T> search = FinderFactory.CreateFinder<T>();
-
-      T result = search.FindByText(txtSearch.Text);
-
-      if (result != null)
-      {
-        Resultado = result;
-        this.Close();
-      }
-    }
-
-    private void Cancelar_OnClick(object sender, EventArgs e)
-    {
-      this.Close();
     }
   }
 }

@@ -36,9 +36,26 @@ namespace HidUI.ViewModel
     [Command(UseCommandManager = false)]
     public void Devolucion()
     {
-      Debug.WriteLine("Toggle Ejecutado!!");
+      Debug.WriteLine("Devolver Alquilable");
 
       //this.RaiseCanExecuteChanged(x => x.Comando_Procesar1());
+    }
+
+    public bool CanDevolucion()
+    {
+      //  TODO incorporar seguridad
+      return false;
+    }
+
+    [Command(UseCommandManager = false)]
+    public void Dummy()
+    {
+      Debug.WriteLine("No implementado...");
+    }
+
+    public bool CanDummy()
+    {
+      return true;
     }
 
     #endregion
@@ -50,6 +67,9 @@ namespace HidUI.ViewModel
 
       if (name == "Devolucion")
         return () => this.Devolucion();
+
+      if (name == "Dummy")
+        return () => this.Dummy();
 
       return null;
     }

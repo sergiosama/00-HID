@@ -41,11 +41,11 @@
       this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
       this.btnSearch.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
       this.btnSearch.Appearance.Options.UseFont = true;
-      this.btnSearch.Location = new System.Drawing.Point(431, 122);
+      this.btnSearch.Location = new System.Drawing.Point(431, 131);
       this.btnSearch.Margin = new System.Windows.Forms.Padding(10);
       this.btnSearch.Name = "btnSearch";
       this.btnSearch.Size = new System.Drawing.Size(120, 40);
-      this.btnSearch.TabIndex = 7;
+      this.btnSearch.TabIndex = 1;
       this.btnSearch.Text = "Buscar";
       this.btnSearch.Click += new System.EventHandler(this.Buscar_OnClick);
       // 
@@ -55,11 +55,11 @@
       this.btnCancelar.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
       this.btnCancelar.Appearance.Options.UseFont = true;
       this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.btnCancelar.Location = new System.Drawing.Point(291, 122);
+      this.btnCancelar.Location = new System.Drawing.Point(291, 131);
       this.btnCancelar.Margin = new System.Windows.Forms.Padding(10);
       this.btnCancelar.Name = "btnCancelar";
       this.btnCancelar.Size = new System.Drawing.Size(120, 40);
-      this.btnCancelar.TabIndex = 9;
+      this.btnCancelar.TabIndex = 2;
       this.btnCancelar.Text = "Cancelar";
       this.btnCancelar.Click += new System.EventHandler(this.Cancelar_OnClick);
       // 
@@ -67,18 +67,18 @@
       // 
       this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.txtSearch.Location = new System.Drawing.Point(14, 69);
+      this.txtSearch.Location = new System.Drawing.Point(14, 90);
       this.txtSearch.Margin = new System.Windows.Forms.Padding(10);
       this.txtSearch.Name = "txtSearch";
       this.txtSearch.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
       this.txtSearch.Properties.Appearance.Options.UseFont = true;
       this.txtSearch.Size = new System.Drawing.Size(537, 24);
-      this.txtSearch.TabIndex = 19;
+      this.txtSearch.TabIndex = 0;
       // 
       // labelControl1
       // 
       this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
-      this.labelControl1.Location = new System.Drawing.Point(14, 26);
+      this.labelControl1.Location = new System.Drawing.Point(19, 16);
       this.labelControl1.Margin = new System.Windows.Forms.Padding(10);
       this.labelControl1.Name = "labelControl1";
       this.labelControl1.Size = new System.Drawing.Size(47, 17);
@@ -88,7 +88,7 @@
       // lblEntityName
       // 
       this.lblEntityName.Appearance.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-      this.lblEntityName.Location = new System.Drawing.Point(81, 19);
+      this.lblEntityName.Location = new System.Drawing.Point(19, 40);
       this.lblEntityName.Margin = new System.Windows.Forms.Padding(10);
       this.lblEntityName.Name = "lblEntityName";
       this.lblEntityName.Size = new System.Drawing.Size(105, 30);
@@ -101,7 +101,8 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.btnCancelar;
-      this.ClientSize = new System.Drawing.Size(570, 181);
+      this.ClientSize = new System.Drawing.Size(570, 190);
+      this.ControlBox = false;
       this.Controls.Add(this.lblEntityName);
       this.Controls.Add(this.txtSearch);
       this.Controls.Add(this.labelControl1);

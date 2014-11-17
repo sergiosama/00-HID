@@ -44,6 +44,20 @@ namespace HidUI
       bbnNuevoProveedor.BindCommand(() => _vm.NewProveedor(), _vm);
       bbnEditProvedor.BindCommand(() => _vm.EditProveedor(), _vm);
       bbnBuscarProveedor.BindCommand(() => _vm.BuscarProveedor(), _vm);
+      //
+      txtHidden.DataBindings.Add(new Binding("Text", _vm, "UserName"));
+      txtHiddenSearch.DataBindings.Add(new Binding("Text", _vm, "SearchResult"));
+    }
+
+    private void Hidden_TextChanged(object sender, EventArgs e)
+    {
+      if (!string.IsNullOrWhiteSpace(txtHidden.Text))
+        btxtUsuario.Caption = txtHidden.Text;
+
+      if (!string.IsNullOrWhiteSpace(txtHiddenSearch.Text))
+        btxtSearchResult.Caption = string.Format("Resultado > {0}", txtHiddenSearch.Text);
+      else
+        btxtSearchResult.Caption = "Resultado de la busqueda";
     }
   }
 }

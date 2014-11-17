@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Forms;
 using DevExpress.Mvvm.POCO;
 using DevExpress.XtraBars.Ribbon;
@@ -33,7 +34,6 @@ namespace HidUI.Views
       //ViewManager.Current.AddView(ViewType.StockReportes, ViewType.Stock, null);
     }
 
-    //  public static 
     public StockView(IViewLocator locator)
     {
       InitializeComponent();
@@ -59,7 +59,8 @@ namespace HidUI.Views
 
       //  TODO cambiar o arregar porque cuando reingreso con otro user no llama de nuevo a OnLoad!!
       //  TODO y eso no seria nada, el problema es que tambien puede pasar con el mismo user
-      _viewModel.SetDefaultView();
+      //  El default deberia setearse con la pagina del ribbon...siempre
+      //  _viewModel.SetDefaultView();
     }
 
     private void CreateWorkViews()
@@ -69,7 +70,6 @@ namespace HidUI.Views
       _workViews.Add(ViewType.StockInsumos, _locator.GetView(ViewType.StockInsumos) as IWorkView);
       _workViews.Add(ViewType.StockAlquilables, _locator.GetView(ViewType.StockAlquilables) as IWorkView);
     }
-
 
     #region Command Binding
 
@@ -82,16 +82,28 @@ namespace HidUI.Views
       IWorkView workView;
 
       workView = _workViews[ViewType.StockInsumos];
+      IWorkViewModel vm = workView.ViewModel;
 
-      bbnAlqNuevo.BindCommand(workView.ViewModel.GetActionFromName("Procesar1"), workView.ViewModel);
-      bbnAlqIngreso.BindCommand(workView.ViewModel.GetActionFromName("Toggle"), workView.ViewModel);
+      //bbnAlqNuevo.BindCommand(vm.GetActionFromName(""), vm);
+      //bbnAlqIngreso.BindCommand(vm.GetActionFromName(""), vm);
 
       workView = _workViews[ViewType.StockAlquilables];
+      vm = workView.ViewModel;
 
-      bbnAlqNuevo.BindCommand(workView.ViewModel.GetActionFromName("Procesar2"), workView.ViewModel);
+      bbnAlqComprar.BindCommand(vm.GetActionFromName("Dummy"), vm);
+      bbnAlqDevolucion.BindCommand(vm.GetActionFromName("Devolucion"), vm);
+      bbnAlqEditar.BindCommand(vm.GetActionFromName("Dummy"), vm);
+      bbnAlqEtiquetas.BindCommand(vm.GetActionFromName("Dummy"), vm);
+      bbnAlqIngreso.BindCommand(vm.GetActionFromName("Dummy"), vm);
+      bbnAlqNuevo.BindCommand(vm.GetActionFromName("Nuevo"), vm);
+      bbnAlqReparados.BindCommand(vm.GetActionFromName("Dummy"), vm);
+      bbnAlqScrap.BindCommand(vm.GetActionFromName("Dummy"), vm);
+      bbnAlqVista.BindCommand(vm.GetActionFromName("Dummy"), vm);
     }
 
     #endregion
+
+    #region ViewModel Event Handling
 
     private void ViewModelOnWorkViewRemoved(object sender, EventArgs eventArgs)
     {
@@ -121,6 +133,36 @@ namespace HidUI.Views
       }
     }
 
+    #endregion
+
+    #region Ribbon Event Handling
+
+    //  Event handler para el cambio de pagina del ribbon [Ribbon.OnSelectedPageChanged]
+    //
+    private void Cambio_Pagina(object sender, EventArgs e)
+    {
+      //  OJO!! Que pasa si va a una vista que no esta dentro del navegador???
+      RibbonControl rib = sender as RibbonControl;
+      ViewType vtTag;
+
+      Debug.WriteLine(string.Format("Cambio de pagina MERGED destino --> {0}", rib.SelectedPage.Text));
+
+      //  se produce cuando cambio de pagina en ribbon => hay que cambiar de vista de trabajo
+      string nombreVista = rib.SelectedPage.Tag as string;
+
+      //  chequear si el tag no corresponde, tendriamos que avisar a la vista principal (no es necesario porque el evento tambien lo recibe 
+      //  la vista principal)
+      if (Enum.TryParse(nombreVista, out vtTag))
+      {
+        _viewModel.SetCurrentWorkViewType(vtTag);
+        SaveVisualState();
+      }
+      //  _viewModel.SetCurrentWorkViewType((ViewType)Enum.Parse(typeof(ViewType), nombreVista));
+    }
+
+    #endregion
+
+    #region Implementacion ISupportRibbon
 
     public DevExpress.XtraBars.Ribbon.RibbonControl Ribbon
     {
@@ -129,19 +171,30 @@ namespace HidUI.Views
 
     public void SetMainRibbon(RibbonControl ribbon)
     {
-      throw new NotImplementedException();
+      _ribbon = ribbon;
     }
 
     public void BindEvents()
     {
-      throw new NotImplementedException();
+      _ribbon.SelectedPageChanged += Cambio_Pagina;
     }
 
     public void FocusOnPage()
     {
-      throw new NotImplementedException();
+      //  ojo: guardar donde estaba posicionado...
+      //
+      //  ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
+      if (_lastPage != null)
+        _ribbon.SelectedPage = ribStock.Pages[_lastPage];
+      else
+        _ribbon.SelectedPage = _ribbon.MergedPages[0];
     }
 
+    #endregion
+
+/*
+ *  ANTERIOR
+ *  
     public void FocusOnPage(DevExpress.XtraBars.Ribbon.RibbonControl ribbon)
     {
       //  ojo: guardar donde estaba posicionado...
@@ -149,13 +202,27 @@ namespace HidUI.Views
       //  ribbon.SelectedPage = ribStock.Pages["INSUMOS"];
       ribbon.SelectedPage = ribStock.Pages["ALQUILABLES"];
     }
+*/
+
+    #region Implementacion INavigableView 
+
+    public void SetContainer(Control ctrl)
+    {
+      _parent = ctrl;
+    }
+
+    public void UnsetContainer()
+    {
+      _parent = null;
+      _viewModel.SelectedWorkViewType = ViewType.Ninguno;
+    }
 
     /// <summary>
     /// Antes de abandonar la vista navegable, tengo que guardar el estado de donde estaba
     /// </summary>
     public void SaveVisualState()
     {
-      
+      _lastPage = _ribbon.SelectedPage.Text;
     }
 
     /// <summary>
@@ -163,17 +230,9 @@ namespace HidUI.Views
     /// </summary>
     public void RestoreVisualState()
     {
-      
+
     }
 
-    public void SetContainer(Control ctrl)
-    {
-      throw new NotImplementedException();
-    }
-
-    public void UnsetContainer()
-    {
-      throw new NotImplementedException();
-    }
+    #endregion
   }
 }

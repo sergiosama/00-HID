@@ -146,11 +146,41 @@ namespace HidUI.Common
     /// Avisa que el control que se esta usando de content ya no estara mas disponible para la vista navegable
     /// </summary>
     void UnsetContainer();
+
+    /// <summary>
+    /// Le da la oportunidad a la vista de guardar el estado visual (en discusion)
+    /// </summary>
+    void SaveVisualState();
+
+    /// <summary>
+    /// En discusion
+    /// </summary>
+    void RestoreVisualState();
   }
 
   /// <summary>
-  /// [WORK VIEW] Una vista de trabajo no posee ribbon sino que usa la ribbon de la vista navegable en donde esta
-  /// residiendo. Para eso BindCommands permite enlazar controles de la ribbon en esta vista de trabajo
+  /// Establece la minima funcionalidad que el view model de una vista navegable deberia disponer
+  /// </summary>
+  public interface INavigableViewModel
+  {
+    ViewType SelectedWorkViewType { get; set; }
+
+    object SelectedWorkView { get; set; }
+    
+    void SetCurrentWorkViewType(ViewType vt);
+
+    /// <summary>
+    /// Este metodo esta en capilla...
+    /// </summary>
+    void SetDefaultView();
+
+    event EventHandler WorkViewAdded;
+    event EventHandler WorkViewRemoved;
+  }
+
+  /// <summary>
+  /// [WORK VIEW] Una vista de trabajo no posee ribbon sino que usa la ribbon de la vista navegable en donde esta\n
+  /// residiendo. Para eso BindCommands permite enlazar controles de la ribbon en esta vista de trabajo\n
   /// Toda vista de trabajo debe tener una referencia a un view model que implemente IWorkViewModel para poder enlazar
   /// estos comandos
   /// Las vistas de trabajo comunmente se activan mediante cambios de pagina del ribbon

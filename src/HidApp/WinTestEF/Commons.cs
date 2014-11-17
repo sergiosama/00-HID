@@ -56,47 +56,59 @@ namespace WinTestEF
     /// No hay ninguna vista activa
     /// </summary>
     Ninguno,
+
     /// <summary>
     /// UC integrable en el formulario principal
     /// </summary>
     About,
+
     /// <summary>
     /// Usado en la ventana modal de login
     /// </summary>
     Login,
+
     /// <summary>
     /// UC con tiles que permiten la navegación entre diferentes secciones de la aplicacion
     /// </summary>
     StartMenu,
+
     /// <summary>
     /// UC con Ribbon integrable, no tiene nada pero por defecto deberia ir a StockInsumos (guardar ultima seleccion)
     /// </summary>
     Stock,
+
     /// <summary>
     /// UC integrable, seleccionado mediante la pagina Insumos de la Ribbon de Stock
     /// </summary>
     StockInsumos,
+
     /// <summary>
     /// UC integrable, seleccionado mediante la pagina Alquilables de la Ribbon de Stock
     /// </summary>
     StockAlquilables,
+
     /// <summary>
     /// UC integrable, permite administrar la impresion de etiquetas
     /// </summary>
     ///StockEtiquetas,
+    
     /// <summary>
     /// UC integrable, permite incorporar la impresión de reportes relacionados con el stock
     /// </summary>
     StockReportes,
+
     PacientesView,
+
     /// <summary>
     /// Vista navegable de prueba
     /// </summary>
     Vista_1,
+
     /// <summary>
     /// Vista de trabajo de prueba #1
     /// </summary>
     Pagina_1,
+
     /// <summary>
     /// Vista de trabajo de prueba #2
     /// </summary>

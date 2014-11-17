@@ -10,27 +10,23 @@ namespace Entidades
   /// </summary>
   public class enTCategoriaRecurso
 	{
-
-
-
-      public enTCategoriaRecurso()
-        {
-            this.TCtaCtePaciente = new HashSet<enTCtaCtePaciente>();
-            this.TRecurso = new HashSet<enTRecurso>();
-        }
+    public enTCategoriaRecurso()
+    {
+      this.TCtaCtePaciente = new HashSet<enTCtaCtePaciente>();
+      //  this.TRecurso = new HashSet<enTRecurso>();
+    }
     
-        public int IdCategoria { get; set; }
-        public string Detalle { get; set; }
+    public int IdCategoria { get; set; }
+    public string Detalle { get; set; }
     
-        public virtual ICollection<enTCtaCtePaciente> TCtaCtePaciente { get; set; }
-        public virtual ICollection<enTRecurso> TRecurso { get; set; }
+    public virtual ICollection<enTCtaCtePaciente> TCtaCtePaciente { get; set; }
+
+    //  Vale lo mismo que para la situacion AFIP: no es navegable hacia recurso!!
+    //  public virtual ICollection<enTRecurso> TRecurso { get; set; }
 
     public override string ToString()
     {
       return Detalle;
     }
-
-
-
 	}
 }

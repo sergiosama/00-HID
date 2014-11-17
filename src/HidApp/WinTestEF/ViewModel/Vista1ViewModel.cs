@@ -64,9 +64,9 @@ namespace WinTestEF.ViewModel
         WorkViewAdded(SelectedWorkView, EventArgs.Empty);
     }
 
-    public void SetCurrentWorkViewType(ViewType _vtActual)
+    public void SetCurrentWorkViewType(ViewType vtActual)
     {
-      SelectedWorkViewType = _vtActual;
+      SelectedWorkViewType = vtActual;
     }
 
     public void SetDefaultView()

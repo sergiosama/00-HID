@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Data.Finders;
 using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 using DevExpress.Mvvm.POCO;
@@ -12,6 +11,7 @@ using Entidades;
 using HidUI.Common;
 using Infraestructura;
 using Servicios;
+using Servicios.Finders;
 
 namespace HidUI.ViewModel
 {
@@ -20,7 +20,7 @@ namespace HidUI.ViewModel
   public class SimpleSearchViewModel : ViewModelBase
   {
 
-    public event EventHandler ViewMustClose;
+    //  public event EventHandler ViewMustClose;
     //  public event EventHandler<IList<HidErrorInfo>> ViewHasErrors;
 
     public SimpleSearchViewModel()

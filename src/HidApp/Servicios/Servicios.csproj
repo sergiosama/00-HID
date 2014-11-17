@@ -52,6 +52,9 @@
   <ItemGroup>
     <Compile Include="ArticulosServices.cs" />
     <Compile Include="AuditServices.cs" />
+    <Compile Include="Finders\FinderFactory.cs" />
+    <Compile Include="Finders\SearchArticulos.cs" />
+    <Compile Include="Finders\SearchProveedores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityServices.cs" />
   </ItemGroup>

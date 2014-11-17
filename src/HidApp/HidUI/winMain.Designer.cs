@@ -72,7 +72,7 @@ namespace HidUI
       this.ribMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbpgInicio});
       this.ribMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-      this.ribMain.Size = new System.Drawing.Size(1193, 144);
+      this.ribMain.Size = new System.Drawing.Size(1123, 144);
       this.ribMain.StatusBar = this.sbar;
       this.ribMain.PageGroupCaptionButtonClick += new DevExpress.XtraBars.Ribbon.RibbonPageGroupEventHandler(this.GrupoClick);
       this.ribMain.SelectedPageChanged += new System.EventHandler(this.Ribbon_CambiarPagina);
@@ -149,19 +149,21 @@ namespace HidUI
       // sbar
       // 
       this.sbar.ItemLinks.Add(this.bbUserConnected);
-      this.sbar.Location = new System.Drawing.Point(0, 791);
+      this.sbar.Location = new System.Drawing.Point(0, 697);
       this.sbar.Name = "sbar";
       this.sbar.Ribbon = this.ribMain;
-      this.sbar.Size = new System.Drawing.Size(1193, 31);
+      this.sbar.Size = new System.Drawing.Size(1123, 31);
       // 
       // mainContent
       // 
+      this.mainContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
       this.mainContent.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
       this.mainContent.Appearance.Options.UseBackColor = true;
-      this.mainContent.Dock = System.Windows.Forms.DockStyle.Fill;
       this.mainContent.Location = new System.Drawing.Point(0, 0);
       this.mainContent.Name = "mainContent";
-      this.mainContent.Size = new System.Drawing.Size(1193, 639);
+      this.mainContent.Size = new System.Drawing.Size(1123, 515);
       this.mainContent.TabIndex = 3;
       // 
       // txtHidden
@@ -184,7 +186,7 @@ namespace HidUI
       this.pnlSplit.Panel1.Text = "Search";
       this.pnlSplit.Panel2.Controls.Add(this.mainContent);
       this.pnlSplit.Panel2.Text = "Content";
-      this.pnlSplit.Size = new System.Drawing.Size(1193, 678);
+      this.pnlSplit.Size = new System.Drawing.Size(1123, 584);
       this.pnlSplit.SplitterPosition = 34;
       this.pnlSplit.TabIndex = 17;
       this.pnlSplit.Text = "splitContainerControl1";
@@ -206,7 +208,7 @@ namespace HidUI
       this.mainSearch.Properties.NullValuePrompt = "Ingrese un texto para buscar....";
       this.mainSearch.Properties.ShowMRUButton = true;
       this.mainSearch.Properties.ShowNullValuePromptWhenFocused = true;
-      this.mainSearch.Size = new System.Drawing.Size(1193, 34);
+      this.mainSearch.Size = new System.Drawing.Size(1123, 34);
       this.mainSearch.TabIndex = 0;
       // 
       // winMain
@@ -214,7 +216,7 @@ namespace HidUI
       this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1193, 822);
+      this.ClientSize = new System.Drawing.Size(1123, 728);
       this.Controls.Add(this.ppUserInfo);
       this.Controls.Add(this.sbar);
       this.Controls.Add(this.pnlSplit);

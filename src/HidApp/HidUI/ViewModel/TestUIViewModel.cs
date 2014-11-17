@@ -18,15 +18,25 @@ namespace HidUI.ViewModel
   {
     private readonly ProveedoresViewModel _viewModel;
 
+    private bool _editEnabled;
+
     public TestUIViewModel()
     {
+      _editEnabled = false;
+
       SecurityServices sec = new SecurityServices();
 
       Contexto.Current.Sesion = sec.LoginUser("ethedy", "viterilove");
 
       //  lo creo porque lo necesito, puede que ya este creado por otra VIEW...
       _viewModel = ViewModelSource.Create(() => new ProveedoresViewModel());
+
+      UserName = Contexto.Current.Sesion.FullName;
     }
+
+    public virtual string UserName { get; set; }
+
+    public virtual string SearchResult { get; set; }
 
     #region Comandos
 
@@ -35,6 +45,12 @@ namespace HidUI.ViewModel
     {
       var editService = GetService<IFormEditService>();
 
+      _editEnabled = false;
+      this.RaiseCanExecuteChanged(x => x.EditProveedor());
+
+      //  Si selecciona la opcion de nuevo proveedor, entonces hay que crear una instancia nueva de esta clase
+      //
+      _viewModel.SetProveedor(new Proveedor());   //  TODO reemplazar por metodo NewProveedor??
       editService.ViewModel = _viewModel;
       editService.Run(FormEditAction.EditarNuevo);
     }
@@ -44,6 +60,7 @@ namespace HidUI.ViewModel
       return true;
     }
 
+    [Command(UseCommandManager = false)]
     public void EditProveedor()
     {
       var editService = GetService<IFormEditService>();
@@ -56,15 +73,28 @@ namespace HidUI.ViewModel
 
     public bool CanEditProveedor()
     {
-      return (_viewModel.Current != null);
+      return _editEnabled;
     }
 
+    [Command(UseCommandManager = false)]
     public void BuscarProveedor()
     {
       var searchService = GetService<IFormSearchService<Proveedor>>();
-
       Proveedor prov = searchService.Show();
-      _viewModel.SetProveedor(prov);
+
+      if (prov != null)
+      {
+        SearchResult = prov.Nombre;
+        _viewModel.SetProveedor(prov);
+        _editEnabled = true;
+      }
+      else
+      {
+        _editEnabled = false;
+        SearchResult = null;
+      }
+
+      this.RaiseCanExecuteChanged(x => x.EditProveedor());
     }
 
     public bool CanBuscarProveedor()
