@@ -36,5 +36,13 @@ namespace Servicios.Finders
       }
       return result;
     }
+
+    public string Descripcion
+    {
+      get { return @"Es posible buscar un Proveedor por <b>ID</b> (numerico), por cualquier parte del nombre o bien por <b>CUIT</b>.
+La busqueda por CUIT se dispara si consultamos por ejemplo con 4 o más dígitos
+Las busquedas por texto no distinguen mayusculas y minusculas"; }
+      set { throw new NotSupportedException("Metodo set no soportado para propiedad SearchProveedores.Descripcion"); }
+    }
   }
 }

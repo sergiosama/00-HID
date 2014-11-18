@@ -23,7 +23,7 @@ namespace HidUI.ViewModel
     public TestUIViewModel()
     {
       _editEnabled = false;
-
+      
       SecurityServices sec = new SecurityServices();
 
       Contexto.Current.Sesion = sec.LoginUser("ethedy", "viterilove");
@@ -43,14 +43,16 @@ namespace HidUI.ViewModel
     [Command(UseCommandManager = false)]
     public void NewProveedor()
     {
-      var editService = GetService<IFormEditService>();
+      var editService = GetService<IFormEditService<Proveedor>>();
+
+      SearchResult = null;
 
       _editEnabled = false;
       this.RaiseCanExecuteChanged(x => x.EditProveedor());
 
       //  Si selecciona la opcion de nuevo proveedor, entonces hay que crear una instancia nueva de esta clase
       //
-      _viewModel.SetProveedor(new Proveedor());   //  TODO reemplazar por metodo NewProveedor??
+      _viewModel.SetCurrent(new Proveedor());   //  TODO reemplazar por metodo NewProveedor??
       editService.ViewModel = _viewModel;
       editService.Run(FormEditAction.EditarNuevo);
     }
@@ -63,7 +65,7 @@ namespace HidUI.ViewModel
     [Command(UseCommandManager = false)]
     public void EditProveedor()
     {
-      var editService = GetService<IFormEditService>();
+      var editService = GetService<IFormEditService<Proveedor>>();
 
       editService.ViewModel = _viewModel;
       //  obtener un proveedor --> LISTO
@@ -85,7 +87,7 @@ namespace HidUI.ViewModel
       if (prov != null)
       {
         SearchResult = prov.Nombre;
-        _viewModel.SetProveedor(prov);
+        _viewModel.SetCurrent(prov);
         _editEnabled = true;
       }
       else

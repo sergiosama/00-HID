@@ -10,7 +10,11 @@ namespace Servicios.Finders
 
     //  TODO incorporar helper para mostrar tooltip en la UI 
     //  TODO Si no que hacer? Otro servicio mas cercano a la UI que me diga las reglas de busqueda??
-    //  string Sintaxis { get; set; }
+    //  TODO Encadenar o asociar finders? Como hacer que se busque en toda la aplicacion?
+    /// <summary>
+    /// Retorna una cadena (opcional) que describe el uso del buscador (reglas, etc...)
+    /// </summary>
+    string Descripcion { get; set; }
   }
 
   public class FinderFactory

@@ -29,26 +29,29 @@
     private void InitializeComponent()
     {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winTestUI));
-      DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-      DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+      DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+      DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
       this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
       this.bbnNuevoProveedor = new DevExpress.XtraBars.BarButtonItem();
       this.bbnEditProvedor = new DevExpress.XtraBars.BarButtonItem();
       this.bbnBuscarProveedor = new DevExpress.XtraBars.BarButtonItem();
       this.btxtUsuario = new DevExpress.XtraBars.BarStaticItem();
       this.btxtSearchResult = new DevExpress.XtraBars.BarStaticItem();
-      this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-      this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-      this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-      this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-      this.txtHidden = new System.Windows.Forms.TextBox();
-      this.txtHiddenSearch = new System.Windows.Forms.TextBox();
-      this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
       this.bbnNuevoAlquilable = new DevExpress.XtraBars.BarButtonItem();
       this.bbnEditAlquilable = new DevExpress.XtraBars.BarButtonItem();
       this.bbnBuscarAlquilable = new DevExpress.XtraBars.BarButtonItem();
+      this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+      this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+      this.txtHidden = new System.Windows.Forms.TextBox();
+      this.txtHiddenSearch = new System.Windows.Forms.TextBox();
+      this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+      this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+      this.panelControl1.SuspendLayout();
       this.SuspendLayout();
       // 
       // ribbon
@@ -116,82 +119,14 @@
       this.btxtSearchResult.ItemAppearance.Normal.Options.UseBackColor = true;
       this.btxtSearchResult.ItemAppearance.Normal.Options.UseFont = true;
       this.btxtSearchResult.Name = "btxtSearchResult";
-      toolTipTitleItem2.Text = "Resultado de la Busqueda";
-      toolTipItem2.LeftIndent = 6;
-      toolTipItem2.Text = "Visualiza el ultimo resultado encontrado de cualquier operacion de busqueda dentr" +
+      toolTipTitleItem1.Text = "Resultado de la Busqueda";
+      toolTipItem1.LeftIndent = 6;
+      toolTipItem1.Text = "Visualiza el ultimo resultado encontrado de cualquier operacion de busqueda dentr" +
     "o de la aplicacion";
-      superToolTip2.Items.Add(toolTipTitleItem2);
-      superToolTip2.Items.Add(toolTipItem2);
-      this.btxtSearchResult.SuperTip = superToolTip2;
+      superToolTip1.Items.Add(toolTipTitleItem1);
+      superToolTip1.Items.Add(toolTipItem1);
+      this.btxtSearchResult.SuperTip = superToolTip1;
       this.btxtSearchResult.TextAlignment = System.Drawing.StringAlignment.Near;
-      // 
-      // ribbonPage1
-      // 
-      this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
-      this.ribbonPage1.Name = "ribbonPage1";
-      this.ribbonPage1.Text = "PRUEBAS";
-      // 
-      // ribbonPageGroup1
-      // 
-      this.ribbonPageGroup1.ItemLinks.Add(this.bbnNuevoProveedor);
-      this.ribbonPageGroup1.ItemLinks.Add(this.bbnEditProvedor);
-      this.ribbonPageGroup1.ItemLinks.Add(this.bbnBuscarProveedor);
-      this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-      this.ribbonPageGroup1.Text = "Proveedores";
-      // 
-      // ribbonStatusBar
-      // 
-      this.ribbonStatusBar.AutoHeight = true;
-      this.ribbonStatusBar.ItemLinks.Add(this.btxtUsuario);
-      this.ribbonStatusBar.ItemLinks.Add(this.btxtSearchResult);
-      this.ribbonStatusBar.Location = new System.Drawing.Point(0, 495);
-      this.ribbonStatusBar.Name = "ribbonStatusBar";
-      this.ribbonStatusBar.Ribbon = this.ribbon;
-      this.ribbonStatusBar.Size = new System.Drawing.Size(876, 37);
-      // 
-      // labelControl1
-      // 
-      this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
-      this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-      this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-      this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-      this.labelControl1.Location = new System.Drawing.Point(214, 235);
-      this.labelControl1.Name = "labelControl1";
-      this.labelControl1.Size = new System.Drawing.Size(342, 115);
-      this.labelControl1.TabIndex = 2;
-      this.labelControl1.Text = "Esta ventana se utiliza unicamente para testear los diversos formularios de dialo" +
-    "go. Se usan servicios para mostrar los diversos dialogos pero no tenemos navegab" +
-    "ilidad de ningun tipo, ni login\r\n\r\n";
-      // 
-      // txtHidden
-      // 
-      this.txtHidden.Location = new System.Drawing.Point(466, 396);
-      this.txtHidden.Name = "txtHidden";
-      this.txtHidden.Size = new System.Drawing.Size(272, 21);
-      this.txtHidden.TabIndex = 5;
-      this.txtHidden.TabStop = false;
-      this.txtHidden.Visible = false;
-      this.txtHidden.TextChanged += new System.EventHandler(this.Hidden_TextChanged);
-      // 
-      // txtHiddenSearch
-      // 
-      this.txtHiddenSearch.Location = new System.Drawing.Point(466, 423);
-      this.txtHiddenSearch.Name = "txtHiddenSearch";
-      this.txtHiddenSearch.Size = new System.Drawing.Size(272, 21);
-      this.txtHiddenSearch.TabIndex = 7;
-      this.txtHiddenSearch.TabStop = false;
-      this.txtHiddenSearch.Visible = false;
-      this.txtHiddenSearch.TextChanged += new System.EventHandler(this.Hidden_TextChanged);
-      // 
-      // ribbonPageGroup2
-      // 
-      this.ribbonPageGroup2.ItemLinks.Add(this.bbnNuevoAlquilable);
-      this.ribbonPageGroup2.ItemLinks.Add(this.bbnEditAlquilable);
-      this.ribbonPageGroup2.ItemLinks.Add(this.bbnBuscarAlquilable);
-      this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-      this.ribbonPageGroup2.Text = "Alquilables";
       // 
       // bbnNuevoAlquilable
       // 
@@ -216,13 +151,86 @@
       this.bbnBuscarAlquilable.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbnBuscarAlquilable.LargeGlyph")));
       this.bbnBuscarAlquilable.Name = "bbnBuscarAlquilable";
       // 
+      // ribbonPage1
+      // 
+      this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
+      this.ribbonPage1.Name = "ribbonPage1";
+      this.ribbonPage1.Text = "PRUEBAS";
+      // 
+      // ribbonPageGroup1
+      // 
+      this.ribbonPageGroup1.ItemLinks.Add(this.bbnNuevoProveedor);
+      this.ribbonPageGroup1.ItemLinks.Add(this.bbnEditProvedor);
+      this.ribbonPageGroup1.ItemLinks.Add(this.bbnBuscarProveedor);
+      this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+      this.ribbonPageGroup1.Text = "Proveedores";
+      // 
+      // ribbonPageGroup2
+      // 
+      this.ribbonPageGroup2.ItemLinks.Add(this.bbnNuevoAlquilable);
+      this.ribbonPageGroup2.ItemLinks.Add(this.bbnEditAlquilable);
+      this.ribbonPageGroup2.ItemLinks.Add(this.bbnBuscarAlquilable);
+      this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+      this.ribbonPageGroup2.Text = "Alquilables";
+      // 
+      // ribbonStatusBar
+      // 
+      this.ribbonStatusBar.AutoHeight = true;
+      this.ribbonStatusBar.ItemLinks.Add(this.btxtUsuario);
+      this.ribbonStatusBar.ItemLinks.Add(this.btxtSearchResult);
+      this.ribbonStatusBar.Location = new System.Drawing.Point(0, 495);
+      this.ribbonStatusBar.Name = "ribbonStatusBar";
+      this.ribbonStatusBar.Ribbon = this.ribbon;
+      this.ribbonStatusBar.Size = new System.Drawing.Size(876, 37);
+      // 
+      // txtHidden
+      // 
+      this.txtHidden.Location = new System.Drawing.Point(466, 396);
+      this.txtHidden.Name = "txtHidden";
+      this.txtHidden.Size = new System.Drawing.Size(272, 21);
+      this.txtHidden.TabIndex = 5;
+      this.txtHidden.TextChanged += new System.EventHandler(this.Hidden_TextChanged);
+      // 
+      // txtHiddenSearch
+      // 
+      this.txtHiddenSearch.Location = new System.Drawing.Point(466, 423);
+      this.txtHiddenSearch.Name = "txtHiddenSearch";
+      this.txtHiddenSearch.Size = new System.Drawing.Size(272, 21);
+      this.txtHiddenSearch.TabIndex = 7;
+      this.txtHiddenSearch.TextChanged += new System.EventHandler(this.Hidden_TextChanged);
+      // 
+      // panelControl1
+      // 
+      this.panelControl1.Controls.Add(this.labelControl1);
+      this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.panelControl1.Location = new System.Drawing.Point(0, 144);
+      this.panelControl1.Name = "panelControl1";
+      this.panelControl1.Size = new System.Drawing.Size(876, 351);
+      this.panelControl1.TabIndex = 10;
+      // 
+      // labelControl1
+      // 
+      this.labelControl1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+      this.labelControl1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+      this.labelControl1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+      this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+      this.labelControl1.Location = new System.Drawing.Point(102, 73);
+      this.labelControl1.Name = "labelControl1";
+      this.labelControl1.Size = new System.Drawing.Size(342, 115);
+      this.labelControl1.TabIndex = 3;
+      this.labelControl1.Text = "Esta ventana se utiliza unicamente para testear los diversos formularios de dialo" +
+    "go. Se usan servicios para mostrar los diversos dialogos pero no tenemos navegab" +
+    "ilidad de ningun tipo, ni login\r\n\r\n";
+      // 
       // winTestUI
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(876, 532);
+      this.Controls.Add(this.panelControl1);
       this.Controls.Add(this.txtHiddenSearch);
-      this.Controls.Add(this.labelControl1);
       this.Controls.Add(this.ribbonStatusBar);
       this.Controls.Add(this.txtHidden);
       this.Controls.Add(this.ribbon);
@@ -232,6 +240,8 @@
       this.StatusBar = this.ribbonStatusBar;
       this.Text = "Pruebas varias para diferentes vistas";
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+      this.panelControl1.ResumeLayout(false);
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -244,7 +254,6 @@
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
     private DevExpress.XtraBars.BarButtonItem bbnNuevoProveedor;
-    private DevExpress.XtraEditors.LabelControl labelControl1;
     private DevExpress.XtraBars.BarButtonItem bbnEditProvedor;
     private DevExpress.XtraBars.BarButtonItem bbnBuscarProveedor;
     private DevExpress.XtraBars.BarStaticItem btxtUsuario;
@@ -255,5 +264,7 @@
     private DevExpress.XtraBars.BarButtonItem bbnEditAlquilable;
     private DevExpress.XtraBars.BarButtonItem bbnBuscarAlquilable;
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+    private DevExpress.XtraEditors.PanelControl panelControl1;
+    private DevExpress.XtraEditors.LabelControl labelControl1;
   }
 }

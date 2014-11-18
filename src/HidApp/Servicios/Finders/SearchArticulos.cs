@@ -9,5 +9,11 @@ namespace Servicios.Finders
     {
       throw new NotImplementedException();
     }
+
+    public string Descripcion
+    {
+      get { return @"Busqueda de articulos..."; }
+      set { throw new NotSupportedException("Metodo set no soportado para propiedad SearchProveedores.Descripcion"); }
+    }
   }
 }
