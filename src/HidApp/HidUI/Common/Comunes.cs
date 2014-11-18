@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Windows.Forms;
 using DevExpress.Mvvm;
 using DevExpress.XtraBars.Ribbon;
+using Infraestructura;
 
 namespace HidUI.Common
 {
@@ -201,10 +203,58 @@ namespace HidUI.Common
   }
 
   /// <summary>
-  /// Interface utilizada para servicios de edicion de cualquier tipo (normalmente un formulario con campos para ingresar o actualizar elementos)
-  /// Este servicio seguro que necesita de un ViewModel para funcionar...
+  /// Contiene la funcionalidad comun a todos los view model que pueden usarse dentro de un formulario de edicion de entidades
   /// </summary>
-  public interface IFormEditService
+  /// <remarks>
+  /// Add_Exit(), Add_Keep(), Save_Exit() y Cancel() seran las acciones basicas que cualquiera de estos formularios debera tener
+  /// Luego podran existir otras
+  /// 
+  /// </remarks>
+  /// <typeparam name="T"></typeparam>
+  public interface IFormEditViewModel<T> 
+  {
+    event EventHandler ViewMustClose;
+
+    event EventHandler<IList<HidErrorInfo>> ViewHasErrors;
+
+    /// <summary>
+    /// Devuelve o establece la instancia actual (tipo T) del elemento que esta siendo editado
+    /// </summary>
+    T Current { get; set; }
+
+    void SetCurrent(T newCurrent);
+
+    void Add_Exit();
+
+    void Add_Keep();
+
+    void Save_Exit();
+
+    void Cancel();
+  }
+
+  /// <summary>
+  /// Una vista o control que contiene entrada tipo formulario y que puede embeberse en un dialogo, popup, etc...
+  /// </summary>
+  public interface IFormEditView<T>
+  {
+    event EventHandler CloseView;
+
+    /// <summary>
+    /// Devuelve o establece el tipo de accion a la que tiene que responder el view model: editar existente o editar nuevo
+    /// </summary>
+    FormEditAction Action { get; set; }
+
+    void SetViewModel(IFormEditViewModel<T> vm);
+  }
+
+  /// <summary>
+  /// Interface utilizada para servicios de edicion de cualquier tipo 
+  /// (normalmente un formulario con campos para ingresar o actualizar elementos)
+  /// Este servicio seguro que necesita de un ViewModel para funcionar...
+  /// El hecho que diga FORM es porque el ingreso es una especie de formulario, no porque tenga que usarse forms de Windows...
+  /// </summary>
+  public interface IFormEditService<T> 
   {
     /// <summary>
     /// Metodo que efectivamente muestra el formulario de edicion para la entidad que estoy necesitando
@@ -214,10 +264,10 @@ namespace HidUI.Common
     FormEditResult Run(FormEditAction action);
 
     /// <summary>
-    /// Propiedad con la que ajusto el VM que usara la vista de edicion (puede ser que en algun momento vea que tiene que ser object y no
-    /// ViewModelBase)
+    /// El view model de un servicio de edicion tiene que tener una serie de miembros bien definidos
+    /// Entre ellos, uno que permita setear y obtener el valor actual que se quiere editar
     /// </summary>
-    ViewModelBase ViewModel { get; set; }
+    IFormEditViewModel<T> ViewModel { get; set; }
 
     //  IDoc
     //  podria retornar un valor que diga si agrego/modifico uno, varios o ningun registro?

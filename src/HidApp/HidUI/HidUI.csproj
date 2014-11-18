@@ -129,6 +129,12 @@
     <Compile Include="Views\NavegableView.Designer.cs">
       <DependentUpon>NavegableView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ProveedorEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ProveedorEditControl.Designer.cs">
+      <DependentUpon>ProveedorEditControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserInfoView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,6 +244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NavegableView.resx">
       <DependentUpon>NavegableView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProveedorEditControl.resx">
+      <DependentUpon>ProveedorEditControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserInfoView.resx">
       <DependentUpon>UserInfoView.cs</DependentUpon>

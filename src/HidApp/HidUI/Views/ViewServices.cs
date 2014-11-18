@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Mvvm;
+using Entidades;
 using HidUI.Common;
 
 namespace HidUI.Views
@@ -18,9 +19,9 @@ namespace HidUI.Views
     }
   }
 
-  public class EditProveedoresService : IFormEditService
+  public class DlgEditProveedoresService : IFormEditService<Proveedor>
   {
-    public EditProveedoresService()
+    public DlgEditProveedoresService()
     {
       ViewModel = null;
     }
@@ -35,18 +36,23 @@ namespace HidUI.Views
       return res == DialogResult.Cancel ? FormEditResult.Cancelado : FormEditResult.Modificado;
     }
 
-    public ViewModelBase ViewModel { get; set; }
+    public IFormEditViewModel<Proveedor> ViewModel { get; set; }
   }
 
-  public class EditAlquilablesService : IFormEditService
+  public class DlgEditAlquilablesService : IFormEditService<enTArticulo>
   {
     public FormEditResult Run(FormEditAction action)
     {
       throw new NotImplementedException();
     }
 
-    public ViewModelBase ViewModel { get; set; }
+    public IFormEditViewModel<enTArticulo> ViewModel { get; set; }
   }
+
+  //  TODO Atento TURKO
+  //  public class PopEditProveedoresService : IForm...
+  //  pero internamente usa un popupcontrol
+  //
 
   public class SearchEntityService<T> : IFormSearchService<T> where T: class 
   {

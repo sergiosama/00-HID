@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.Mvvm.POCO;
+using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using Entidades;
 using HidUI.ViewModel;
@@ -22,6 +23,7 @@ namespace HidUI.Views
   public partial class winSimpleSearch<T> : DevExpress.XtraEditors.XtraForm where T: class 
   {
     //  private SimpleSearchViewModel _vm;
+    private IFinder<T> _search;
 
     public winSimpleSearch()
     {
@@ -30,9 +32,11 @@ namespace HidUI.Views
 
       lblEntityName.Text = typeof (T).Name;
 
-      //  _vm.ViewMustClose += CloseEvent;
+      _search = FinderFactory.CreateFinder<T>();
 
-      //  BindCommands();
+      txtSearch.AllowHtmlTextInToolTip = DefaultBoolean.True;
+      txtSearch.ToolTip = _search.Descripcion;
+
       Resultado = null;
     }
 
@@ -50,9 +54,7 @@ namespace HidUI.Views
 
     private void Buscar_OnClick(object sender, EventArgs e)
     {
-      IFinder<T> search = FinderFactory.CreateFinder<T>();
-
-      T result = search.FindByText(txtSearch.Text);
+      T result = _search.FindByText(txtSearch.Text);
 
       if (result != null)
       {

@@ -8,14 +8,16 @@ using DevExpress.Mvvm;
 using DevExpress.Mvvm.DataAnnotations;
 
 using Entidades;
+using HidUI.Common;
 using Infraestructura;
 using Servicios;
 
 namespace HidUI.ViewModel
 {
-  public class ProveedoresViewModel : ViewModelBase
+  public class ProveedoresViewModel : ViewModelBase, IFormEditViewModel<Proveedor>
   {
     public event EventHandler ViewMustClose;
+
     public event EventHandler<IList<HidErrorInfo>> ViewHasErrors;
 
     private readonly ArticulosServices _svc;
@@ -35,13 +37,13 @@ namespace HidUI.ViewModel
     public virtual Proveedor Current { get; set; }
 
     /// <summary>
-    /// Ajusta una instancia de Proveedor en el VM para permitir la edicion
+    /// Se podra incorporar en el set de la propiedad Current? Porque para lo unico que sirve es para la opcion de Guardar y Seguir
     /// La opcion de "Guardar y Seguir" se deshabilita
     /// </summary>
-    /// <param name="proveedor"></param>
-    public void SetProveedor(Proveedor proveedor)
+    /// <param name="newCurrent"></param>
+    public void SetCurrent(Proveedor newCurrent)
     {
-      Current = proveedor;
+      Current = newCurrent;
       _canKeep = false;
     }
 
@@ -90,14 +92,14 @@ namespace HidUI.ViewModel
     }
 
     [Command(UseCommandManager = false)]
-    public void Cancelar()
+    public void Cancel()
     {
       //  deshacer cualquier cambio hecho...
       if (ViewMustClose != null)
         ViewMustClose(null, null);
     }
 
-    public bool CanCancelar()
+    public bool CanCancel()
     {
       return true;
     }

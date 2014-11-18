@@ -27,7 +27,7 @@ namespace HidUI
       _vm = ViewModelSource.Create(() => new TestUIViewModel());
 
       //  Acá es donde digo que servicios CONCRETOS va a utilizar esta vista...
-      ServiceContainer.Default.RegisterService(new EditProveedoresService());
+      ServiceContainer.Default.RegisterService(new DlgEditProveedoresService());
       ServiceContainer.Default.RegisterService(new SearchEntityService<Proveedor>());
 
       BindCommands();
@@ -36,7 +36,7 @@ namespace HidUI
     protected override void OnLoad(EventArgs e)
     {
       base.OnLoad(e);
-      btxtUsuario.Caption = Contexto.Current.Sesion.FullName;
+      //btxtUsuario.Caption = Contexto.Current.Sesion.FullName;
     }
 
     private void BindCommands()
@@ -44,6 +44,8 @@ namespace HidUI
       bbnNuevoProveedor.BindCommand(() => _vm.NewProveedor(), _vm);
       bbnEditProvedor.BindCommand(() => _vm.EditProveedor(), _vm);
       bbnBuscarProveedor.BindCommand(() => _vm.BuscarProveedor(), _vm);
+      //
+      //  OJO!! Si estan invisibles no participan del binding!!! Dejarlos visibles y SendToBack
       //
       txtHidden.DataBindings.Add(new Binding("Text", _vm, "UserName"));
       txtHiddenSearch.DataBindings.Add(new Binding("Text", _vm, "SearchResult"));
