@@ -56,6 +56,8 @@ namespace HidUI.Common
     /// </summary>
     StockReportes,
 
+    
+
     PacientesView
   }
 
