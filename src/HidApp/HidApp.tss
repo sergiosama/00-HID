@@ -2,41 +2,46 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>f:\desarrollo\00-hid\src\hidapp\servicios\finders\searchproveedores.cs</string>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\proveedoreditcontrol.cs</string>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\proveedoreditcontrol.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>f:\desarrollo\00-hid\src\hidapp\servicios\finders\finderfactory.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\winproveedores.cs</string>
-      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\winproveedores.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\winsimplesearch.cs</string>
-      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\winsimplesearch.cs</string>
-      <string>F:\DESARROLLO\00-HID\src\HidApp\HidUI\Views\winSimpleSearch.Designer.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>F:\DESARROLLO\00-HID\src\HidApp\HidUI\Common\Comunes.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>F:\DESARROLLO\00-HID\src\HidApp\HidUI\ViewModel\ProveedoresViewModel.cs</string>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\viewmodel\proveedoresviewmodel.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>f:\desarrollo\00-hid\src\hidapp\servicios\articulosservices.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>f:\desarrollo\00-hid\src\hidapp\hidui\viewmodel\testuiviewmodel.cs</string>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\stockinsumosview.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\wintestui.cs</string>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\wintestui.cs</string>
     </ArrayOfString>
     <ArrayOfString>
       <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\viewservices.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>f:\desarrollo\00-hid\src\hidapp\hidui\wintestui.cs</string>
-      <string>f:\desarrollo\00-hid\src\hidapp\hidui\wintestui.cs</string>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\insumoseditcontrol.cs</string>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\insumoseditcontrol.cs</string>
     </ArrayOfString>
     <ArrayOfString>
-      <string>f:\desarrollo\00-hid\src\hidapp\servicios\finders\searcharticulos.cs</string>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\winalquilables.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>f:\desarrollo\00-hid\src\hidapp\hidui\views\stockview.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>f:\desarrollo\00-hid\src\hidapp\entidades\compra.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>F:\DESARROLLO\00-HID\src\HidApp\HidUI\Program.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>F:\DESARROLLO\00-HID\src\HidApp\HidUI\ViewModel\TestUIViewModel.cs</string>
+    </ArrayOfString>
+    <ArrayOfString>
+      <string>F:\DESARROLLO\00-HID\src\HidApp\HidUI\Common\Comunes.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

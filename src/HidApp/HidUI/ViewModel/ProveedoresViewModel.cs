@@ -27,8 +27,9 @@ namespace HidUI.ViewModel
     public ProveedoresViewModel()
     {
       _svc = new ArticulosServices();
-      Current = new Proveedor();
-      _canKeep = true;
+      SetNew();   //  TODO no es sospechoso?? Que pasa si implemento explicitamente??
+      //  Current = new Proveedor();
+      //  _canKeep = true;
     }
 
     /// <summary>
@@ -45,6 +46,12 @@ namespace HidUI.ViewModel
     {
       Current = newCurrent;
       _canKeep = false;
+    }
+
+    public void SetNew()
+    {
+      Current = new Proveedor();
+      _canKeep = true;
     }
 
     #region Comandos

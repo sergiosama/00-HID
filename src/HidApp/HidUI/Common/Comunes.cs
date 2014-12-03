@@ -226,6 +226,12 @@ namespace HidUI.Common
 
     void SetCurrent(T newCurrent);
 
+    /// <summary>
+    /// Este metodo por ahora es necesario para poder saber si estoy o no editando...
+    /// Pensar bien si es util
+    /// </summary>
+    void SetNew();
+
     void Add_Exit();
 
     void Add_Keep();

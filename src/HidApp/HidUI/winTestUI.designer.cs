@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winTestUI));
       DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
       DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
@@ -49,9 +50,15 @@
       this.txtHiddenSearch = new System.Windows.Forms.TextBox();
       this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
       this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+      this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+      this.bbnNuevoInsumo = new DevExpress.XtraBars.BarButtonItem();
+      this.bbnEditInsumo = new DevExpress.XtraBars.BarButtonItem();
+      this.bbnBuscarInsumo = new DevExpress.XtraBars.BarButtonItem();
+      this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
       this.panelControl1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
       this.SuspendLayout();
       // 
       // ribbon
@@ -66,9 +73,12 @@
             this.btxtSearchResult,
             this.bbnNuevoAlquilable,
             this.bbnEditAlquilable,
-            this.bbnBuscarAlquilable});
+            this.bbnBuscarAlquilable,
+            this.bbnNuevoInsumo,
+            this.bbnEditInsumo,
+            this.bbnBuscarInsumo});
       this.ribbon.Location = new System.Drawing.Point(0, 0);
-      this.ribbon.MaxItemId = 10;
+      this.ribbon.MaxItemId = 13;
       this.ribbon.Name = "ribbon";
       this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -155,7 +165,8 @@
       // 
       this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
       this.ribbonPage1.Name = "ribbonPage1";
       this.ribbonPage1.Text = "PRUEBAS";
       // 
@@ -224,6 +235,46 @@
     "go. Se usan servicios para mostrar los diversos dialogos pero no tenemos navegab" +
     "ilidad de ningun tipo, ni login\r\n\r\n";
       // 
+      // ribbonPageGroup3
+      // 
+      this.ribbonPageGroup3.ItemLinks.Add(this.bbnNuevoInsumo);
+      this.ribbonPageGroup3.ItemLinks.Add(this.bbnEditInsumo);
+      this.ribbonPageGroup3.ItemLinks.Add(this.bbnBuscarInsumo);
+      this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+      this.ribbonPageGroup3.Text = "Insumos";
+      // 
+      // bbnNuevoInsumo
+      // 
+      this.bbnNuevoInsumo.Caption = "Nuevo";
+      this.bbnNuevoInsumo.Glyph = ((System.Drawing.Image)(resources.GetObject("bbnNuevoInsumo.Glyph")));
+      this.bbnNuevoInsumo.Id = 10;
+      this.bbnNuevoInsumo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbnNuevoInsumo.LargeGlyph")));
+      this.bbnNuevoInsumo.Name = "bbnNuevoInsumo";
+      // 
+      // bbnEditInsumo
+      // 
+      this.bbnEditInsumo.Caption = "Modificar";
+      this.bbnEditInsumo.Glyph = ((System.Drawing.Image)(resources.GetObject("bbnEditInsumo.Glyph")));
+      this.bbnEditInsumo.Id = 11;
+      this.bbnEditInsumo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbnEditInsumo.LargeGlyph")));
+      this.bbnEditInsumo.Name = "bbnEditInsumo";
+      // 
+      // bbnBuscarInsumo
+      // 
+      this.bbnBuscarInsumo.ActAsDropDown = true;
+      this.bbnBuscarInsumo.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+      this.bbnBuscarInsumo.Caption = "Buscar";
+      this.bbnBuscarInsumo.DropDownControl = this.galleryDropDown1;
+      this.bbnBuscarInsumo.Glyph = ((System.Drawing.Image)(resources.GetObject("bbnBuscarInsumo.Glyph")));
+      this.bbnBuscarInsumo.Id = 12;
+      this.bbnBuscarInsumo.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("bbnBuscarInsumo.LargeGlyph")));
+      this.bbnBuscarInsumo.Name = "bbnBuscarInsumo";
+      // 
+      // galleryDropDown1
+      // 
+      this.galleryDropDown1.Name = "galleryDropDown1";
+      this.galleryDropDown1.Ribbon = this.ribbon;
+      // 
       // winTestUI
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,6 +293,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
       this.panelControl1.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -266,5 +318,10 @@
     private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     private DevExpress.XtraEditors.PanelControl panelControl1;
     private DevExpress.XtraEditors.LabelControl labelControl1;
+    private DevExpress.XtraBars.BarButtonItem bbnNuevoInsumo;
+    private DevExpress.XtraBars.BarButtonItem bbnEditInsumo;
+    private DevExpress.XtraBars.BarButtonItem bbnBuscarInsumo;
+    private DevExpress.XtraBars.Ribbon.GalleryDropDown galleryDropDown1;
+    private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
   }
 }

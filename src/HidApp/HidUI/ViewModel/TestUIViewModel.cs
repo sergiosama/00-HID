@@ -52,7 +52,7 @@ namespace HidUI.ViewModel
 
       //  Si selecciona la opcion de nuevo proveedor, entonces hay que crear una instancia nueva de esta clase
       //
-      _viewModel.SetCurrent(new Proveedor());   //  TODO reemplazar por metodo NewProveedor??
+      _viewModel.SetNew();  //   .SetCurrent(new Proveedor());   //  TODO reemplazar por metodo NewProveedor??
       editService.ViewModel = _viewModel;
       editService.Run(FormEditAction.EditarNuevo);
     }

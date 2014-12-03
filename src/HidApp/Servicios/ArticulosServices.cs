@@ -31,7 +31,25 @@ namespace Servicios
       HIDContext ctx = DB.Context;
 
       //  return ctx.Proveedores.Local.ToBindingList();
+      //  TODO retornar SOLO HABILITADOS!!
       return ctx.Proveedores.Local;
+    }
+
+    public IList<enTArticulo> GetInsumos()
+    {
+      //
+      return null;
+    }
+
+    /// <summary>
+    /// Obtiene la lista de los tipos de articulos habilitados
+    /// </summary>
+    /// <returns></returns>
+    public IList<enTTipoArticulo> GetTipoArticulos()
+    {
+      HIDContext ctx = DB.Context;
+
+      return ctx.TTipoArticulo.Local;
     }
 
     public bool AddProveedor(Proveedor nuevo)
@@ -98,6 +116,17 @@ namespace Servicios
       }
       return result;
     }
+
+    public void Addinsumo(enTArticulo nuevo)
+    {
+      //
+    }
+
+    public bool UpdateInsumo(enTArticulo modificado)
+    {
+      return false;
+    }
+
 
     public List<HidErrorInfo> Errores { get; set; }
 

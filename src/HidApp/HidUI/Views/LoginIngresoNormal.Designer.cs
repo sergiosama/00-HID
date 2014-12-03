@@ -28,14 +28,13 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.components = new System.ComponentModel.Container();
       this.btnLogin = new DevExpress.XtraEditors.SimpleButton();
       this.txtUser = new DevExpress.XtraEditors.TextEdit();
       this.txtPassword = new DevExpress.XtraEditors.TextEdit();
       this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
       this.btnCancelar = new DevExpress.XtraEditors.SimpleButton();
       this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-      this.errLogin = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+      this.errLogin = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider();
       ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.errLogin)).BeginInit();
@@ -58,6 +57,7 @@
       // 
       this.txtUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+      this.txtUser.EditValue = "ethedy";
       this.txtUser.Location = new System.Drawing.Point(88, 10);
       this.txtUser.Margin = new System.Windows.Forms.Padding(10);
       this.txtUser.Name = "txtUser";
@@ -70,7 +70,7 @@
       // 
       this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-      this.txtPassword.EditValue = "";
+      this.txtPassword.EditValue = "viterilove";
       this.txtPassword.Location = new System.Drawing.Point(88, 54);
       this.txtPassword.Margin = new System.Windows.Forms.Padding(10);
       this.txtPassword.Name = "txtPassword";

@@ -51,8 +51,26 @@ namespace HidUI.Views
 
   //  TODO Atento TURKO
   //  public class PopEditProveedoresService : IForm...
-  //  pero internamente usa un popupcontrol
+  //  pero internamente usa un wpopupcontrol
   //
+
+  public class DlgEditInsumosService : IFormEditService<enTArticulo>
+  {
+    public DlgEditInsumosService()
+    {
+      ViewModel = null;
+    }
+
+    public FormEditResult Run(FormEditAction action)
+    {
+      winInsumos editInsumos = new winInsumos(ViewModel, action);
+
+      DialogResult res = editInsumos.ShowDialog();
+      return res == DialogResult.Cancel ? FormEditResult.Cancelado : FormEditResult.Modificado;
+    }
+
+    public IFormEditViewModel<enTArticulo> ViewModel { get; set; }
+  }
 
   public class SearchEntityService<T> : IFormSearchService<T> where T: class 
   {

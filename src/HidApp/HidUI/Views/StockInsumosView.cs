@@ -22,7 +22,7 @@ namespace HidUI.Views
     /// </summary>
     public partial class StockInsumosView : XtraUserControl, IWorkView
     {
-        private StockInsumosViewModel _viewModel;
+        //  private StockInsumosViewModel _viewModel;
 
         public HIDContext _ctx;
 
@@ -50,7 +50,7 @@ namespace HidUI.Views
         {
             InitializeComponent();
 
-            _viewModel = ViewModelSource.Create<StockInsumosViewModel>();
+            ViewModel = ViewModelSource.Create<StockInsumosViewModel>();
 
             _ctx = new HIDContext();
 
@@ -60,17 +60,25 @@ namespace HidUI.Views
 
             bs = new BindingSource();
 
-
             bs.DataSource = Art;
 
-            teCodigoBarra.DataBindings.Add(new Binding("Text", bs, "CodeBar"));
-            teDetalleArticulo.DataBindings.Add(new Binding("Text", bs, "DetalleArticulo"));
-            teStock.DataBindings.Add(new Binding("Value", bs, "Stock"));
-            teStockMinimo.DataBindings.Add(new Binding("Value", bs, "StockMinimo"));
-            tePrecioAlquiler.DataBindings.Add(new Binding("Text", bs, "PrecioAlquiler"));
-            tePrecioCosto.DataBindings.Add(new Binding("Text", bs, "PrecioCosto"));
-            tePrecioPublico.DataBindings.Add(new Binding("Text", bs, "PrecioPublico"));
-            imgArticulo.DataBindings.Add(new Binding("Image", bs, "Imagen"));
+            teCodigoBarra.DataBindings.Add(new Binding("Text", ViewModel, "CodeBar"));
+            teDetalleArticulo.DataBindings.Add(new Binding("Text", ViewModel, "Current.DetalleArticulo"));
+            teStock.DataBindings.Add(new Binding("EditValue", ViewModel, "Current.Stock"));
+            teStockMinimo.DataBindings.Add(new Binding("EditValue", ViewModel, "Current.StockMinimo"));
+            tePrecioAlquiler.DataBindings.Add(new Binding("Text", ViewModel, "Current.PrecioAlquiler"));
+            tePrecioCosto.DataBindings.Add(new Binding("Text", ViewModel, "Current.PrecioCompra"));
+            tePrecioPublico.DataBindings.Add(new Binding("Text", ViewModel, "Current.PrecioVenta"));
+            imgArticulo.DataBindings.Add(new Binding("Image", ViewModel, "Current.Imagen"));
+
+            //teCodigoBarra.DataBindings.Add(new Binding("Text", bs, "CodeBar"));
+            //teDetalleArticulo.DataBindings.Add(new Binding("Text", bs, "DetalleArticulo"));
+            //teStock.DataBindings.Add(new Binding("EditValue", bs, "Stock"));
+            //teStockMinimo.DataBindings.Add(new Binding("EditValue", bs, "StockMinimo"));
+            //tePrecioAlquiler.DataBindings.Add(new Binding("Text", bs, "PrecioAlquiler"));
+            //tePrecioCosto.DataBindings.Add(new Binding("Text", bs, "PrecioCompra"));
+            //tePrecioPublico.DataBindings.Add(new Binding("Text", bs, "PrecioVenta"));
+            //imgArticulo.DataBindings.Add(new Binding("Image", bs, "Imagen"));
 
 
             //LookUpEdit
@@ -88,17 +96,13 @@ namespace HidUI.Views
 
             // leTipoArticulo.Properties.Columns.Add(col);
 
-
-
             teDetalleArticulo.EnterMoveNextControl = true;
-
 
             gviewArticulos.DoubleClick += gviewArticulos_DoubleClick;
             gviewArticulos.KeyDown += gviewArticulos_KeyDown;
             btnAplicar.Click += btnAplicar_Click;
 
             gcArticulos.DataSource = bs;
-
         }
 
 
@@ -109,10 +113,10 @@ namespace HidUI.Views
         /// <param name="e"></param>
         void btnAplicar_Click(object sender, EventArgs e)
         {
-
             try
             {
                 int iIdActual = Convert.ToInt32(teIdArt.Text);
+
                 if (iIdActual <= 0)
                 {
                     //Inserto...
@@ -343,13 +347,12 @@ namespace HidUI.Views
         }
 
 
+      public void BindCommands(ISupportRibbon parent)
+      {
+        throw new NotImplementedException();
+      }
 
-
-
-
-
-
-
+      public IWorkViewModel ViewModel { get; set; }
 
     }
 }

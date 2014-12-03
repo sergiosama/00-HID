@@ -28,9 +28,9 @@
     /// </summary>
     private void InitializeComponent()
     {
-      DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-      DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+      DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+      DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+      DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
       this.chkHabilitado = new DevExpress.XtraEditors.CheckEdit();
       this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
       this.txtCUIT = new DevExpress.XtraEditors.TextEdit();
@@ -81,15 +81,15 @@
       this.txtCUIT.Properties.Mask.EditMask = "(20|30)-\\d\\d\\d\\d\\d\\d\\d\\d-\\d|99-\\d\\d\\d\\d\\d\\d\\d\\d-X";
       this.txtCUIT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
       this.txtCUIT.Size = new System.Drawing.Size(263, 24);
-      toolTipTitleItem2.Text = "CUIT o DNI del proveedor";
-      toolTipItem2.LeftIndent = 6;
-      toolTipItem2.Text = "Ingresar el CUIT del Proveedor, en caso de no disponer del mismo, reemplazar con " +
+      toolTipTitleItem1.Text = "CUIT o DNI del proveedor";
+      toolTipItem1.LeftIndent = 6;
+      toolTipItem1.Text = "Ingresar el CUIT del Proveedor, en caso de no disponer del mismo, reemplazar con " +
     "el DNI de la persona responsable, colocando 99 en el primer campo y X en el ulti" +
     "mo";
-      superToolTip2.Items.Add(toolTipTitleItem2);
-      superToolTip2.Items.Add(toolTipItem2);
-      this.txtCUIT.SuperTip = superToolTip2;
-      this.txtCUIT.TabIndex = 28;
+      superToolTip1.Items.Add(toolTipTitleItem1);
+      superToolTip1.Items.Add(toolTipItem1);
+      this.txtCUIT.SuperTip = superToolTip1;
+      this.txtCUIT.TabIndex = 2;
       // 
       // txtDireccion
       // 
@@ -101,7 +101,7 @@
       this.txtDireccion.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
       this.txtDireccion.Properties.Appearance.Options.UseFont = true;
       this.txtDireccion.Size = new System.Drawing.Size(460, 24);
-      this.txtDireccion.TabIndex = 27;
+      this.txtDireccion.TabIndex = 1;
       // 
       // labelControl3
       // 
@@ -122,7 +122,7 @@
       this.btnDoAndKeep.Margin = new System.Windows.Forms.Padding(10);
       this.btnDoAndKeep.Name = "btnDoAndKeep";
       this.btnDoAndKeep.Size = new System.Drawing.Size(120, 40);
-      this.btnDoAndKeep.TabIndex = 31;
+      this.btnDoAndKeep.TabIndex = 4;
       this.btnDoAndKeep.Text = "Agrega y Sigue";
       this.btnDoAndKeep.Click += new System.EventHandler(this.Botones_OnClick);
       // 
@@ -136,7 +136,7 @@
       this.txtNombre.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10F);
       this.txtNombre.Properties.Appearance.Options.UseFont = true;
       this.txtNombre.Size = new System.Drawing.Size(460, 24);
-      this.txtNombre.TabIndex = 26;
+      this.txtNombre.TabIndex = 0;
       // 
       // labelControl1
       // 
@@ -157,7 +157,7 @@
       this.btnDoAndExit.Margin = new System.Windows.Forms.Padding(10);
       this.btnDoAndExit.Name = "btnDoAndExit";
       this.btnDoAndExit.Size = new System.Drawing.Size(120, 40);
-      this.btnDoAndExit.TabIndex = 30;
+      this.btnDoAndExit.TabIndex = 3;
       this.btnDoAndExit.Text = "Agrega y Sale";
       this.btnDoAndExit.Click += new System.EventHandler(this.Botones_OnClick);
       // 
@@ -171,7 +171,7 @@
       this.btnCancelar.Margin = new System.Windows.Forms.Padding(10);
       this.btnCancelar.Name = "btnCancelar";
       this.btnCancelar.Size = new System.Drawing.Size(120, 40);
-      this.btnCancelar.TabIndex = 32;
+      this.btnCancelar.TabIndex = 5;
       this.btnCancelar.Text = "Cancelar";
       // 
       // ProveedorEditControl

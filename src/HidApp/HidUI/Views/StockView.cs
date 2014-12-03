@@ -86,6 +86,7 @@ namespace HidUI.Views
 
       //bbnAlqNuevo.BindCommand(vm.GetActionFromName(""), vm);
       //bbnAlqIngreso.BindCommand(vm.GetActionFromName(""), vm);
+      bbnInsNuevo.BindCommand(vm.GetActionFromName("Nuevo"), vm);
 
       workView = _workViews[ViewType.StockAlquilables];
       vm = workView.ViewModel;

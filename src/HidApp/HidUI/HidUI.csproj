@@ -90,12 +90,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\InsumosViewModel.cs" />
     <Compile Include="ViewModel\NavegableViewModel.cs" />
     <Compile Include="ViewModel\PacientesViewModel.cs" />
     <Compile Include="ViewModel\ProveedoresViewModel.cs" />
     <Compile Include="ViewModel\StockAlquilablesViewModel.cs" />
     <Compile Include="ViewModel\SimpleSearchViewModel.cs" />
     <Compile Include="ViewModel\TestUIViewModel.cs" />
+    <Compile Include="Views\InsumosEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\InsumosEditControl.Designer.cs">
+      <DependentUpon>InsumosEditControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginIngresoNormal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -129,6 +136,12 @@
     <Compile Include="Views\ProveedorEditControl.Designer.cs">
       <DependentUpon>ProveedorEditControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\StockInsumosView_.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\StockInsumosView_.designer.cs">
+      <DependentUpon>StockInsumosView_.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UserInfoView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +155,12 @@
     </Compile>
     <Compile Include="Views\winAlquilables.designer.cs">
       <DependentUpon>winAlquilables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\winInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\winInsumos.designer.cs">
+      <DependentUpon>winInsumos.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\winProveedores.cs">
       <SubType>Form</SubType>
@@ -224,6 +243,9 @@
     <Compile Include="winTestUI.designer.cs">
       <DependentUpon>winTestUI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\InsumosEditControl.resx">
+      <DependentUpon>InsumosEditControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginIngresoNormal.resx">
       <DependentUpon>LoginIngresoNormal.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,11 +261,17 @@
     <EmbeddedResource Include="Views\ProveedorEditControl.resx">
       <DependentUpon>ProveedorEditControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\StockInsumosView_.resx">
+      <DependentUpon>StockInsumosView_.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UserInfoView.resx">
       <DependentUpon>UserInfoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\winAlquilables.resx">
       <DependentUpon>winAlquilables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\winInsumos.resx">
+      <DependentUpon>winInsumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\winProveedores.resx">
       <DependentUpon>winProveedores.cs</DependentUpon>
